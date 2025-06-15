@@ -5,5 +5,3 @@ description: ESP-IDF component for integrating devices with Home Assistant over 
 url: "https://github.com/EdenBarnes/HAMQTT"
 dependencies:
   idf: ">=5.4"
-  mqtt: "*"
-  cjson: "*"
