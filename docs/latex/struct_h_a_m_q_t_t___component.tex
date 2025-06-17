@@ -1,0 +1,180 @@
+\doxysection{HAMQTT\+\_\+\+Component Struct Reference}
+\hypertarget{struct_h_a_m_q_t_t___component}{}\label{struct_h_a_m_q_t_t___component}\index{HAMQTT\_Component@{HAMQTT\_Component}}
+
+
+Base struct representing a generic Home Assistant MQTT component.  
+
+
+
+
+{\ttfamily \#include $<$hamqtt\+\_\+component\+\_\+internal.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a076abb82f1d6bd547109139a0fd0477e}{hamqtt\+\_\+component\+\_\+get\+\_\+discovery\+\_\+config}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, c\+JSON \texorpdfstring{$\ast$}{*}root, const char \texorpdfstring{$\ast$}{*}device\+\_\+uid)
+\begin{DoxyCompactList}\small\item\em Populates the Home Assistant discovery configuration for the component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18}{hamqtt\+\_\+component\+\_\+handle\+\_\+mqtt\+\_\+message}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, const char \texorpdfstring{$\ast$}{*}topic, int topic\+\_\+len, const char \texorpdfstring{$\ast$}{*}data, int data\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Dispatches an incoming MQTT message to the specified component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ac64bc85cd566882dfc4473c76417c7c1}{hamqtt\+\_\+component\+\_\+update}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t client)
+\begin{DoxyCompactList}\small\item\em Performs a periodic update for the component. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab84107885e9060b0ecf2d304fa6d81ec}{hamqtt\+\_\+component\+\_\+get\+\_\+unique\+\_\+id}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Returns the unique ID of the component. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab8daa7145718b9feb168f3819b750c0e}{hamqtt\+\_\+component\+\_\+get\+\_\+subscribed\+\_\+topics}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, size\+\_\+t \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Returns the list of topics the component wants to subscribe to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\+\_\+\+Component\+\_\+\+VTable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab9ba74db2f50dccb9c65b2206eb2e5d3}{subscribed\+\_\+topics}} \mbox{[}\mbox{\hyperlink{common_8h_a2fc290f3f367930732ad6448e021077b}{HAMQTT\+\_\+\+COMPONENT\+\_\+\+MAX\+\_\+\+TOPICS}}\mbox{]}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a862c88accdc3daa12ec0f6bb94a61b0b}{subscribed\+\_\+topics\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base struct representing a generic Home Assistant MQTT component. 
+
+\label{doc-func-members}
+\Hypertarget{struct_h_a_m_q_t_t___component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___component_a076abb82f1d6bd547109139a0fd0477e}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_get\_discovery\_config@{hamqtt\_component\_get\_discovery\_config}}
+\index{hamqtt\_component\_get\_discovery\_config@{hamqtt\_component\_get\_discovery\_config}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_component\_get\_discovery\_config()}{hamqtt\_component\_get\_discovery\_config()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_a076abb82f1d6bd547109139a0fd0477e} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+component\+\_\+get\+\_\+discovery\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{, }\item[{c\+JSON \texorpdfstring{$\ast$}{*}}]{root}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{device\+\_\+uid}{}\end{DoxyParamCaption})}
+
+
+
+Populates the Home Assistant discovery configuration for the component. 
+
+This function builds a JSON object containing discovery configuration information for the specified component. This information is used by Home Assistant to automatically set up the entity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Pointer to the component instance. \\
+\hline
+{\em root} & Pointer to the c\+JSON object to populate. \\
+\hline
+{\em device\+\_\+uid} & Unique ID of the parent device to associate with the component. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an appropriate error code on failure. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___component_ab8daa7145718b9feb168f3819b750c0e}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_get\_subscribed\_topics@{hamqtt\_component\_get\_subscribed\_topics}}
+\index{hamqtt\_component\_get\_subscribed\_topics@{hamqtt\_component\_get\_subscribed\_topics}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_component\_get\_subscribed\_topics()}{hamqtt\_component\_get\_subscribed\_topics()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_ab8daa7145718b9feb168f3819b750c0e} 
+const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} hamqtt\+\_\+component\+\_\+get\+\_\+subscribed\+\_\+topics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Returns the list of topics the component wants to subscribe to. 
+
+The component uses these topics to receive control or data messages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Pointer to the component instance. \\
+\hline
+{\em count} & Pointer to a size\+\_\+t to receive the number of topics. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} const\texorpdfstring{$\ast$}{*} Array of topic strings. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___component_ab84107885e9060b0ecf2d304fa6d81ec}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_get\_unique\_id@{hamqtt\_component\_get\_unique\_id}}
+\index{hamqtt\_component\_get\_unique\_id@{hamqtt\_component\_get\_unique\_id}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_component\_get\_unique\_id()}{hamqtt\_component\_get\_unique\_id()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_ab84107885e9060b0ecf2d304fa6d81ec} 
+const char \texorpdfstring{$\ast$}{*} hamqtt\+\_\+component\+\_\+get\+\_\+unique\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})}
+
+
+
+Returns the unique ID of the component. 
+
+This ID is used for discovery, topic namespacing, and internal lookup.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Pointer to the component instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} Unique ID string. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_handle\_mqtt\_message@{hamqtt\_component\_handle\_mqtt\_message}}
+\index{hamqtt\_component\_handle\_mqtt\_message@{hamqtt\_component\_handle\_mqtt\_message}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_component\_handle\_mqtt\_message()}{hamqtt\_component\_handle\_mqtt\_message()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18} 
+void hamqtt\+\_\+component\+\_\+handle\+\_\+mqtt\+\_\+message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{, }\item[{int}]{topic\+\_\+len}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{data\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+Dispatches an incoming MQTT message to the specified component. 
+
+This function should be called when an MQTT message is received for a topic that the component has subscribed to. The component will parse the message and act on it accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Pointer to the component instance. \\
+\hline
+{\em topic} & The topic string. \\
+\hline
+{\em topic\+\_\+len} & Length of the topic string. \\
+\hline
+{\em data} & The message payload. \\
+\hline
+{\em data\+\_\+len} & Length of the payload. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_h_a_m_q_t_t___component_ac64bc85cd566882dfc4473c76417c7c1}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_update@{hamqtt\_component\_update}}
+\index{hamqtt\_component\_update@{hamqtt\_component\_update}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_component\_update()}{hamqtt\_component\_update()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_ac64bc85cd566882dfc4473c76417c7c1} 
+void hamqtt\+\_\+component\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{, }\item[{esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t}]{client}{}\end{DoxyParamCaption})}
+
+
+
+Performs a periodic update for the component. 
+
+This function is typically called in the main loop to allow the component to publish state changes or perform maintenance tasks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Pointer to the component instance. \\
+\hline
+{\em client} & MQTT client handle to use for publishing. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_h_a_m_q_t_t___component_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___component_ab9ba74db2f50dccb9c65b2206eb2e5d3}\index{HAMQTT\_Component@{HAMQTT\_Component}!subscribed\_topics@{subscribed\_topics}}
+\index{subscribed\_topics@{subscribed\_topics}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{subscribed\_topics}{subscribed\_topics}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_ab9ba74db2f50dccb9c65b2206eb2e5d3} 
+const char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Component\+::subscribed\+\_\+topics\mbox{[}\mbox{\hyperlink{common_8h_a2fc290f3f367930732ad6448e021077b}{HAMQTT\+\_\+\+COMPONENT\+\_\+\+MAX\+\_\+\+TOPICS}}\mbox{]}}
+
+\Hypertarget{struct_h_a_m_q_t_t___component_a862c88accdc3daa12ec0f6bb94a61b0b}\index{HAMQTT\_Component@{HAMQTT\_Component}!subscribed\_topics\_count@{subscribed\_topics\_count}}
+\index{subscribed\_topics\_count@{subscribed\_topics\_count}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{subscribed\_topics\_count}{subscribed\_topics\_count}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_a862c88accdc3daa12ec0f6bb94a61b0b} 
+size\+\_\+t HAMQTT\+\_\+\+Component\+::subscribed\+\_\+topics\+\_\+count}
+
+\Hypertarget{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}\index{HAMQTT\_Component@{HAMQTT\_Component}!v@{v}}
+\index{v@{v}!HAMQTT\_Component@{HAMQTT\_Component}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52} 
+const \mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\+\_\+\+Component\+\_\+\+VTable}}\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Component\+::v}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+HAMQTT/\mbox{\hyperlink{hamqtt__component__internal_8h}{hamqtt\+\_\+component\+\_\+internal.\+h}}\item 
+include/\+HAMQTT/\mbox{\hyperlink{hamqtt__component_8h}{hamqtt\+\_\+component.\+h}}\end{DoxyCompactItemize}

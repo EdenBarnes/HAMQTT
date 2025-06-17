@@ -14,12 +14,50 @@
  * limitations under the License.
  */
 
+/**
+ * @file hamqtt_device.c
+ * @brief Implementation of the HAMQTT_Device MQTT device abstraction.
+ *
+ * This file defines the internal structure and logic of the `HAMQTT_Device`,
+ * including device metadata handling, MQTT discovery publishing, message routing,
+ * and lifecycle management of components.
+ *
+ * This is the core implementation used by device applications integrating with
+ * Home Assistant's MQTT discovery protocol.
+ *
+ * @author Ethan Barnes
+ * @date 2025
+ * @copyright Apache License 2.0
+ */
+
 #include "HAMQTT/hamqtt_device.h"
 
 #define MQTT_CONNECTED_BIT BIT0
 
 static const char *TAG = "HAMQTT_Device";
 
+HAMQTT_Device_Config hamqtt_device_config_default(void) {
+    HAMQTT_Device_Config config = {
+        .mqtt_config_topic_prefix = "homeassistant",
+        .mqtt_uri = NULL,
+        .mqtt_username = NULL,
+        .mqtt_password = NULL,
+        .manufacturer = NULL,
+        .model = NULL,
+        .serial_number = NULL,
+        .unique_id = NULL,
+        .sw_version = NULL,
+        .hw_version = NULL,
+        .origin_url = NULL,
+        .name = "ESP32 Device"
+    };
+    return config;
+}
+
+/**
+ * @struct HAMQTT_Device
+ * @brief Internal representation of a Home Assistant MQTT device.
+ */
 struct HAMQTT_Device {
     HAMQTT_Device_Config *device_config;
 
@@ -34,20 +72,67 @@ struct HAMQTT_Device {
 
 /* ----- Private HAMQTT Device function declarations ----- */
 
-// Generate the config json for the device and its components
-esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root);
+/**
+ * @internal
+ * @brief Validates that the minimum required fields are populated in the configuration.
+ *
+ * Required fields: `mqtt_config_topic_prefix`, `mqtt_uri`, `unique_id`, and `name`.
+ *
+ * @param device The device to validate.
+ * @return true if valid, false otherwise.
+ * 
+ * @memberof HAMQTT_Device
+ */
+static bool hamqtt_device_is_config_valid(const HAMQTT_Device *device);
 
-// Subscribe to all topics that each component wants to subscribe to
-void hamqtt_device_subscribe(const HAMQTT_Device *device);
+/**
+ * @internal
+ * @brief Builds the full Home Assistant discovery config JSON for the device and its components.
+ *
+ * @param[in] device The device whose configuration to serialize.
+ * @param[out] root The output cJSON object to populate.
+ * @return ESP_OK on success, or appropriate error on failure.
+ * 
+ * @memberof HAMQTT_Device
+ */
+static esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root);
 
-// Callback for mqtt events
-void hamqtt_device_mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+/**
+ * @internal
+ * @brief Subscribes to all topics requested by each registered component.
+ *
+ * @param[in] device The device whose components should be subscribed.
+ * 
+ * @memberof HAMQTT_Device
+ */
+static void hamqtt_device_subscribe(const HAMQTT_Device *device);
 
-// Determine which component and mqtt message belongs to, if any, and send it that message
+/**
+ * @internal
+ * @brief Callback handler for all MQTT client events.
+ *
+ * @param handler_args Pointer to the HAMQTT_Device.
+ * @param base Event base.
+ * @param event_id Event ID.
+ * @param event_data Pointer to the event data.
+ * 
+ * @memberof HAMQTT_Device
+ */
+static void hamqtt_device_mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+
+/**
+ * @internal
+ * @brief Determines if any component is subscribed to a given topic and dispatches the message to it.
+ *
+ * @param[in] device The device instance.
+ * @param[in] topic Topic string.
+ * @param[in] topic_len Length of the topic.
+ * @param[in] data Payload data.
+ * @param[in] data_len Length of the payload.
+ * 
+ * @memberof HAMQTT_Device
+ */
 void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *topic, int topic_len, const char *data, int data_len);
-
-// Check to see if the device config has all required fields set
-bool hamqtt_device_is_config_valid(const HAMQTT_Device *device);
 
 /* ----- HAMQTT Device function definitions ----- */
 
@@ -76,10 +161,16 @@ void hamqtt_device_destroy(HAMQTT_Device *device) {
 }
 
 esp_err_t hamqtt_device_add_component(HAMQTT_Device *device, HAMQTT_Component *component) {
-    if (device->component_count > HAMQTT_DEVICE_MAX_COMPONENTS) {
-        ESP_LOGE(TAG, "Component buffer is full! No more than %d components can be added", HAMQTT_DEVICE_MAX_COMPONENTS);
-        return ESP_ERR_NO_MEM;
-    }
+    ESP_RETURN_ON_FALSE(component,
+                        ESP_ERR_INVALID_ARG,
+                        TAG,
+                        "Attempted to add component before it was initialized");
+
+    ESP_RETURN_ON_FALSE(HAMQTT_DEVICE_MAX_COMPONENTS <= device->component_count,
+                        ESP_ERR_NO_MEM,
+                        TAG,
+                        "Component buffer is full! No more than %d components can be added",
+                        HAMQTT_DEVICE_MAX_COMPONENTS);
 
     device->components[device->component_count] = component;
     device->component_count++;
@@ -99,12 +190,8 @@ esp_err_t hamqtt_device_connect(HAMQTT_Device *device) {
     esp_mqtt_client_config_t mqtt_config = {};
     mqtt_config.broker.address.uri = device->device_config->mqtt_uri;
 
-    if (device->device_config->mqtt_username) {
-        mqtt_config.credentials.username = device->device_config->mqtt_username;
-    }
-    if (device->device_config->mqtt_password) {
-        mqtt_config.credentials.authentication.password = device->device_config->mqtt_password;
-    }
+    if (device->device_config->mqtt_username) mqtt_config.credentials.username = device->device_config->mqtt_username;
+    if (device->device_config->mqtt_password) mqtt_config.credentials.authentication.password = device->device_config->mqtt_password;
 
     mqtt_config.session.last_will.topic = device->availability_topic;
     mqtt_config.session.last_will.msg = "offline";
@@ -168,6 +255,15 @@ void hamqtt_device_loop(const HAMQTT_Device *device) {
 
 HAMQTT_Device_Config *hamqtt_device_get_config(const HAMQTT_Device *device) {
     return device->device_config;
+}
+
+bool hamqtt_device_is_config_valid(const HAMQTT_Device *device) {
+    if (!device->device_config->mqtt_config_topic_prefix) return false;
+    if (!device->device_config->mqtt_uri) return false;
+    if (!device->device_config->unique_id) return false;
+    if (!device->device_config->name) return false;
+
+    return true;
 }
 
 esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root) {
@@ -290,12 +386,4 @@ void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *
             }
         }
     }
-}
-
-bool hamqtt_device_is_config_valid(const HAMQTT_Device *device) {
-    if (!device->device_config->mqtt_uri) return false;
-    if (!device->device_config->unique_id) return false;
-    if (!device->device_config->name) return false;
-
-    return true;
 }

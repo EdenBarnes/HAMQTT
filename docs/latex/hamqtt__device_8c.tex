@@ -1,0 +1,127 @@
+\doxysection{src/hamqtt\+\_\+device.c File Reference}
+\hypertarget{hamqtt__device_8c}{}\label{hamqtt__device_8c}\index{src/hamqtt\_device.c@{src/hamqtt\_device.c}}
+
+
+Implementation of the \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device} MQTT device abstraction.  
+
+
+{\ttfamily \#include "{}HAMQTT/hamqtt\+\_\+device.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}}
+\begin{DoxyCompactList}\small\item\em Internal representation of a Home Assistant MQTT device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hamqtt__device_8c_a1e80d8829bc152cc952c4a118fcde270}{MQTT\+\_\+\+CONNECTED\+\_\+\+BIT}}~BIT0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \mbox{\hyperlink{hamqtt__device_8c_ad4253a1733848605522c786043d4436d}{hamqtt\+\_\+device\+\_\+config\+\_\+default}} (void)
+\item 
+void \mbox{\hyperlink{hamqtt__device_8c_ac3f0a11b1f7c3dfa07c039bb1b6b2eea}{hamqtt\+\_\+device\+\_\+handle\+\_\+mqtt\+\_\+message}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device, const char \texorpdfstring{$\ast$}{*}topic, int topic\+\_\+len, const char \texorpdfstring{$\ast$}{*}data, int data\+\_\+len)
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{hamqtt__device_8c_ad6293709013ec5cc1dbd93860dde67a1}{hamqtt\+\_\+device\+\_\+create}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}config)
+\item 
+void \mbox{\hyperlink{hamqtt__device_8c_af25f704f1af6f6ca5994e3eee081c172}{hamqtt\+\_\+device\+\_\+destroy}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{hamqtt__device_8c_a5d174b25c536bc7c96fac4eb86ce7bef}{hamqtt\+\_\+device\+\_\+add\+\_\+component}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device, \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{hamqtt__device_8c_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7}{hamqtt\+\_\+device\+\_\+connect}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{hamqtt__device_8c_a5cc68c84ecb0216c16b37eadbde25ac3}{hamqtt\+\_\+device\+\_\+publish\+\_\+availability}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device, bool availability)
+\item 
+void \mbox{\hyperlink{hamqtt__device_8c_a8e9d1484b0f8d71e0f3f4103c23ea46b}{hamqtt\+\_\+device\+\_\+loop}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{hamqtt__device_8c_ab7853bda558ebf81c13eceaaa4091a55}{hamqtt\+\_\+device\+\_\+get\+\_\+config}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device} MQTT device abstraction. 
+
+This file defines the internal structure and logic of the {\ttfamily \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}}, including device metadata handling, MQTT discovery publishing, message routing, and lifecycle management of components.
+
+This is the core implementation used by device applications integrating with Home Assistant\textquotesingle{}s MQTT discovery protocol.
+
+\begin{DoxyAuthor}{Author}
+Ethan Barnes 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Apache License 2.\+0 
+\end{DoxyCopyright}
+
+
+\label{doc-define-members}
+\Hypertarget{hamqtt__device_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{hamqtt__device_8c_a1e80d8829bc152cc952c4a118fcde270}\index{hamqtt\_device.c@{hamqtt\_device.c}!MQTT\_CONNECTED\_BIT@{MQTT\_CONNECTED\_BIT}}
+\index{MQTT\_CONNECTED\_BIT@{MQTT\_CONNECTED\_BIT}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{MQTT\_CONNECTED\_BIT}{MQTT\_CONNECTED\_BIT}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_a1e80d8829bc152cc952c4a118fcde270} 
+\#define MQTT\+\_\+\+CONNECTED\+\_\+\+BIT~BIT0}
+
+
+
+\label{doc-func-members}
+\Hypertarget{hamqtt__device_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{hamqtt__device_8c_a5d174b25c536bc7c96fac4eb86ce7bef}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_add\_component@{hamqtt\_device\_add\_component}}
+\index{hamqtt\_device\_add\_component@{hamqtt\_device\_add\_component}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_add\_component()}{hamqtt\_device\_add\_component()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_a5d174b25c536bc7c96fac4eb86ce7bef} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+device\+\_\+add\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_ad4253a1733848605522c786043d4436d}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_config\_default@{hamqtt\_device\_config\_default}}
+\index{hamqtt\_device\_config\_default@{hamqtt\_device\_config\_default}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_config\_default()}{hamqtt\_device\_config\_default()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_ad4253a1733848605522c786043d4436d} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} hamqtt\+\_\+device\+\_\+config\+\_\+default (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_connect@{hamqtt\_device\_connect}}
+\index{hamqtt\_device\_connect@{hamqtt\_device\_connect}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_connect()}{hamqtt\_device\_connect()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+device\+\_\+connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_ad6293709013ec5cc1dbd93860dde67a1}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_create@{hamqtt\_device\_create}}
+\index{hamqtt\_device\_create@{hamqtt\_device\_create}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_create()}{hamqtt\_device\_create()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_ad6293709013ec5cc1dbd93860dde67a1} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+device\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_af25f704f1af6f6ca5994e3eee081c172}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_destroy@{hamqtt\_device\_destroy}}
+\index{hamqtt\_device\_destroy@{hamqtt\_device\_destroy}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_destroy()}{hamqtt\_device\_destroy()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_af25f704f1af6f6ca5994e3eee081c172} 
+void hamqtt\+\_\+device\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_ab7853bda558ebf81c13eceaaa4091a55}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_get\_config@{hamqtt\_device\_get\_config}}
+\index{hamqtt\_device\_get\_config@{hamqtt\_device\_get\_config}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_get\_config()}{hamqtt\_device\_get\_config()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_ab7853bda558ebf81c13eceaaa4091a55} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+device\+\_\+get\+\_\+config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_ac3f0a11b1f7c3dfa07c039bb1b6b2eea}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_handle\_mqtt\_message@{hamqtt\_device\_handle\_mqtt\_message}}
+\index{hamqtt\_device\_handle\_mqtt\_message@{hamqtt\_device\_handle\_mqtt\_message}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_handle\_mqtt\_message()}{hamqtt\_device\_handle\_mqtt\_message()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_ac3f0a11b1f7c3dfa07c039bb1b6b2eea} 
+void hamqtt\+\_\+device\+\_\+handle\+\_\+mqtt\+\_\+message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{, }\item[{int}]{topic\+\_\+len}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{data\+\_\+len}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_a8e9d1484b0f8d71e0f3f4103c23ea46b}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_loop@{hamqtt\_device\_loop}}
+\index{hamqtt\_device\_loop@{hamqtt\_device\_loop}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_loop()}{hamqtt\_device\_loop()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_a8e9d1484b0f8d71e0f3f4103c23ea46b} 
+void hamqtt\+\_\+device\+\_\+loop (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hamqtt__device_8c_a5cc68c84ecb0216c16b37eadbde25ac3}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_publish\_availability@{hamqtt\_device\_publish\_availability}}
+\index{hamqtt\_device\_publish\_availability@{hamqtt\_device\_publish\_availability}!hamqtt\_device.c@{hamqtt\_device.c}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_publish\_availability()}{hamqtt\_device\_publish\_availability()}}
+{\footnotesize\ttfamily \label{hamqtt__device_8c_a5cc68c84ecb0216c16b37eadbde25ac3} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+device\+\_\+publish\+\_\+availability (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{bool}]{availability}{}\end{DoxyParamCaption})}
+

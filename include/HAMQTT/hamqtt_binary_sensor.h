@@ -14,4 +14,35 @@
  * limitations under the License.
  */
 
+/**
+ * @file hamqtt_binary_sensor.h
+ * @brief HAMQTT Binary Sensor component interface for Home Assistant MQTT discovery.
+ *
+ * Declares the interface and configuration for binary sensor components, such as door
+ * sensors or motion detectors, within the HAMQTT MQTT integration framework for Home Assistant.
+ *
+ * @author Ethan Barnes
+ * @date 2025
+ * @copyright Apache License 2.0
+ */
+
 #pragma once
+
+#include "common.h"
+
+typedef struct {
+    char *device_class;
+    bool enabled_by_default;
+    char *entity_picture;
+    int expire_after;
+    bool force_update;
+    char *icon;
+    char *name;
+    int off_delay;
+    char *unique_id;
+} HAMQTT_Binary_Sensor_Config;
+
+typedef struct HAMQTT_Binary_Sensor HAMQTT_Binary_Sensor;
+typedef bool (*HAMQTT_Binary_Sensor_Get_State_Func)(void *args);
+
+HAMQTT_Binary_Sensor *hamqtt_binary_sensor_create(HAMQTT_Binary_Sensor_Config *config, HAMQTT_Binary_Sensor_Get_State_Func get_state_func, void *get_state_func_args);

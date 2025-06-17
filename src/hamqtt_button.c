@@ -14,4 +14,17 @@
  * limitations under the License.
  */
 
+/**
+ * @file hamqtt_button.c
+ * @brief Implementation of the HAMQTT_Button component.
+ *
+ * Provides functions for initializing, configuring, and publishing button events
+ * via MQTT for integration with Home Assistant. This file implements the interface
+ * declared in @ref hamqtt_button.h.
+ *
+ * @author Ethan Barnes
+ * @date 2025
+ * @copyright Apache License 2.0
+ */
+
  #include "HAMQTT/hamqtt_button.h"

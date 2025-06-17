@@ -14,4 +14,18 @@
  * limitations under the License.
  */
 
+/**
+ * @file hamqtt_binary_sensor.c
+ * @brief Implementation of the HAMQTT_Binary_Sensor component.
+ *
+ * Contains logic for setting state and generating discovery/configuration
+ * messages for binary sensors within the HAMQTT framework for Home Assistant MQTT integration.
+ *
+ * Implements the interface defined in @ref hamqtt_binary_sensor.h.
+ *
+ * @author Ethan Barnes
+ * @date 2025
+ * @copyright Apache License 2.0
+ */
+
 #include "HAMQTT/hamqtt_binary_sensor.h"

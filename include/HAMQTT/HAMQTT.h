@@ -14,6 +14,22 @@
  * limitations under the License.
  */
 
+/**
+ * @file HAMQTT.h
+ * @brief Main public API header for the HAMQTT library.
+ *
+ * This is the primary include file for users of the HAMQTT framework.
+ * It provides access to all components and functionality required to integrate
+ * custom devices with Home Assistant via MQTT using ESP-IDF.
+ *
+ * Including this file will automatically include all core component headers,
+ * allowing for simplified integration in user applications.
+ *
+ * @author Ethan Barnes
+ * @date 2025
+ * @copyright Apache License 2.0
+ */
+
 #pragma once
 
 #include "hamqtt_device.h"

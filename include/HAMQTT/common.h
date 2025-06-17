@@ -14,7 +14,25 @@
  * limitations under the License.
  */
 
+/**
+ * @file common.h
+ * @brief Common macros and definitions used across the HAMQTT library.
+ *
+ * This header provides utility macros, constants, and shared definitions
+ * used by multiple components of the HAMQTT framework. It ensures consistency
+ * and reduces duplication across the codebase.
+ *
+ * This file is included internally by other headers and source files and
+ * should not typically be included directly by user applications.
+ *
+ * @author Ethan Barnes
+ * @date 2025
+ * @copyright Apache License 2.0
+ */
+
 #pragma once
+
+#include <stdbool.h>
 
 #include "cJSON.h"
 

@@ -1,0 +1,235 @@
+\doxysection{HAMQTT\+\_\+\+Device Struct Reference}
+\hypertarget{struct_h_a_m_q_t_t___device}{}\label{struct_h_a_m_q_t_t___device}\index{HAMQTT\_Device@{HAMQTT\_Device}}
+
+
+Internal representation of a Home Assistant MQTT device.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_ad6293709013ec5cc1dbd93860dde67a1}{hamqtt\+\_\+device\+\_\+create}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}config)
+\begin{DoxyCompactList}\small\item\em Create a new HAMQTT device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___device_af25f704f1af6f6ca5994e3eee081c172}{hamqtt\+\_\+device\+\_\+destroy}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\begin{DoxyCompactList}\small\item\em Destroy a HAMQTT device and free all resources. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a5d174b25c536bc7c96fac4eb86ce7bef}{hamqtt\+\_\+device\+\_\+add\+\_\+component}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device, \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Add a component (e.\+g. sensor, switch) to the device. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7}{hamqtt\+\_\+device\+\_\+connect}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\begin{DoxyCompactList}\small\item\em Connect the device to the MQTT broker and publish its Home Assistant discovery config. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a5cc68c84ecb0216c16b37eadbde25ac3}{hamqtt\+\_\+device\+\_\+publish\+\_\+availability}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device, bool availability)
+\begin{DoxyCompactList}\small\item\em Publish an availability message to Home Assistant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a8e9d1484b0f8d71e0f3f4103c23ea46b}{hamqtt\+\_\+device\+\_\+loop}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\begin{DoxyCompactList}\small\item\em Update the state of all components and publish to MQTT. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_ab7853bda558ebf81c13eceaaa4091a55}{hamqtt\+\_\+device\+\_\+get\+\_\+config}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
+\begin{DoxyCompactList}\small\item\em Get the configuration used to initialize the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a3516f34d3ed9536cfc4bba8f2ff12f3b}{device\+\_\+config}}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_acc8cb521ef14ea383bc7dfcd435bf856}{components}} \mbox{[}\mbox{\hyperlink{common_8h_a02c79785bd66192831429789aae18f2e}{HAMQTT\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COMPONENTS}}\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a6db33a602158237e2ce86e541c198f0c}{component\+\_\+count}}
+\item 
+char \mbox{\hyperlink{struct_h_a_m_q_t_t___device_acf792e13806dad2f69ca3c57a22d5ddb}{availability\+\_\+topic}} \mbox{[}\mbox{\hyperlink{common_8h_a17e50de40838a250c65197a0165ca7fb}{HAMQTT\+\_\+\+CHAR\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}
+\item 
+esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a8e9c07c4d547fac072f83724f2d51fb8}{mqtt\+\_\+client}}
+\item 
+Event\+Group\+Handle\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_afe8aa6ae6775aac5b007170d8152391e}{mqtt\+\_\+event\+\_\+group}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal representation of a Home Assistant MQTT device. 
+
+\label{doc-func-members}
+\Hypertarget{struct_h_a_m_q_t_t___device_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___device_a5d174b25c536bc7c96fac4eb86ce7bef}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_add\_component@{hamqtt\_device\_add\_component}}
+\index{hamqtt\_device\_add\_component@{hamqtt\_device\_add\_component}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_add\_component()}{hamqtt\_device\_add\_component()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a5d174b25c536bc7c96fac4eb86ce7bef} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+device\+\_\+add\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})}
+
+
+
+Add a component (e.\+g. sensor, switch) to the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the device. \\
+\hline
+{\em component} & Pointer to a component implementing the \doxylink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component} interface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK on success
+\item ESP\+\_\+\+ERR\+\_\+\+NO\+\_\+\+MEM if component buffer is full
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+ARG if inputs are invalid 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___device_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_connect@{hamqtt\_device\_connect}}
+\index{hamqtt\_device\_connect@{hamqtt\_device\_connect}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_connect()}{hamqtt\_device\_connect()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+device\+\_\+connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+
+
+Connect the device to the MQTT broker and publish its Home Assistant discovery config. 
+
+This must be called before calling {\ttfamily hamqtt\+\_\+device\+\_\+loop}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the device. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK on success
+\item ESP\+\_\+\+FAIL or MQTT-\/related error code on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___device_ad6293709013ec5cc1dbd93860dde67a1}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_create@{hamqtt\_device\_create}}
+\index{hamqtt\_device\_create@{hamqtt\_device\_create}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_create()}{hamqtt\_device\_create()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_ad6293709013ec5cc1dbd93860dde67a1} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+device\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Create a new HAMQTT device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Pointer to a device configuration. Must remain valid for the lifetime of the device. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}, or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___device_af25f704f1af6f6ca5994e3eee081c172}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_destroy@{hamqtt\_device\_destroy}}
+\index{hamqtt\_device\_destroy@{hamqtt\_device\_destroy}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_destroy()}{hamqtt\_device\_destroy()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_af25f704f1af6f6ca5994e3eee081c172} 
+void hamqtt\+\_\+device\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+
+
+Destroy a HAMQTT device and free all resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the device to destroy. Must not be NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_h_a_m_q_t_t___device_ab7853bda558ebf81c13eceaaa4091a55}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_get\_config@{hamqtt\_device\_get\_config}}
+\index{hamqtt\_device\_get\_config@{hamqtt\_device\_get\_config}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_get\_config()}{hamqtt\_device\_get\_config()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_ab7853bda558ebf81c13eceaaa4091a55} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+device\+\_\+get\+\_\+config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+
+
+Get the configuration used to initialize the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the device. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the original configuration struct. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___device_a8e9d1484b0f8d71e0f3f4103c23ea46b}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_loop@{hamqtt\_device\_loop}}
+\index{hamqtt\_device\_loop@{hamqtt\_device\_loop}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_loop()}{hamqtt\_device\_loop()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a8e9d1484b0f8d71e0f3f4103c23ea46b} 
+void hamqtt\+\_\+device\+\_\+loop (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{}\end{DoxyParamCaption})}
+
+
+
+Update the state of all components and publish to MQTT. 
+
+This should be called periodically to keep sensor states up to date.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the device. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_h_a_m_q_t_t___device_a5cc68c84ecb0216c16b37eadbde25ac3}\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device\_publish\_availability@{hamqtt\_device\_publish\_availability}}
+\index{hamqtt\_device\_publish\_availability@{hamqtt\_device\_publish\_availability}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_device\_publish\_availability()}{hamqtt\_device\_publish\_availability()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a5cc68c84ecb0216c16b37eadbde25ac3} 
+esp\+\_\+err\+\_\+t hamqtt\+\_\+device\+\_\+publish\+\_\+availability (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{bool}]{availability}{}\end{DoxyParamCaption})}
+
+
+
+Publish an availability message to Home Assistant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the device. \\
+\hline
+{\em availability} & true if available, false if offline. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK on success
+\item ESP\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+STATE if the device has not connected to MQTT 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_h_a_m_q_t_t___device_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___device_acf792e13806dad2f69ca3c57a22d5ddb}\index{HAMQTT\_Device@{HAMQTT\_Device}!availability\_topic@{availability\_topic}}
+\index{availability\_topic@{availability\_topic}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{availability\_topic}{availability\_topic}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_acf792e13806dad2f69ca3c57a22d5ddb} 
+char HAMQTT\+\_\+\+Device\+::availability\+\_\+topic\mbox{[}\mbox{\hyperlink{common_8h_a17e50de40838a250c65197a0165ca7fb}{HAMQTT\+\_\+\+CHAR\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}}
+
+\Hypertarget{struct_h_a_m_q_t_t___device_a6db33a602158237e2ce86e541c198f0c}\index{HAMQTT\_Device@{HAMQTT\_Device}!component\_count@{component\_count}}
+\index{component\_count@{component\_count}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{component\_count}{component\_count}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a6db33a602158237e2ce86e541c198f0c} 
+int HAMQTT\+\_\+\+Device\+::component\+\_\+count}
+
+\Hypertarget{struct_h_a_m_q_t_t___device_acc8cb521ef14ea383bc7dfcd435bf856}\index{HAMQTT\_Device@{HAMQTT\_Device}!components@{components}}
+\index{components@{components}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_acc8cb521ef14ea383bc7dfcd435bf856} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}}\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Device\+::components\mbox{[}\mbox{\hyperlink{common_8h_a02c79785bd66192831429789aae18f2e}{HAMQTT\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COMPONENTS}}\mbox{]}}
+
+\Hypertarget{struct_h_a_m_q_t_t___device_a3516f34d3ed9536cfc4bba8f2ff12f3b}\index{HAMQTT\_Device@{HAMQTT\_Device}!device\_config@{device\_config}}
+\index{device\_config@{device\_config}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{device\_config}{device\_config}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a3516f34d3ed9536cfc4bba8f2ff12f3b} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}}\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Device\+::device\+\_\+config}
+
+\Hypertarget{struct_h_a_m_q_t_t___device_a8e9c07c4d547fac072f83724f2d51fb8}\index{HAMQTT\_Device@{HAMQTT\_Device}!mqtt\_client@{mqtt\_client}}
+\index{mqtt\_client@{mqtt\_client}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{mqtt\_client}{mqtt\_client}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a8e9c07c4d547fac072f83724f2d51fb8} 
+esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t HAMQTT\+\_\+\+Device\+::mqtt\+\_\+client}
+
+\Hypertarget{struct_h_a_m_q_t_t___device_afe8aa6ae6775aac5b007170d8152391e}\index{HAMQTT\_Device@{HAMQTT\_Device}!mqtt\_event\_group@{mqtt\_event\_group}}
+\index{mqtt\_event\_group@{mqtt\_event\_group}!HAMQTT\_Device@{HAMQTT\_Device}}
+\doxysubsubsection{\texorpdfstring{mqtt\_event\_group}{mqtt\_event\_group}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_afe8aa6ae6775aac5b007170d8152391e} 
+Event\+Group\+Handle\+\_\+t HAMQTT\+\_\+\+Device\+::mqtt\+\_\+event\+\_\+group}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{hamqtt__device_8c}{hamqtt\+\_\+device.\+c}}\item 
+include/\+HAMQTT/\mbox{\hyperlink{hamqtt__device_8h}{hamqtt\+\_\+device.\+h}}\end{DoxyCompactItemize}

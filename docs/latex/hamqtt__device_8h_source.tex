@@ -1,0 +1,60 @@
+\doxysection{hamqtt\+\_\+device.\+h}
+\hypertarget{hamqtt__device_8h_source}{}\label{hamqtt__device_8h_source}\index{include/HAMQTT/hamqtt\_device.h@{include/HAMQTT/hamqtt\_device.h}}
+\mbox{\hyperlink{hamqtt__device_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2025\ Ethan\ Barnes}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8h}{common.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hamqtt__component_8h}{hamqtt\_component.h}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_adfee5d1313d8cd315a6c58e0f82b4eab}{mqtt\_config\_topic\_prefix}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_aa4dc947b0dc69f1021c89883ebf0588e}{mqtt\_uri}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a84882f325e07827460ea1f928634b50b}{mqtt\_username}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a728fca158d4777ed4de2466e98b0f846}{mqtt\_password}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a246245e958dacfa1896b84d66429f305}{manufacturer}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a50c3dfc56c10e99f89a1b137be299aed}{model}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_aaa79b1e8622ef07055147a77c905b60f}{serial\_number}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_ae0bd3b2c40450213a1e71ffba9d6a345}{unique\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a4f4485d201e6d061babc52bbdaa24d1b}{sw\_version}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a07fc4390398122d088b0cf2e7a264132}{hw\_version}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a028e3ff14d3b2d1fc00e4254ca6f800a}{origin\_url}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a7225c63ca05dbd991e4087b717b6bacb}{name}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\_Device\_Config}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00064\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\_Device\_Config}}\ \mbox{\hyperlink{hamqtt__device_8c_ad4253a1733848605522c786043d4436d}{hamqtt\_device\_config\_default}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00076\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *\mbox{\hyperlink{hamqtt__device_8c_ad6293709013ec5cc1dbd93860dde67a1}{hamqtt\_device\_create}}(\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\_Device\_Config}}\ *config);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hamqtt__device_8c_af25f704f1af6f6ca5994e3eee081c172}{hamqtt\_device\_destroy}}(\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00099\ esp\_err\_t\ \mbox{\hyperlink{hamqtt__device_8c_a5d174b25c536bc7c96fac4eb86ce7bef}{hamqtt\_device\_add\_component}}(\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device,\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00113\ esp\_err\_t\ \mbox{\hyperlink{hamqtt__device_8c_a6a6a72b5e7a02c4cfd6ca18e8dc28bc7}{hamqtt\_device\_connect}}(\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00126\ esp\_err\_t\ \mbox{\hyperlink{hamqtt__device_8c_a5cc68c84ecb0216c16b37eadbde25ac3}{hamqtt\_device\_publish\_availability}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device,\ \textcolor{keywordtype}{bool}\ availability);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hamqtt__device_8c_a8e9d1484b0f8d71e0f3f4103c23ea46b}{hamqtt\_device\_loop}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00147\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\_Device\_Config}}\ *\mbox{\hyperlink{hamqtt__device_8c_ab7853bda558ebf81c13eceaaa4091a55}{hamqtt\_device\_get\_config}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device);}
+
+\end{DoxyCode}

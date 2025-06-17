@@ -1,0 +1,75 @@
+\doxysection{include/\+HAMQTT/common.h File Reference}
+\hypertarget{common_8h}{}\label{common_8h}\index{include/HAMQTT/common.h@{include/HAMQTT/common.h}}
+
+
+Common macros and definitions used across the HAMQTT library.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}c\+JSON.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+system.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+check.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/event\+\_\+groups.\+h"{}}\newline
+{\ttfamily \#include "{}mqtt\+\_\+client.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{common_8h_a02c79785bd66192831429789aae18f2e}{HAMQTT\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COMPONENTS}}~16
+\item 
+\#define \mbox{\hyperlink{common_8h_a2fc290f3f367930732ad6448e021077b}{HAMQTT\+\_\+\+COMPONENT\+\_\+\+MAX\+\_\+\+TOPICS}}~32
+\item 
+\#define \mbox{\hyperlink{common_8h_a17e50de40838a250c65197a0165ca7fb}{HAMQTT\+\_\+\+CHAR\+\_\+\+BUF\+\_\+\+SIZE}}~64
+\item 
+\#define \mbox{\hyperlink{common_8h_a4b69ae1a25328e3f290ebcee7662a555}{HAMQTT\+\_\+\+MQTT\+\_\+\+CONNECT\+\_\+\+TIMEOUT\+\_\+\+MS}}~10000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common macros and definitions used across the HAMQTT library. 
+
+This header provides utility macros, constants, and shared definitions used by multiple components of the HAMQTT framework. It ensures consistency and reduces duplication across the codebase.
+
+This file is included internally by other headers and source files and should not typically be included directly by user applications.
+
+\begin{DoxyAuthor}{Author}
+Ethan Barnes 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Apache License 2.\+0 
+\end{DoxyCopyright}
+
+
+\label{doc-define-members}
+\Hypertarget{common_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{common_8h_a17e50de40838a250c65197a0165ca7fb}\index{common.h@{common.h}!HAMQTT\_CHAR\_BUF\_SIZE@{HAMQTT\_CHAR\_BUF\_SIZE}}
+\index{HAMQTT\_CHAR\_BUF\_SIZE@{HAMQTT\_CHAR\_BUF\_SIZE}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{HAMQTT\_CHAR\_BUF\_SIZE}{HAMQTT\_CHAR\_BUF\_SIZE}}
+{\footnotesize\ttfamily \label{common_8h_a17e50de40838a250c65197a0165ca7fb} 
+\#define HAMQTT\+\_\+\+CHAR\+\_\+\+BUF\+\_\+\+SIZE~64}
+
+\Hypertarget{common_8h_a2fc290f3f367930732ad6448e021077b}\index{common.h@{common.h}!HAMQTT\_COMPONENT\_MAX\_TOPICS@{HAMQTT\_COMPONENT\_MAX\_TOPICS}}
+\index{HAMQTT\_COMPONENT\_MAX\_TOPICS@{HAMQTT\_COMPONENT\_MAX\_TOPICS}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{HAMQTT\_COMPONENT\_MAX\_TOPICS}{HAMQTT\_COMPONENT\_MAX\_TOPICS}}
+{\footnotesize\ttfamily \label{common_8h_a2fc290f3f367930732ad6448e021077b} 
+\#define HAMQTT\+\_\+\+COMPONENT\+\_\+\+MAX\+\_\+\+TOPICS~32}
+
+\Hypertarget{common_8h_a02c79785bd66192831429789aae18f2e}\index{common.h@{common.h}!HAMQTT\_DEVICE\_MAX\_COMPONENTS@{HAMQTT\_DEVICE\_MAX\_COMPONENTS}}
+\index{HAMQTT\_DEVICE\_MAX\_COMPONENTS@{HAMQTT\_DEVICE\_MAX\_COMPONENTS}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{HAMQTT\_DEVICE\_MAX\_COMPONENTS}{HAMQTT\_DEVICE\_MAX\_COMPONENTS}}
+{\footnotesize\ttfamily \label{common_8h_a02c79785bd66192831429789aae18f2e} 
+\#define HAMQTT\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COMPONENTS~16}
+
+\Hypertarget{common_8h_a4b69ae1a25328e3f290ebcee7662a555}\index{common.h@{common.h}!HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS@{HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS}}
+\index{HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS@{HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS}{HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS}}
+{\footnotesize\ttfamily \label{common_8h_a4b69ae1a25328e3f290ebcee7662a555} 
+\#define HAMQTT\+\_\+\+MQTT\+\_\+\+CONNECT\+\_\+\+TIMEOUT\+\_\+\+MS~10000}
+

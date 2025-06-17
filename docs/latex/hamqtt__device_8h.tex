@@ -1,0 +1,48 @@
+\doxysection{include/\+HAMQTT/hamqtt\+\_\+device.h File Reference}
+\hypertarget{hamqtt__device_8h}{}\label{hamqtt__device_8h}\index{include/HAMQTT/hamqtt\_device.h@{include/HAMQTT/hamqtt\_device.h}}
+
+
+Public API for representing a Home Assistant MQTT device.  
+
+
+{\ttfamily \#include "{}common.\+h"{}}\newline
+{\ttfamily \#include "{}hamqtt\+\_\+component.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}}
+\begin{DoxyCompactList}\small\item\em Configuration parameters for a HAMQTT device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct HAMQTT\+\_\+\+Device \mbox{\hyperlink{hamqtt__device_8h_a28a7ebcc6673c57aa2c3cbe3ada70b10}{HAMQTT\+\_\+\+Device}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Public API for representing a Home Assistant MQTT device. 
+
+This header provides the {\ttfamily \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} type and functions for managing a device with one or more MQTT components in Home Assistant. It allows registration of components, setting device metadata, and updating MQTT state.
+
+Components are dispatched using the \doxylink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component} interface.
+
+\begin{DoxyAuthor}{Author}
+Ethan Barnes 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Apache License 2.\+0 
+\end{DoxyCopyright}
+
+
+\label{doc-typedef-members}
+\Hypertarget{hamqtt__device_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{hamqtt__device_8h_a28a7ebcc6673c57aa2c3cbe3ada70b10}\index{hamqtt\_device.h@{hamqtt\_device.h}!HAMQTT\_Device@{HAMQTT\_Device}}
+\index{HAMQTT\_Device@{HAMQTT\_Device}!hamqtt\_device.h@{hamqtt\_device.h}}
+\doxysubsubsection{\texorpdfstring{HAMQTT\_Device}{HAMQTT\_Device}}
+{\footnotesize\ttfamily \label{hamqtt__device_8h_a28a7ebcc6673c57aa2c3cbe3ada70b10} 
+typedef struct HAMQTT\+\_\+\+Device HAMQTT\+\_\+\+Device}
+
