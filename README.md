@@ -1,4 +1,8 @@
-<p align="center"><a href="https://github.com/EdenBarnes/HAMQTT" target="_blank" rel="noopener noreferrer"><img src="docs/logo.svg?raw=true" alt="EdenElectronics Logo"></a></p>
+<p align="center">
+  <a href="https://github.com/EdenBarnes/HAMQTT" target="_blank" rel="noopener noreferrer">
+    <img src="docs/logo.svg?raw=true" alt="EdenElectronics Logo" width="200">
+  </a>
+</p>
 
 # HAMQTT
 
