@@ -1,0 +1,88 @@
+\doxysection{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor Struct Reference}
+\hypertarget{struct_h_a_m_q_t_t___binary___sensor}{}\label{struct_h_a_m_q_t_t___binary___sensor}\index{HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}}
+
+
+Internal representation of a Home Assistant MQTT binary sensor.  
+
+
+
+
+{\ttfamily \#include $<$hamqtt\+\_\+binary\+\_\+sensor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor_ab193a58f7f6de373f3dd0c796806e4fb}{hamqtt\+\_\+binary\+\_\+sensor\+\_\+create}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}config, \mbox{\hyperlink{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Get\+\_\+\+State\+\_\+\+Func}} get\+\_\+state\+\_\+func, void \texorpdfstring{$\ast$}{*}get\+\_\+state\+\_\+func\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Create a new HAMQTT binary sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor_a2430debc7268b37b9e418e04c6288f86}{hamqtt\+\_\+binary\+\_\+sensor\+\_\+destroy}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*}sensor)
+\begin{DoxyCompactList}\small\item\em Destroy a HAMQTT binary sensor and free all resources. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor_ab0f1272ea215b514a7d2f5403eaf8f91}{hamqtt\+\_\+binary\+\_\+sensor\+\_\+get\+\_\+config}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*}sensor)
+\begin{DoxyCompactList}\small\item\em Get the configuration used to initialize the binary sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal representation of a Home Assistant MQTT binary sensor. 
+
+\label{doc-func-members}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor_ab193a58f7f6de373f3dd0c796806e4fb}\index{HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}!hamqtt\_binary\_sensor\_create@{hamqtt\_binary\_sensor\_create}}
+\index{hamqtt\_binary\_sensor\_create@{hamqtt\_binary\_sensor\_create}!HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_binary\_sensor\_create()}{hamqtt\_binary\_sensor\_create()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor_ab193a58f7f6de373f3dd0c796806e4fb} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+binary\+\_\+sensor\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}}]{config}{, }\item[{\mbox{\hyperlink{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Get\+\_\+\+State\+\_\+\+Func}}}]{get\+\_\+state\+\_\+func}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{get\+\_\+state\+\_\+func\+\_\+args}{}\end{DoxyParamCaption})}
+
+
+
+Create a new HAMQTT binary sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Pointer to a binary sensor configuration. Must remain valid for the lifetime of the binary sensor. \\
+\hline
+{\em get\+\_\+state\+\_\+func} & Function pointer for retrieving the state of a binary sensor. (See \doxylink{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Get\+\_\+\+State\+\_\+\+Func}). \\
+\hline
+{\em get\+\_\+state\+\_\+func\+\_\+args} & A pointer to the arguments to be passed to the {\ttfamily get\+\_\+state\+\_\+func}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}, or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor_a2430debc7268b37b9e418e04c6288f86}\index{HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}!hamqtt\_binary\_sensor\_destroy@{hamqtt\_binary\_sensor\_destroy}}
+\index{hamqtt\_binary\_sensor\_destroy@{hamqtt\_binary\_sensor\_destroy}!HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_binary\_sensor\_destroy()}{hamqtt\_binary\_sensor\_destroy()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor_a2430debc7268b37b9e418e04c6288f86} 
+void hamqtt\+\_\+binary\+\_\+sensor\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*}}]{sensor}{}\end{DoxyParamCaption})}
+
+
+
+Destroy a HAMQTT binary sensor and free all resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & Pointer to the binary sensor to destroy. Must not be NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor_ab0f1272ea215b514a7d2f5403eaf8f91}\index{HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}!hamqtt\_binary\_sensor\_get\_config@{hamqtt\_binary\_sensor\_get\_config}}
+\index{hamqtt\_binary\_sensor\_get\_config@{hamqtt\_binary\_sensor\_get\_config}!HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_binary\_sensor\_get\_config()}{hamqtt\_binary\_sensor\_get\_config()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor_ab0f1272ea215b514a7d2f5403eaf8f91} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+binary\+\_\+sensor\+\_\+get\+\_\+config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*}}]{sensor}{}\end{DoxyParamCaption})}
+
+
+
+Get the configuration used to initialize the binary sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & Pointer to the binary sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the original configuration struct. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+HAMQTT/\mbox{\hyperlink{hamqtt__binary__sensor_8h}{hamqtt\+\_\+binary\+\_\+sensor.\+h}}\end{DoxyCompactItemize}

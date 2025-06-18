@@ -5,6 +5,10 @@
 Internal representation of a Home Assistant MQTT device.  
 
 
+
+
+{\ttfamily \#include $<$hamqtt\+\_\+device.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,21 +26,6 @@ void \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a8e9d1484b0f8d71e0f3f4103c23ea
 \begin{DoxyCompactList}\small\item\em Update the state of all components and publish to MQTT. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_ab7853bda558ebf81c13eceaaa4091a55}{hamqtt\+\_\+device\+\_\+get\+\_\+config}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
 \begin{DoxyCompactList}\small\item\em Get the configuration used to initialize the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a3516f34d3ed9536cfc4bba8f2ff12f3b}{device\+\_\+config}}
-\item 
-\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___device_acc8cb521ef14ea383bc7dfcd435bf856}{components}} \mbox{[}\mbox{\hyperlink{common_8h_a02c79785bd66192831429789aae18f2e}{HAMQTT\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COMPONENTS}}\mbox{]}
-\item 
-int \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a6db33a602158237e2ce86e541c198f0c}{component\+\_\+count}}
-\item 
-char \mbox{\hyperlink{struct_h_a_m_q_t_t___device_acf792e13806dad2f69ca3c57a22d5ddb}{availability\+\_\+topic}} \mbox{[}\mbox{\hyperlink{common_8h_a17e50de40838a250c65197a0165ca7fb}{HAMQTT\+\_\+\+CHAR\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}
-\item 
-esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_a8e9c07c4d547fac072f83724f2d51fb8}{mqtt\+\_\+client}}
-\item 
-Event\+Group\+Handle\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___device_afe8aa6ae6775aac5b007170d8152391e}{mqtt\+\_\+event\+\_\+group}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -188,48 +177,6 @@ Publish an availability message to Home Assistant.
 \end{DoxyReturn}
 
 
-\label{doc-variable-members}
-\Hypertarget{struct_h_a_m_q_t_t___device_doc-variable-members}
-\doxysubsection{Member Data Documentation}
-\Hypertarget{struct_h_a_m_q_t_t___device_acf792e13806dad2f69ca3c57a22d5ddb}\index{HAMQTT\_Device@{HAMQTT\_Device}!availability\_topic@{availability\_topic}}
-\index{availability\_topic@{availability\_topic}!HAMQTT\_Device@{HAMQTT\_Device}}
-\doxysubsubsection{\texorpdfstring{availability\_topic}{availability\_topic}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_acf792e13806dad2f69ca3c57a22d5ddb} 
-char HAMQTT\+\_\+\+Device\+::availability\+\_\+topic\mbox{[}\mbox{\hyperlink{common_8h_a17e50de40838a250c65197a0165ca7fb}{HAMQTT\+\_\+\+CHAR\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}}
-
-\Hypertarget{struct_h_a_m_q_t_t___device_a6db33a602158237e2ce86e541c198f0c}\index{HAMQTT\_Device@{HAMQTT\_Device}!component\_count@{component\_count}}
-\index{component\_count@{component\_count}!HAMQTT\_Device@{HAMQTT\_Device}}
-\doxysubsubsection{\texorpdfstring{component\_count}{component\_count}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a6db33a602158237e2ce86e541c198f0c} 
-int HAMQTT\+\_\+\+Device\+::component\+\_\+count}
-
-\Hypertarget{struct_h_a_m_q_t_t___device_acc8cb521ef14ea383bc7dfcd435bf856}\index{HAMQTT\_Device@{HAMQTT\_Device}!components@{components}}
-\index{components@{components}!HAMQTT\_Device@{HAMQTT\_Device}}
-\doxysubsubsection{\texorpdfstring{components}{components}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_acc8cb521ef14ea383bc7dfcd435bf856} 
-\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}}\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Device\+::components\mbox{[}\mbox{\hyperlink{common_8h_a02c79785bd66192831429789aae18f2e}{HAMQTT\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COMPONENTS}}\mbox{]}}
-
-\Hypertarget{struct_h_a_m_q_t_t___device_a3516f34d3ed9536cfc4bba8f2ff12f3b}\index{HAMQTT\_Device@{HAMQTT\_Device}!device\_config@{device\_config}}
-\index{device\_config@{device\_config}!HAMQTT\_Device@{HAMQTT\_Device}}
-\doxysubsubsection{\texorpdfstring{device\_config}{device\_config}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a3516f34d3ed9536cfc4bba8f2ff12f3b} 
-\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}}\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Device\+::device\+\_\+config}
-
-\Hypertarget{struct_h_a_m_q_t_t___device_a8e9c07c4d547fac072f83724f2d51fb8}\index{HAMQTT\_Device@{HAMQTT\_Device}!mqtt\_client@{mqtt\_client}}
-\index{mqtt\_client@{mqtt\_client}!HAMQTT\_Device@{HAMQTT\_Device}}
-\doxysubsubsection{\texorpdfstring{mqtt\_client}{mqtt\_client}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_a8e9c07c4d547fac072f83724f2d51fb8} 
-esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t HAMQTT\+\_\+\+Device\+::mqtt\+\_\+client}
-
-\Hypertarget{struct_h_a_m_q_t_t___device_afe8aa6ae6775aac5b007170d8152391e}\index{HAMQTT\_Device@{HAMQTT\_Device}!mqtt\_event\_group@{mqtt\_event\_group}}
-\index{mqtt\_event\_group@{mqtt\_event\_group}!HAMQTT\_Device@{HAMQTT\_Device}}
-\doxysubsubsection{\texorpdfstring{mqtt\_event\_group}{mqtt\_event\_group}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___device_afe8aa6ae6775aac5b007170d8152391e} 
-Event\+Group\+Handle\+\_\+t HAMQTT\+\_\+\+Device\+::mqtt\+\_\+event\+\_\+group}
-
-
-
-The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/\mbox{\hyperlink{hamqtt__device_8c}{hamqtt\+\_\+device.\+c}}\item 
 include/\+HAMQTT/\mbox{\hyperlink{hamqtt__device_8h}{hamqtt\+\_\+device.\+h}}\end{DoxyCompactItemize}

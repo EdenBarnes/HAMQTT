@@ -10,7 +10,7 @@ Implementation of the \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Devic
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}}
-\begin{DoxyCompactList}\small\item\em Internal representation of a Home Assistant MQTT device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,7 +22,7 @@ struct \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}}
 \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \mbox{\hyperlink{hamqtt__device_8c_ad4253a1733848605522c786043d4436d}{hamqtt\+\_\+device\+\_\+config\+\_\+default}} (void)
 \item 
 void \mbox{\hyperlink{hamqtt__device_8c_ac3f0a11b1f7c3dfa07c039bb1b6b2eea}{hamqtt\+\_\+device\+\_\+handle\+\_\+mqtt\+\_\+message}} (const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device, const char \texorpdfstring{$\ast$}{*}topic, int topic\+\_\+len, const char \texorpdfstring{$\ast$}{*}data, int data\+\_\+len)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if any component is subscribed to a given topic and dispatches the message to it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{hamqtt__device_8c_ad6293709013ec5cc1dbd93860dde67a1}{hamqtt\+\_\+device\+\_\+create}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\+\_\+\+Device\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}config)
 \item 
 void \mbox{\hyperlink{hamqtt__device_8c_af25f704f1af6f6ca5994e3eee081c172}{hamqtt\+\_\+device\+\_\+destroy}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}device)
@@ -113,6 +113,23 @@ void hamqtt\+\_\+device\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hype
 {\footnotesize\ttfamily \label{hamqtt__device_8c_ac3f0a11b1f7c3dfa07c039bb1b6b2eea} 
 void hamqtt\+\_\+device\+\_\+handle\+\_\+mqtt\+\_\+message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{, }\item[{int}]{topic\+\_\+len}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{data\+\_\+len}{}\end{DoxyParamCaption})}
 
+
+
+Determines if any component is subscribed to a given topic and dispatches the message to it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em device} & The device instance. \\
+\hline
+\mbox{\texttt{in}}  & {\em topic} & Topic string. \\
+\hline
+\mbox{\texttt{in}}  & {\em topic\+\_\+len} & Length of the topic. \\
+\hline
+\mbox{\texttt{in}}  & {\em data} & Payload data. \\
+\hline
+\mbox{\texttt{in}}  & {\em data\+\_\+len} & Length of the payload. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{hamqtt__device_8c_a8e9d1484b0f8d71e0f3f4103c23ea46b}\index{hamqtt\_device.c@{hamqtt\_device.c}!hamqtt\_device\_loop@{hamqtt\_device\_loop}}
 \index{hamqtt\_device\_loop@{hamqtt\_device\_loop}!hamqtt\_device.c@{hamqtt\_device.c}}
 \doxysubsubsection{\texorpdfstring{hamqtt\_device\_loop()}{hamqtt\_device\_loop()}}

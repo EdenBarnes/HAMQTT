@@ -54,10 +54,6 @@ HAMQTT_Device_Config hamqtt_device_config_default(void) {
     return config;
 }
 
-/**
- * @struct HAMQTT_Device
- * @brief Internal representation of a Home Assistant MQTT device.
- */
 struct HAMQTT_Device {
     HAMQTT_Device_Config *device_config;
 
@@ -73,55 +69,42 @@ struct HAMQTT_Device {
 /* ----- Private HAMQTT Device function declarations ----- */
 
 /**
- * @internal
  * @brief Validates that the minimum required fields are populated in the configuration.
  *
  * Required fields: `mqtt_config_topic_prefix`, `mqtt_uri`, `unique_id`, and `name`.
  *
  * @param device The device to validate.
  * @return true if valid, false otherwise.
- * 
- * @memberof HAMQTT_Device
  */
 static bool hamqtt_device_is_config_valid(const HAMQTT_Device *device);
 
 /**
- * @internal
  * @brief Builds the full Home Assistant discovery config JSON for the device and its components.
  *
  * @param[in] device The device whose configuration to serialize.
  * @param[out] root The output cJSON object to populate.
  * @return ESP_OK on success, or appropriate error on failure.
- * 
- * @memberof HAMQTT_Device
  */
 static esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root);
 
 /**
- * @internal
  * @brief Subscribes to all topics requested by each registered component.
  *
  * @param[in] device The device whose components should be subscribed.
- * 
- * @memberof HAMQTT_Device
  */
 static void hamqtt_device_subscribe(const HAMQTT_Device *device);
 
 /**
- * @internal
  * @brief Callback handler for all MQTT client events.
  *
  * @param handler_args Pointer to the HAMQTT_Device.
  * @param base Event base.
  * @param event_id Event ID.
  * @param event_data Pointer to the event data.
- * 
- * @memberof HAMQTT_Device
  */
 static void hamqtt_device_mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
 
 /**
- * @internal
  * @brief Determines if any component is subscribed to a given topic and dispatches the message to it.
  *
  * @param[in] device The device instance.
@@ -129,8 +112,6 @@ static void hamqtt_device_mqtt_event_handler(void *handler_args, esp_event_base_
  * @param[in] topic_len Length of the topic.
  * @param[in] data Payload data.
  * @param[in] data_len Length of the payload.
- * 
- * @memberof HAMQTT_Device
  */
 void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *topic, int topic_len, const char *data, int data_len);
 
@@ -253,7 +234,7 @@ void hamqtt_device_loop(const HAMQTT_Device *device) {
     }
 }
 
-HAMQTT_Device_Config *hamqtt_device_get_config(const HAMQTT_Device *device) {
+const HAMQTT_Device_Config *hamqtt_device_get_config(const HAMQTT_Device *device) {
     return device->device_config;
 }
 

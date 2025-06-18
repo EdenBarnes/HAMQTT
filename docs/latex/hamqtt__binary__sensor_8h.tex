@@ -10,19 +10,14 @@ HAMQTT Binary Sensor component interface for Home Assistant MQTT discovery.
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Configuration parameters for a HAMQTT binary sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}}
+typedef struct HAMQTT\+\_\+\+Binary\+\_\+\+Sensor \mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}}
 \item 
 typedef bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Get\+\_\+\+State\+\_\+\+Func}}) (void \texorpdfstring{$\ast$}{*}args)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{hamqtt__binary__sensor_8h_ab193a58f7f6de373f3dd0c796806e4fb}{hamqtt\+\_\+binary\+\_\+sensor\+\_\+create}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}config, \mbox{\hyperlink{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Get\+\_\+\+State\+\_\+\+Func}} get\+\_\+state\+\_\+func, void \texorpdfstring{$\ast$}{*}get\+\_\+state\+\_\+func\+\_\+args)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function pointer type for retrieving the state of a binary sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -48,7 +43,7 @@ Apache License 2.\+0
 \index{HAMQTT\_Binary\_Sensor@{HAMQTT\_Binary\_Sensor}!hamqtt\_binary\_sensor.h@{hamqtt\_binary\_sensor.h}}
 \doxysubsubsection{\texorpdfstring{HAMQTT\_Binary\_Sensor}{HAMQTT\_Binary\_Sensor}}
 {\footnotesize\ttfamily \label{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1} 
-typedef struct \mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}}}
+typedef struct HAMQTT\+\_\+\+Binary\+\_\+\+Sensor HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}
 
 \Hypertarget{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}\index{hamqtt\_binary\_sensor.h@{hamqtt\_binary\_sensor.h}!HAMQTT\_Binary\_Sensor\_Get\_State\_Func@{HAMQTT\_Binary\_Sensor\_Get\_State\_Func}}
 \index{HAMQTT\_Binary\_Sensor\_Get\_State\_Func@{HAMQTT\_Binary\_Sensor\_Get\_State\_Func}!hamqtt\_binary\_sensor.h@{hamqtt\_binary\_sensor.h}}
@@ -58,12 +53,15 @@ typedef bool(\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+
 
 
 
-\label{doc-func-members}
-\Hypertarget{hamqtt__binary__sensor_8h_doc-func-members}
-\doxysubsection{Function Documentation}
-\Hypertarget{hamqtt__binary__sensor_8h_ab193a58f7f6de373f3dd0c796806e4fb}\index{hamqtt\_binary\_sensor.h@{hamqtt\_binary\_sensor.h}!hamqtt\_binary\_sensor\_create@{hamqtt\_binary\_sensor\_create}}
-\index{hamqtt\_binary\_sensor\_create@{hamqtt\_binary\_sensor\_create}!hamqtt\_binary\_sensor.h@{hamqtt\_binary\_sensor.h}}
-\doxysubsubsection{\texorpdfstring{hamqtt\_binary\_sensor\_create()}{hamqtt\_binary\_sensor\_create()}}
-{\footnotesize\ttfamily \label{hamqtt__binary__sensor_8h_ab193a58f7f6de373f3dd0c796806e4fb} 
-\mbox{\hyperlink{hamqtt__binary__sensor_8h_a7e4c09b85dabb3601307beb90aeabfc1}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+binary\+\_\+sensor\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}}]{config}{, }\item[{\mbox{\hyperlink{hamqtt__binary__sensor_8h_ae97eb7b32ef65fe4ad3b53df34f22203}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Get\+\_\+\+State\+\_\+\+Func}}}]{get\+\_\+state\+\_\+func}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{get\+\_\+state\+\_\+func\+\_\+args}{}\end{DoxyParamCaption})}
+Function pointer type for retrieving the state of a binary sensor. 
 
+This function pointer is used to obtain the current state of a binary sensor. It is expected to return {\ttfamily true} if the sensor is active/on, or {\ttfamily false} otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & A pointer to user-\/defined arguments or context data required to get the state. This is typically a pointer to the sensor-\/specific data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the sensor is active; {\ttfamily false} otherwise. 
+\end{DoxyReturn}

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['enabled_5fby_5fdefault_0',['enabled_by_default',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a016c1f9f35e925236ea93813113464e6',1,'HAMQTT_Binary_Sensor_Config']]],
-  ['entity_5fpicture_1',['entity_picture',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a45cf80574993ba6a5d858b395583abd9',1,'HAMQTT_Binary_Sensor_Config']]],
-  ['expire_5fafter_2',['expire_after',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a8fe59595395eaedeb6ff82300961af8a',1,'HAMQTT_Binary_Sensor_Config']]]
+  ['get_5fdiscovery_5fconfig_0',['get_discovery_config',['../struct_h_a_m_q_t_t___component___v_table.html#ac6ba09428e4af3ff8e57598840d8b045',1,'HAMQTT_Component_VTable']]],
+  ['get_5fsubscribed_5ftopics_1',['get_subscribed_topics',['../struct_h_a_m_q_t_t___component___v_table.html#a419693fc9f44e9bd16ecb38c3051199f',1,'HAMQTT_Component_VTable']]],
+  ['get_5funique_5fid_2',['get_unique_id',['../struct_h_a_m_q_t_t___component___v_table.html#a6c858bdaba141d63f3cf4120fdebdc11',1,'HAMQTT_Component_VTable']]]
 ];

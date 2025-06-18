@@ -96,6 +96,8 @@ $(function(){initNavTree('struct_h_a_m_q_t_t___device.html','','struct_h_a_m_q_t
 
 <p>Internal representation of a Home Assistant MQTT device.  
  <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="hamqtt__device_8h_source.html">hamqtt_device.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -113,15 +115,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8e9d1484b0f8d71e0f3f4103c23ea46b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the state of all components and publish to MQTT.  <br /></td></tr>
 <tr class="memitem:ab7853bda558ebf81c13eceaaa4091a55" id="r_ab7853bda558ebf81c13eceaaa4091a55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_h_a_m_q_t_t___device___config.html">HAMQTT_Device_Config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7853bda558ebf81c13eceaaa4091a55">hamqtt_device_get_config</a> (const <a class="el" href="struct_h_a_m_q_t_t___device.html">HAMQTT_Device</a> *device)</td></tr>
 <tr class="memdesc:ab7853bda558ebf81c13eceaaa4091a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the configuration used to initialize the device.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3516f34d3ed9536cfc4bba8f2ff12f3b" id="r_a3516f34d3ed9536cfc4bba8f2ff12f3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_h_a_m_q_t_t___device___config.html">HAMQTT_Device_Config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3516f34d3ed9536cfc4bba8f2ff12f3b">device_config</a></td></tr>
-<tr class="memitem:acc8cb521ef14ea383bc7dfcd435bf856" id="r_acc8cb521ef14ea383bc7dfcd435bf856"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc8cb521ef14ea383bc7dfcd435bf856">components</a> [<a class="el" href="common_8h.html#a02c79785bd66192831429789aae18f2e">HAMQTT_DEVICE_MAX_COMPONENTS</a>]</td></tr>
-<tr class="memitem:a6db33a602158237e2ce86e541c198f0c" id="r_a6db33a602158237e2ce86e541c198f0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6db33a602158237e2ce86e541c198f0c">component_count</a></td></tr>
-<tr class="memitem:acf792e13806dad2f69ca3c57a22d5ddb" id="r_acf792e13806dad2f69ca3c57a22d5ddb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf792e13806dad2f69ca3c57a22d5ddb">availability_topic</a> [<a class="el" href="common_8h.html#a17e50de40838a250c65197a0165ca7fb">HAMQTT_CHAR_BUF_SIZE</a>]</td></tr>
-<tr class="memitem:a8e9c07c4d547fac072f83724f2d51fb8" id="r_a8e9c07c4d547fac072f83724f2d51fb8"><td class="memItemLeft" align="right" valign="top">esp_mqtt_client_handle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e9c07c4d547fac072f83724f2d51fb8">mqtt_client</a></td></tr>
-<tr class="memitem:afe8aa6ae6775aac5b007170d8152391e" id="r_afe8aa6ae6775aac5b007170d8152391e"><td class="memItemLeft" align="right" valign="top">EventGroupHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe8aa6ae6775aac5b007170d8152391e">mqtt_event_group</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal representation of a Home Assistant MQTT device. </p>
@@ -331,93 +324,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="acf792e13806dad2f69ca3c57a22d5ddb" name="acf792e13806dad2f69ca3c57a22d5ddb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf792e13806dad2f69ca3c57a22d5ddb">&#9670;&#160;</a></span>availability_topic</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char HAMQTT_Device::availability_topic[<a class="el" href="common_8h.html#a17e50de40838a250c65197a0165ca7fb">HAMQTT_CHAR_BUF_SIZE</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6db33a602158237e2ce86e541c198f0c" name="a6db33a602158237e2ce86e541c198f0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6db33a602158237e2ce86e541c198f0c">&#9670;&#160;</a></span>component_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int HAMQTT_Device::component_count</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acc8cb521ef14ea383bc7dfcd435bf856" name="acc8cb521ef14ea383bc7dfcd435bf856"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc8cb521ef14ea383bc7dfcd435bf856">&#9670;&#160;</a></span>components</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a>* HAMQTT_Device::components[<a class="el" href="common_8h.html#a02c79785bd66192831429789aae18f2e">HAMQTT_DEVICE_MAX_COMPONENTS</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3516f34d3ed9536cfc4bba8f2ff12f3b" name="a3516f34d3ed9536cfc4bba8f2ff12f3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3516f34d3ed9536cfc4bba8f2ff12f3b">&#9670;&#160;</a></span>device_config</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_h_a_m_q_t_t___device___config.html">HAMQTT_Device_Config</a>* HAMQTT_Device::device_config</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8e9c07c4d547fac072f83724f2d51fb8" name="a8e9c07c4d547fac072f83724f2d51fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e9c07c4d547fac072f83724f2d51fb8">&#9670;&#160;</a></span>mqtt_client</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_mqtt_client_handle_t HAMQTT_Device::mqtt_client</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afe8aa6ae6775aac5b007170d8152391e" name="afe8aa6ae6775aac5b007170d8152391e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe8aa6ae6775aac5b007170d8152391e">&#9670;&#160;</a></span>mqtt_event_group</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">EventGroupHandle_t HAMQTT_Device::mqtt_event_group</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>src/<a class="el" href="hamqtt__device_8c.html">hamqtt_device.c</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/HAMQTT/<a class="el" href="hamqtt__device_8h_source.html">hamqtt_device.h</a></li>
 </ul>
 </div><!-- contents -->

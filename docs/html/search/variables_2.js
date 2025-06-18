@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['device_5fclass_0',['device_class',['../struct_h_a_m_q_t_t___binary___sensor___config.html#ad9ff4f8459751659c52513167da3c086',1,'HAMQTT_Binary_Sensor_Config']]],
-  ['device_5fconfig_1',['device_config',['../struct_h_a_m_q_t_t___device.html#a3516f34d3ed9536cfc4bba8f2ff12f3b',1,'HAMQTT_Device']]]
+  ['force_5fupdate_0',['force_update',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a9c9ec87c01f65a575783384d4d20c912',1,'HAMQTT_Binary_Sensor_Config']]]
 ];

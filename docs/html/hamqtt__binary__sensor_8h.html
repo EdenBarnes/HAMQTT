@@ -103,15 +103,13 @@ $(function(){initNavTree('hamqtt__binary__sensor_8h.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:HAMQTT_5FBinary_5FSensor_5FConfig" id="r_HAMQTT_5FBinary_5FSensor_5FConfig"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_h_a_m_q_t_t___binary___sensor___config.html">HAMQTT_Binary_Sensor_Config</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration parameters for a HAMQTT binary sensor.  <a href="struct_h_a_m_q_t_t___binary___sensor___config.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7e4c09b85dabb3601307beb90aeabfc1" id="r_a7e4c09b85dabb3601307beb90aeabfc1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a></td></tr>
+<tr class="memitem:a7e4c09b85dabb3601307beb90aeabfc1" id="r_a7e4c09b85dabb3601307beb90aeabfc1"><td class="memItemLeft" align="right" valign="top">typedef struct HAMQTT_Binary_Sensor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a></td></tr>
 <tr class="memitem:ae97eb7b32ef65fe4ad3b53df34f22203" id="r_ae97eb7b32ef65fe4ad3b53df34f22203"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae97eb7b32ef65fe4ad3b53df34f22203">HAMQTT_Binary_Sensor_Get_State_Func</a>) (void *args)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ab193a58f7f6de373f3dd0c796806e4fb" id="r_ab193a58f7f6de373f3dd0c796806e4fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab193a58f7f6de373f3dd0c796806e4fb">hamqtt_binary_sensor_create</a> (<a class="el" href="struct_h_a_m_q_t_t___binary___sensor___config.html">HAMQTT_Binary_Sensor_Config</a> *config, <a class="el" href="#ae97eb7b32ef65fe4ad3b53df34f22203">HAMQTT_Binary_Sensor_Get_State_Func</a> get_state_func, void *get_state_func_args)</td></tr>
+<tr class="memdesc:ae97eb7b32ef65fe4ad3b53df34f22203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer type for retrieving the state of a binary sensor.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>HAMQTT Binary Sensor component interface for Home Assistant MQTT discovery. </p>
@@ -127,7 +125,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a> <a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a></td>
+          <td class="memname">typedef struct HAMQTT_Binary_Sensor HAMQTT_Binary_Sensor</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -146,32 +144,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ab193a58f7f6de373f3dd0c796806e4fb" name="ab193a58f7f6de373f3dd0c796806e4fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab193a58f7f6de373f3dd0c796806e4fb">&#9670;&#160;</a></span>hamqtt_binary_sensor_create()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a7e4c09b85dabb3601307beb90aeabfc1">HAMQTT_Binary_Sensor</a> * hamqtt_binary_sensor_create </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_h_a_m_q_t_t___binary___sensor___config.html">HAMQTT_Binary_Sensor_Config</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ae97eb7b32ef65fe4ad3b53df34f22203">HAMQTT_Binary_Sensor_Get_State_Func</a></td>          <td class="paramname"><span class="paramname"><em>get_state_func</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>get_state_func_args</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Function pointer type for retrieving the state of a binary sensor. </p>
+<p>This function pointer is used to obtain the current state of a binary sensor. It is expected to return <span class="tt">true</span> if the sensor is active/on, or <span class="tt">false</span> otherwise.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>A pointer to user-defined arguments or context data required to get the state. This is typically a pointer to the sensor-specific data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the sensor is active; <span class="tt">false</span> otherwise. </dd></dl>
 
 </div>
 </div>

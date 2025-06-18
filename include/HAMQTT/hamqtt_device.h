@@ -35,6 +35,7 @@
 #include "hamqtt_component.h"
 
 /**
+ * @struct HAMQTT_Device_Config
  * @brief Configuration parameters for a HAMQTT device.
  */
 typedef struct {
@@ -63,6 +64,10 @@ typedef struct {
  */
 HAMQTT_Device_Config hamqtt_device_config_default(void);
 
+/**
+ * @struct HAMQTT_Device
+ * @brief Internal representation of a Home Assistant MQTT device.
+ */
 typedef struct HAMQTT_Device HAMQTT_Device;
 
 /**
@@ -144,4 +149,4 @@ void hamqtt_device_loop(const HAMQTT_Device *device);
  * 
  * @memberof HAMQTT_Device
  */
-HAMQTT_Device_Config *hamqtt_device_get_config(const HAMQTT_Device *device);
+const HAMQTT_Device_Config *hamqtt_device_get_config(const HAMQTT_Device *device);
