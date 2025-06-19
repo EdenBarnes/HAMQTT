@@ -35,8 +35,8 @@
  */
 typedef struct {
     char *device_class;         ///< The class of the sensor, which alters how its state and icon is rendered. @note Optional.
-    bool enabled_by_default;    ///< Set to `false` if the device should not be enabled when the device is first added.
-    char *entity_picture;       ///< URL to a picture for the entity. @note Optional.
+    bool enabled_by_default;    ///< Set to `false` if the sensor should not be enabled when the sensor is first added.
+    char *entity_picture;       ///< URL to a picture for the sensor. @note Optional.
     int expire_after;           ///< Number of seconds a sensor's state expires, if it's not updated. Set to `-1` to disable expiration.
     bool force_update;          ///< Set to `true` if Home Assistant should always send update events, even when the sensor's state doesn't change.
     char *icon;                 ///< Icon for the sensor. @note Optional.
@@ -50,7 +50,7 @@ typedef struct {
  *
  * Caller is still responsible for assigning unique_id
  * 
- * @return An default-initialized HAMQTT_Binary_Sensor_Config struct.
+ * @return A default-initialized HAMQTT_Binary_Sensor_Config struct.
  * 
  * @memberof HAMQTT_Binary_Sensor_Config
  */

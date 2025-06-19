@@ -58,7 +58,7 @@ typedef struct {
  *
  * Caller is still responsible for assigning mqtt_uri and unique_id
  * 
- * @return An default-initialized HAMQTT_Device_Config struct.
+ * @return A default-initialized HAMQTT_Device_Config struct.
  * 
  * @memberof HAMQTT_Device_Config
  */
