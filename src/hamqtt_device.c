@@ -147,7 +147,7 @@ esp_err_t hamqtt_device_add_component(HAMQTT_Device *device, HAMQTT_Component *c
                         TAG,
                         "Attempted to add component before it was initialized");
 
-    ESP_RETURN_ON_FALSE(HAMQTT_DEVICE_MAX_COMPONENTS <= device->component_count,
+    ESP_RETURN_ON_FALSE(device->component_count <= HAMQTT_DEVICE_MAX_COMPONENTS,
                         ESP_ERR_NO_MEM,
                         TAG,
                         "Component buffer is full! No more than %d components can be added",
@@ -353,6 +353,20 @@ void hamqtt_device_mqtt_event_handler(void *handler_args, esp_event_base_t base,
 }
 
 void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *topic, int topic_len, const char *data, int data_len) {
+    // The data must be converted into two new Cstrings, since `topic` and `data` are not guaranteed to end in a null char
+    char topic_str[HAMQTT_CHAR_BUF_SIZE];
+    char data_str[HAMQTT_CHAR_BUF_SIZE];
+
+    memset(topic_str, 0, sizeof(topic_str));
+    memset(data_str, 0, sizeof(data_str));
+
+    memcpy(topic_str, topic, topic_len < HAMQTT_CHAR_BUF_SIZE - 1 ? topic_len : HAMQTT_CHAR_BUF_SIZE - 1);
+    memcpy(data_str, data, data_len < HAMQTT_CHAR_BUF_SIZE - 1 ? data_len : HAMQTT_CHAR_BUF_SIZE - 1);
+    
+    ESP_LOGI(TAG, "MQTT Event Data Received");
+    ESP_LOGI(TAG, "Topic: %s", topic_str);
+    ESP_LOGI(TAG, "Data: %s", data_str);
+
     for (size_t i = 0; i < device->component_count; ++i) {
         HAMQTT_Component *component = device->components[i];
 
@@ -362,8 +376,8 @@ void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *
         const char *const *topics = hamqtt_component_get_subscribed_topics(component, &topic_count);
 
         for (size_t j = 0; j < topic_count; ++j) {
-            if (strcmp(topics[j], topic) == 0) {
-                hamqtt_component_handle_mqtt_message(component, topic, topic_len, data, data_len);
+            if (strcmp(topics[j], topic_str) == 0) {
+                hamqtt_component_handle_mqtt_message(component, topic_str, data_str);
             }
         }
     }

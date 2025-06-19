@@ -69,7 +69,7 @@ esp_err_t hamqtt_component_get_discovery_config(
  * @memberof HAMQTT_Component
  */
 void hamqtt_component_handle_mqtt_message(
-        HAMQTT_Component *component, const char *topic, int topic_len, const char *data, int data_len);
+        HAMQTT_Component *component, const char *topic, const char *data);
 
 /**
  * @brief Performs a periodic update for the component.

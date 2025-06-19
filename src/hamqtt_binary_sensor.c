@@ -107,9 +107,7 @@ static esp_err_t hamqtt_binary_sensor_get_discovery_config(HAMQTT_Component *com
 
 static void hamqtt_binary_sensor_handle_mqtt_message(HAMQTT_Component *component,
                                                      const char *topic,
-                                                     int topic_len,
-                                                     const char *data,
-                                                     int data_len) {
+                                                     const char *data) {
     // DO NOTHING
 }
 

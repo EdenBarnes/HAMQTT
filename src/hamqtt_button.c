@@ -101,9 +101,7 @@ static esp_err_t hamqtt_button_get_discovery_config(HAMQTT_Component *component,
 
 static void hamqtt_button_handle_mqtt_message(HAMQTT_Component *component,
                                               const char *topic,
-                                              int topic_len,
-                                              const char *data,
-                                              int data_len) {
+                                              const char *data) {
     HAMQTT_Button *button = (HAMQTT_Button *)component;
 
     if(strcmp(topic, button->command_topic) != 0) return; // Sanity check

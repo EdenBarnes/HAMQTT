@@ -48,9 +48,7 @@ struct HAMQTT_Component_VTable {
 
     void (*handle_mqtt_message)(HAMQTT_Component *component,
                                 const char *topic,
-                                int topic_len,
-                                const char *data,
-                                int data_len);
+                                const char *data);
 
     void (*update)(HAMQTT_Component *component,
                    esp_mqtt_client_handle_t mqtt_client);
