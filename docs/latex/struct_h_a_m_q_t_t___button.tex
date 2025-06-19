@@ -1,0 +1,88 @@
+\doxysection{HAMQTT\+\_\+\+Button Struct Reference}
+\hypertarget{struct_h_a_m_q_t_t___button}{}\label{struct_h_a_m_q_t_t___button}\index{HAMQTT\_Button@{HAMQTT\_Button}}
+
+
+Internal representation of a Home Assistant MQTT button.  
+
+
+
+
+{\ttfamily \#include $<$hamqtt\+\_\+button.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___button_a1f9447d599145bec8b434e36b14b5c2f}{hamqtt\+\_\+button\+\_\+create}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}config, \mbox{\hyperlink{hamqtt__button_8h_a5f0d57b12ca7e06d3ae1a27a1ccc6d34}{HAMQTT\+\_\+\+Button\+\_\+\+On\+\_\+\+Press\+\_\+\+Func}} on\+\_\+press\+\_\+func, void \texorpdfstring{$\ast$}{*}on\+\_\+press\+\_\+func\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Create a new HAMQTT button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___button_afded2c0f3678e91422a2dd476253fc77}{hamqtt\+\_\+button\+\_\+destroy}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em Destroy a HAMQTT button and free all resources. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___button_ab7d013972129126007cc9c74de7e0d2e}{hamqtt\+\_\+button\+\_\+get\+\_\+config}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}} \texorpdfstring{$\ast$}{*}button)
+\begin{DoxyCompactList}\small\item\em Get the configuration used to initialize the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal representation of a Home Assistant MQTT button. 
+
+\label{doc-func-members}
+\Hypertarget{struct_h_a_m_q_t_t___button_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___button_a1f9447d599145bec8b434e36b14b5c2f}\index{HAMQTT\_Button@{HAMQTT\_Button}!hamqtt\_button\_create@{hamqtt\_button\_create}}
+\index{hamqtt\_button\_create@{hamqtt\_button\_create}!HAMQTT\_Button@{HAMQTT\_Button}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_button\_create()}{hamqtt\_button\_create()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button_a1f9447d599145bec8b434e36b14b5c2f} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+button\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}} \texorpdfstring{$\ast$}{*}}]{config}{, }\item[{\mbox{\hyperlink{hamqtt__button_8h_a5f0d57b12ca7e06d3ae1a27a1ccc6d34}{HAMQTT\+\_\+\+Button\+\_\+\+On\+\_\+\+Press\+\_\+\+Func}}}]{on\+\_\+press\+\_\+func}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{on\+\_\+press\+\_\+func\+\_\+args}{}\end{DoxyParamCaption})}
+
+
+
+Create a new HAMQTT button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Pointer to a button configuration. Must remain valid for the lifetime of the button. \\
+\hline
+{\em on\+\_\+press\+\_\+func} & Function pointer for handling pressing the ubtton. (See \doxylink{hamqtt__button_8h_a5f0d57b12ca7e06d3ae1a27a1ccc6d34}{HAMQTT\+\_\+\+Button\+\_\+\+On\+\_\+\+Press\+\_\+\+Func}). \\
+\hline
+{\em on\+\_\+press\+\_\+func\+\_\+args} & A pointer to the arguments to be passed to the {\ttfamily on\+\_\+press\+\_\+func}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}, or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{struct_h_a_m_q_t_t___button_afded2c0f3678e91422a2dd476253fc77}\index{HAMQTT\_Button@{HAMQTT\_Button}!hamqtt\_button\_destroy@{hamqtt\_button\_destroy}}
+\index{hamqtt\_button\_destroy@{hamqtt\_button\_destroy}!HAMQTT\_Button@{HAMQTT\_Button}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_button\_destroy()}{hamqtt\_button\_destroy()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button_afded2c0f3678e91422a2dd476253fc77} 
+void hamqtt\+\_\+button\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}} \texorpdfstring{$\ast$}{*}}]{button}{}\end{DoxyParamCaption})}
+
+
+
+Destroy a HAMQTT button and free all resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Pointer to the button to destroy. Must not be NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_h_a_m_q_t_t___button_ab7d013972129126007cc9c74de7e0d2e}\index{HAMQTT\_Button@{HAMQTT\_Button}!hamqtt\_button\_get\_config@{hamqtt\_button\_get\_config}}
+\index{hamqtt\_button\_get\_config@{hamqtt\_button\_get\_config}!HAMQTT\_Button@{HAMQTT\_Button}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_button\_get\_config()}{hamqtt\_button\_get\_config()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button_ab7d013972129126007cc9c74de7e0d2e} 
+const \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}} \texorpdfstring{$\ast$}{*} hamqtt\+\_\+button\+\_\+get\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___button}{HAMQTT\+\_\+\+Button}} \texorpdfstring{$\ast$}{*}}]{button}{}\end{DoxyParamCaption})}
+
+
+
+Get the configuration used to initialize the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Pointer to the button. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the original configuration struct. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+HAMQTT/\mbox{\hyperlink{hamqtt__button_8h}{hamqtt\+\_\+button.\+h}}\end{DoxyCompactItemize}

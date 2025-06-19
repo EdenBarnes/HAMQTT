@@ -19,21 +19,27 @@ Configuration parameters for a HAMQTT binary sensor.
 \item 
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_ad9ff4f8459751659c52513167da3c086}{device\+\_\+class}}
 \begin{DoxyCompactList}\small\item\em The class of the sensor, which alters how its state and icon is rendered. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a016c1f9f35e925236ea93813113464e6}{enabled\+\_\+by\+\_\+default}}
-\begin{DoxyCompactList}\small\item\em Set to {\ttfamily false} if the device should not be enabled when the device is first added. \end{DoxyCompactList}\item 
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a016c1f9f35e925236ea93813113464e6}\label{struct_h_a_m_q_t_t___binary___sensor___config_a016c1f9f35e925236ea93813113464e6} 
+bool {\bfseries enabled\+\_\+by\+\_\+default}
+\begin{DoxyCompactList}\small\item\em Set to {\ttfamily false} if the sensor should not be enabled when the sensor is first added. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a45cf80574993ba6a5d858b395583abd9}{entity\+\_\+picture}}
-\begin{DoxyCompactList}\small\item\em URL to a picture for the entity. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a8fe59595395eaedeb6ff82300961af8a}{expire\+\_\+after}}
+\begin{DoxyCompactList}\small\item\em URL to a picture for the sensor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a8fe59595395eaedeb6ff82300961af8a}\label{struct_h_a_m_q_t_t___binary___sensor___config_a8fe59595395eaedeb6ff82300961af8a} 
+int {\bfseries expire\+\_\+after}
 \begin{DoxyCompactList}\small\item\em Number of seconds a sensor\textquotesingle{}s state expires, if it\textquotesingle{}s not updated. Set to {\ttfamily -\/1} to disable expiration. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a9c9ec87c01f65a575783384d4d20c912}{force\+\_\+update}}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a9c9ec87c01f65a575783384d4d20c912}\label{struct_h_a_m_q_t_t___binary___sensor___config_a9c9ec87c01f65a575783384d4d20c912} 
+bool {\bfseries force\+\_\+update}
 \begin{DoxyCompactList}\small\item\em Set to {\ttfamily true} if Home Assistant should always send update events, even when the sensor\textquotesingle{}s state doesn\textquotesingle{}t change. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a6e815fc072cc9e0b7be90724dbe13f5a}{icon}}
 \begin{DoxyCompactList}\small\item\em Icon for the sensor. \end{DoxyCompactList}\item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a0512a5badf79d7aa54cf3f7473b73a36}{name}}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a0512a5badf79d7aa54cf3f7473b73a36}\label{struct_h_a_m_q_t_t___binary___sensor___config_a0512a5badf79d7aa54cf3f7473b73a36} 
+char \texorpdfstring{$\ast$}{*} {\bfseries name}
 \begin{DoxyCompactList}\small\item\em The name of the sensor shown in Home Assistant. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a52980829d0825359a76149f3238358e4}{off\+\_\+delay}}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a52980829d0825359a76149f3238358e4}\label{struct_h_a_m_q_t_t___binary___sensor___config_a52980829d0825359a76149f3238358e4} 
+int {\bfseries off\+\_\+delay}
 \begin{DoxyCompactList}\small\item\em Number of seconds after the sensor turns on that Home Assistant turns it back off. Set to {\ttfamily -\/1} to disable this feature. \end{DoxyCompactList}\item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_af0b15c6676acc5d52080501a438f9a24}{unique\+\_\+id}}
+\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_af0b15c6676acc5d52080501a438f9a24}\label{struct_h_a_m_q_t_t___binary___sensor___config_af0b15c6676acc5d52080501a438f9a24} 
+char \texorpdfstring{$\ast$}{*} {\bfseries unique\+\_\+id}
 \begin{DoxyCompactList}\small\item\em Unique identifier used for discovery in Home Assistant. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -56,7 +62,7 @@ Returns a default-\/initialized binary sensor configuration.
 Caller is still responsible for assigning unique\+\_\+id
 
 \begin{DoxyReturn}{Returns}
-An default-\/initialized \doxylink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config} struct. 
+A default-\/initialized \doxylink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config} struct. 
 \end{DoxyReturn}
 
 
@@ -76,16 +82,6 @@ The class of the sensor, which alters how its state and icon is rendered.
 \begin{DoxyNote}{Note}
 Optional. 
 \end{DoxyNote}
-\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a016c1f9f35e925236ea93813113464e6}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!enabled\_by\_default@{enabled\_by\_default}}
-\index{enabled\_by\_default@{enabled\_by\_default}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
-\doxysubsubsection{\texorpdfstring{enabled\_by\_default}{enabled\_by\_default}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor___config_a016c1f9f35e925236ea93813113464e6} 
-bool HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\+::enabled\+\_\+by\+\_\+default}
-
-
-
-Set to {\ttfamily false} if the device should not be enabled when the device is first added. 
-
 \Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a45cf80574993ba6a5d858b395583abd9}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!entity\_picture@{entity\_picture}}
 \index{entity\_picture@{entity\_picture}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
 \doxysubsubsection{\texorpdfstring{entity\_picture}{entity\_picture}}
@@ -94,31 +90,11 @@ char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\
 
 
 
-URL to a picture for the entity. 
+URL to a picture for the sensor. 
 
 \begin{DoxyNote}{Note}
 Optional. 
 \end{DoxyNote}
-\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a8fe59595395eaedeb6ff82300961af8a}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!expire\_after@{expire\_after}}
-\index{expire\_after@{expire\_after}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
-\doxysubsubsection{\texorpdfstring{expire\_after}{expire\_after}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor___config_a8fe59595395eaedeb6ff82300961af8a} 
-int HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\+::expire\+\_\+after}
-
-
-
-Number of seconds a sensor\textquotesingle{}s state expires, if it\textquotesingle{}s not updated. Set to {\ttfamily -\/1} to disable expiration. 
-
-\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a9c9ec87c01f65a575783384d4d20c912}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!force\_update@{force\_update}}
-\index{force\_update@{force\_update}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
-\doxysubsubsection{\texorpdfstring{force\_update}{force\_update}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor___config_a9c9ec87c01f65a575783384d4d20c912} 
-bool HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\+::force\+\_\+update}
-
-
-
-Set to {\ttfamily true} if Home Assistant should always send update events, even when the sensor\textquotesingle{}s state doesn\textquotesingle{}t change. 
-
 \Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a6e815fc072cc9e0b7be90724dbe13f5a}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!icon@{icon}}
 \index{icon@{icon}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
 \doxysubsubsection{\texorpdfstring{icon}{icon}}
@@ -132,36 +108,6 @@ Icon for the sensor.
 \begin{DoxyNote}{Note}
 Optional. 
 \end{DoxyNote}
-\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a0512a5badf79d7aa54cf3f7473b73a36}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!name@{name}}
-\index{name@{name}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
-\doxysubsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor___config_a0512a5badf79d7aa54cf3f7473b73a36} 
-char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\+::name}
-
-
-
-The name of the sensor shown in Home Assistant. 
-
-\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_a52980829d0825359a76149f3238358e4}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!off\_delay@{off\_delay}}
-\index{off\_delay@{off\_delay}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
-\doxysubsubsection{\texorpdfstring{off\_delay}{off\_delay}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor___config_a52980829d0825359a76149f3238358e4} 
-int HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\+::off\+\_\+delay}
-
-
-
-Number of seconds after the sensor turns on that Home Assistant turns it back off. Set to {\ttfamily -\/1} to disable this feature. 
-
-\Hypertarget{struct_h_a_m_q_t_t___binary___sensor___config_af0b15c6676acc5d52080501a438f9a24}\index{HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}!unique\_id@{unique\_id}}
-\index{unique\_id@{unique\_id}!HAMQTT\_Binary\_Sensor\_Config@{HAMQTT\_Binary\_Sensor\_Config}}
-\doxysubsubsection{\texorpdfstring{unique\_id}{unique\_id}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___binary___sensor___config_af0b15c6676acc5d52080501a438f9a24} 
-char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Binary\+\_\+\+Sensor\+\_\+\+Config\+::unique\+\_\+id}
-
-
-
-Unique identifier used for discovery in Home Assistant. 
-
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

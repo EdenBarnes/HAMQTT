@@ -93,88 +93,20 @@ $(function(){initNavTree('struct_h_a_m_q_t_t___component___v_table.html','','str
   <div class="headertitle"><div class="title">HAMQTT_Component_VTable Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="hamqtt__component__internal_8h_source.html">hamqtt_component_internal.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac6ba09428e4af3ff8e57598840d8b045" id="r_ac6ba09428e4af3ff8e57598840d8b045"><td class="memItemLeft" align="right" valign="top">esp_err_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6ba09428e4af3ff8e57598840d8b045">get_discovery_config</a> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, cJSON *root, const char *device_unique_id)</td></tr>
-<tr class="memitem:acaccdab1a5791dfd17cfd908bf5cb875" id="r_acaccdab1a5791dfd17cfd908bf5cb875"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaccdab1a5791dfd17cfd908bf5cb875">handle_mqtt_message</a> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, const char *topic, int topic_len, const char *data, int data_len)</td></tr>
-<tr class="memitem:af16a0d288633f9cc919cc75794e25a7c" id="r_af16a0d288633f9cc919cc75794e25a7c"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af16a0d288633f9cc919cc75794e25a7c">update</a> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, esp_mqtt_client_handle_t mqtt_client)</td></tr>
-<tr class="memitem:a6c858bdaba141d63f3cf4120fdebdc11" id="r_a6c858bdaba141d63f3cf4120fdebdc11"><td class="memItemLeft" align="right" valign="top">const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c858bdaba141d63f3cf4120fdebdc11">get_unique_id</a> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component)</td></tr>
-<tr class="memitem:a419693fc9f44e9bd16ecb38c3051199f" id="r_a419693fc9f44e9bd16ecb38c3051199f"><td class="memItemLeft" align="right" valign="top">const char *const *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a419693fc9f44e9bd16ecb38c3051199f">get_subscribed_topics</a> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, size_t *count)</td></tr>
+<tr class="memitem:ac6ba09428e4af3ff8e57598840d8b045" id="r_ac6ba09428e4af3ff8e57598840d8b045"><td class="memItemLeft" align="right" valign="top"><a id="ac6ba09428e4af3ff8e57598840d8b045" name="ac6ba09428e4af3ff8e57598840d8b045"></a>
+esp_err_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>get_discovery_config</b> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, cJSON *root, const char *device_unique_id)</td></tr>
+<tr class="memitem:acaccdab1a5791dfd17cfd908bf5cb875" id="r_acaccdab1a5791dfd17cfd908bf5cb875"><td class="memItemLeft" align="right" valign="top"><a id="acaccdab1a5791dfd17cfd908bf5cb875" name="acaccdab1a5791dfd17cfd908bf5cb875"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><b>handle_mqtt_message</b> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, const char *topic, int topic_len, const char *data, int data_len)</td></tr>
+<tr class="memitem:af16a0d288633f9cc919cc75794e25a7c" id="r_af16a0d288633f9cc919cc75794e25a7c"><td class="memItemLeft" align="right" valign="top"><a id="af16a0d288633f9cc919cc75794e25a7c" name="af16a0d288633f9cc919cc75794e25a7c"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, esp_mqtt_client_handle_t mqtt_client)</td></tr>
+<tr class="memitem:a6c858bdaba141d63f3cf4120fdebdc11" id="r_a6c858bdaba141d63f3cf4120fdebdc11"><td class="memItemLeft" align="right" valign="top"><a id="a6c858bdaba141d63f3cf4120fdebdc11" name="a6c858bdaba141d63f3cf4120fdebdc11"></a>
+const char *(*&#160;</td><td class="memItemRight" valign="bottom"><b>get_unique_id</b> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component)</td></tr>
+<tr class="memitem:a419693fc9f44e9bd16ecb38c3051199f" id="r_a419693fc9f44e9bd16ecb38c3051199f"><td class="memItemLeft" align="right" valign="top"><a id="a419693fc9f44e9bd16ecb38c3051199f" name="a419693fc9f44e9bd16ecb38c3051199f"></a>
+const char *const *(*&#160;</td><td class="memItemRight" valign="bottom"><b>get_subscribed_topics</b> )(<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, size_t *count)</td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="ac6ba09428e4af3ff8e57598840d8b045" name="ac6ba09428e4af3ff8e57598840d8b045"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6ba09428e4af3ff8e57598840d8b045">&#9670;&#160;</a></span>get_discovery_config</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_err_t(* HAMQTT_Component_VTable::get_discovery_config) (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, cJSON *root, const char *device_unique_id)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a419693fc9f44e9bd16ecb38c3051199f" name="a419693fc9f44e9bd16ecb38c3051199f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a419693fc9f44e9bd16ecb38c3051199f">&#9670;&#160;</a></span>get_subscribed_topics</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char *const  *(* HAMQTT_Component_VTable::get_subscribed_topics) (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, size_t *count)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6c858bdaba141d63f3cf4120fdebdc11" name="a6c858bdaba141d63f3cf4120fdebdc11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c858bdaba141d63f3cf4120fdebdc11">&#9670;&#160;</a></span>get_unique_id</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char *(* HAMQTT_Component_VTable::get_unique_id) (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acaccdab1a5791dfd17cfd908bf5cb875" name="acaccdab1a5791dfd17cfd908bf5cb875"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaccdab1a5791dfd17cfd908bf5cb875">&#9670;&#160;</a></span>handle_mqtt_message</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void(* HAMQTT_Component_VTable::handle_mqtt_message) (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, const char *topic, int topic_len, const char *data, int data_len)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af16a0d288633f9cc919cc75794e25a7c" name="af16a0d288633f9cc919cc75794e25a7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af16a0d288633f9cc919cc75794e25a7c">&#9670;&#160;</a></span>update</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void(* HAMQTT_Component_VTable::update) (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, esp_mqtt_client_handle_t mqtt_client)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/HAMQTT/<a class="el" href="hamqtt__component__internal_8h_source.html">hamqtt_component_internal.h</a></li>
 </ul>

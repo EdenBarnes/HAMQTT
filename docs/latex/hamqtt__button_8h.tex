@@ -5,12 +5,26 @@
 HAMQTT Button component interface for Home Assistant MQTT discovery.  
 
 
+{\ttfamily \#include "{}common.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}}
+\begin{DoxyCompactList}\small\item\em Configuration parameters for a HAMQTT button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{hamqtt__button_8h_a74837fdb79203d3e24b96eed30edf031}\label{hamqtt__button_8h_a74837fdb79203d3e24b96eed30edf031} 
+typedef struct HAMQTT\+\_\+\+Button {\bfseries HAMQTT\+\_\+\+Button}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{hamqtt__button_8h_a5f0d57b12ca7e06d3ae1a27a1ccc6d34}{HAMQTT\+\_\+\+Button\+\_\+\+On\+\_\+\+Press\+\_\+\+Func}}) (void \texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Function pointer type for receiving button press events. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 HAMQTT Button component interface for Home Assistant MQTT discovery. 
 
-Defines the interface and configuration for a stateless button component that integrates with Home Assistant over MQTT using the HAMQTT framework.
+Declares the interface and configuration for button components within the HAMQTT MQTT integration framework for Home Assistant.
 
 \begin{DoxyAuthor}{Author}
 Ethan Barnes 
@@ -21,3 +35,25 @@ Ethan Barnes
 \begin{DoxyCopyright}{Copyright}
 Apache License 2.\+0 
 \end{DoxyCopyright}
+
+
+\label{doc-typedef-members}
+\Hypertarget{hamqtt__button_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{hamqtt__button_8h_a5f0d57b12ca7e06d3ae1a27a1ccc6d34}\index{hamqtt\_button.h@{hamqtt\_button.h}!HAMQTT\_Button\_On\_Press\_Func@{HAMQTT\_Button\_On\_Press\_Func}}
+\index{HAMQTT\_Button\_On\_Press\_Func@{HAMQTT\_Button\_On\_Press\_Func}!hamqtt\_button.h@{hamqtt\_button.h}}
+\doxysubsubsection{\texorpdfstring{HAMQTT\_Button\_On\_Press\_Func}{HAMQTT\_Button\_On\_Press\_Func}}
+{\footnotesize\ttfamily \label{hamqtt__button_8h_a5f0d57b12ca7e06d3ae1a27a1ccc6d34} 
+typedef void(\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Button\+\_\+\+On\+\_\+\+Press\+\_\+\+Func) (void \texorpdfstring{$\ast$}{*}args)}
+
+
+
+Function pointer type for receiving button press events. 
+
+This function pointer is called every the button is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & A pointer to user-\/defined arguments or context data required to handle the button press. This is typically a pointer to the button-\/specific data structure. \\
+\hline
+\end{DoxyParams}

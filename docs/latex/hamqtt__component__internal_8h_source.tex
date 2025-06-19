@@ -27,17 +27,17 @@
 \DoxyCodeLine{00036\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ V-\/Table\ (interface)\ -\/-\/-\/-\/-\/\ */}}
 \DoxyCodeLine{00037\ }
 \DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\_Component\_VTable}}\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ esp\_err\_t\ (*\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_ac6ba09428e4af3ff8e57598840d8b045}{get\_discovery\_config}})(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,\ }
+\DoxyCodeLine{00045\ \ \ \ \ esp\_err\_t\ (*get\_discovery\_config)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,\ }
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cJSON\ *root,}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *device\_unique\_id);}
 \DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ void\ (*\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_acaccdab1a5791dfd17cfd908bf5cb875}{handle\_mqtt\_message}})(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
+\DoxyCodeLine{00049\ \ \ \ \ void\ (*handle\_mqtt\_message)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
 \DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *topic,}
 \DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ topic\_len,}
 \DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,}
 \DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ data\_len);}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ void\ (*\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_af16a0d288633f9cc919cc75794e25a7c}{update}})(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
+\DoxyCodeLine{00055\ \ \ \ \ void\ (*update)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ esp\_mqtt\_client\_handle\_t\ mqtt\_client);}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(*get\_unique\_id)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component);}
@@ -50,47 +50,47 @@
 \DoxyCodeLine{00065\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Base\ Object\ -\/-\/-\/-\/-\/\ */}}
 \DoxyCodeLine{00066\ }
 \DoxyCodeLine{00070\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\_Component\_VTable}}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\_Component\_VTable}}\ *v;}
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab9ba74db2f50dccb9c65b2206eb2e5d3}{subscribed\_topics}}[\mbox{\hyperlink{common_8h_a2fc290f3f367930732ad6448e021077b}{HAMQTT\_COMPONENT\_MAX\_TOPICS}}];}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a862c88accdc3daa12ec0f6bb94a61b0b}{subscribed\_topics\_count}};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *subscribed\_topics[HAMQTT\_COMPONENT\_MAX\_TOPICS];}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ subscribed\_topics\_count;}
 \DoxyCodeLine{00075\ \};}
 \DoxyCodeLine{00076\ }
 \DoxyCodeLine{00077\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Dispatch\ helpers\ -\/-\/-\/-\/-\/\ */}}
 \DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ esp\_err\_t\ \mbox{\hyperlink{hamqtt__component__internal_8h_a514ed787c49e33afab6fee049f2e5699}{hamqtt\_component\_get\_discovery\_config}}(}
+\DoxyCodeLine{00079\ esp\_err\_t\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a076abb82f1d6bd547109139a0fd0477e}{hamqtt\_component\_get\_discovery\_config}}(}
 \DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ cJSON\ *root,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *device\_uid)}
 \DoxyCodeLine{00081\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_ac6ba09428e4af3ff8e57598840d8b045}{get\_discovery\_config}}(c,\ root,\ device\_uid);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>v-\/>get\_discovery\_config(c,\ root,\ device\_uid);}
 \DoxyCodeLine{00083\ \}}
 \DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hamqtt__component__internal_8h_a977d2112422dd2fb496596420cc1c2c4}{hamqtt\_component\_handle\_mqtt\_message}}(}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18}{hamqtt\_component\_handle\_mqtt\_message}}(}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *topic,\ \textcolor{keywordtype}{int}\ topic\_len,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ data\_len)}
 \DoxyCodeLine{00087\ \{}
-\DoxyCodeLine{00088\ \ \ \ \ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_acaccdab1a5791dfd17cfd908bf5cb875}{handle\_mqtt\_message}}(c,\ topic,\ topic\_len,\ data,\ data\_len);}
+\DoxyCodeLine{00088\ \ \ \ \ c-\/>v-\/>handle\_mqtt\_message(c,\ topic,\ topic\_len,\ data,\ data\_len);}
 \DoxyCodeLine{00089\ \}}
 \DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hamqtt__component__internal_8h_a50aaec8bb7d92d3cbee7941040d1dac3}{hamqtt\_component\_update}}(}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ac64bc85cd566882dfc4473c76417c7c1}{hamqtt\_component\_update}}(}
 \DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ esp\_mqtt\_client\_handle\_t\ client)}
 \DoxyCodeLine{00093\ \{}
-\DoxyCodeLine{00094\ \ \ \ \ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_af16a0d288633f9cc919cc75794e25a7c}{update}}(c,\ client);}
+\DoxyCodeLine{00094\ \ \ \ \ c-\/>v-\/>update(c,\ client);}
 \DoxyCodeLine{00095\ \}}
 \DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{hamqtt__component__internal_8h_ab81c387b217c04e3d9c4b72acad18800}{hamqtt\_component\_get\_unique\_id}}(}
+\DoxyCodeLine{00097\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab84107885e9060b0ecf2d304fa6d81ec}{hamqtt\_component\_get\_unique\_id}}(}
 \DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c)}
 \DoxyCodeLine{00099\ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_a6c858bdaba141d63f3cf4120fdebdc11}{get\_unique\_id}}(c);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>v-\/>get\_unique\_id(c);}
 \DoxyCodeLine{00101\ \}}
 \DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{hamqtt__component__internal_8h_a91374641c026e66545420fcb6b576f07}{hamqtt\_component\_get\_subscribed\_topics}}(}
+\DoxyCodeLine{00103\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab8daa7145718b9feb168f3819b750c0e}{hamqtt\_component\_get\_subscribed\_topics}}(}
 \DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ \textcolor{keywordtype}{size\_t}\ *count)}
 \DoxyCodeLine{00105\ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_a419693fc9f44e9bd16ecb38c3051199f}{get\_subscribed\_topics}})}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a301d0cf262a73e52bee8082270c27d52}{v}}-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table_a419693fc9f44e9bd16ecb38c3051199f}{get\_subscribed\_topics}}(c,\ count);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>v-\/>get\_subscribed\_topics)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>v-\/>get\_subscribed\_topics(c,\ count);}
 \DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a862c88accdc3daa12ec0f6bb94a61b0b}{subscribed\_topics\_count}}\ >\ 0)\ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ *count\ =\ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_a862c88accdc3daa12ec0f6bb94a61b0b}{subscribed\_topics\_count}};}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>\mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab9ba74db2f50dccb9c65b2206eb2e5d3}{subscribed\_topics}};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>subscribed\_topics\_count\ >\ 0)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ *count\ =\ c-\/>subscribed\_topics\_count;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>subscribed\_topics;}
 \DoxyCodeLine{00112\ \ \ \ \ \}}
 \DoxyCodeLine{00113\ \ \ \ \ *count\ =\ 0;}
 \DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}

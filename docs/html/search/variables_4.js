@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['handle_5fmqtt_5fmessage_0',['handle_mqtt_message',['../struct_h_a_m_q_t_t___component___v_table.html#acaccdab1a5791dfd17cfd908bf5cb875',1,'HAMQTT_Component_VTable']]],
-  ['hw_5fversion_1',['hw_version',['../struct_h_a_m_q_t_t___device___config.html#a07fc4390398122d088b0cf2e7a264132',1,'HAMQTT_Device_Config']]]
+  ['icon_0',['icon',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a6e815fc072cc9e0b7be90724dbe13f5a',1,'HAMQTT_Binary_Sensor_Config::icon'],['../struct_h_a_m_q_t_t___button___config.html#a32a57d06a396f15fd1e4856732920d98',1,'HAMQTT_Button_Config::icon']]]
 ];

@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.14.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -20,10 +19,6 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="docs/doxygen-awesome-darkmode-toggle.js"></script>
-       <script type="text/javascript">
-           DoxygenAwesomeDarkModeToggle.init()
-       </script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -101,15 +96,53 @@ $(function(){initNavTree('hamqtt__button_8h.html','',''); });
 
 <p>HAMQTT Button component interface for Home Assistant MQTT discovery.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
+</div>
 <p><a href="hamqtt__button_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:HAMQTT_5FButton_5FConfig" id="r_HAMQTT_5FButton_5FConfig"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_h_a_m_q_t_t___button___config.html">HAMQTT_Button_Config</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration parameters for a HAMQTT button.  <a href="struct_h_a_m_q_t_t___button___config.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a74837fdb79203d3e24b96eed30edf031" id="r_a74837fdb79203d3e24b96eed30edf031"><td class="memItemLeft" align="right" valign="top"><a id="a74837fdb79203d3e24b96eed30edf031" name="a74837fdb79203d3e24b96eed30edf031"></a>
+typedef struct HAMQTT_Button&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_Button</b></td></tr>
+<tr class="memitem:a5f0d57b12ca7e06d3ae1a27a1ccc6d34" id="r_a5f0d57b12ca7e06d3ae1a27a1ccc6d34"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f0d57b12ca7e06d3ae1a27a1ccc6d34">HAMQTT_Button_On_Press_Func</a>) (void *args)</td></tr>
+<tr class="memdesc:a5f0d57b12ca7e06d3ae1a27a1ccc6d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer type for receiving button press events.  <br /></td></tr>
+</table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>HAMQTT Button component interface for Home Assistant MQTT discovery. </p>
-<p>Defines the interface and configuration for a stateless button component that integrates with Home Assistant over MQTT using the HAMQTT framework.</p>
+<p>Declares the interface and configuration for button components within the HAMQTT MQTT integration framework for Home Assistant.</p>
 <dl class="section author"><dt>Author</dt><dd>Ethan Barnes </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Apache License 2.0 </dd></dl>
-</div></div><!-- contents -->
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a5f0d57b12ca7e06d3ae1a27a1ccc6d34" name="a5f0d57b12ca7e06d3ae1a27a1ccc6d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0d57b12ca7e06d3ae1a27a1ccc6d34">&#9670;&#160;</a></span>HAMQTT_Button_On_Press_Func</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* HAMQTT_Button_On_Press_Func) (void *args)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function pointer type for receiving button press events. </p>
+<p>This function pointer is called every the button is pressed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>A pointer to user-defined arguments or context data required to handle the button press. This is typically a pointer to the button-specific data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

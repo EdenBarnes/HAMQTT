@@ -108,22 +108,28 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad9ff4f8459751659c52513167da3c086" id="r_ad9ff4f8459751659c52513167da3c086"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9ff4f8459751659c52513167da3c086">device_class</a></td></tr>
 <tr class="memdesc:ad9ff4f8459751659c52513167da3c086"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class of the sensor, which alters how its state and icon is rendered.  <br /></td></tr>
-<tr class="memitem:a016c1f9f35e925236ea93813113464e6" id="r_a016c1f9f35e925236ea93813113464e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a016c1f9f35e925236ea93813113464e6">enabled_by_default</a></td></tr>
-<tr class="memdesc:a016c1f9f35e925236ea93813113464e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <span class="tt">false</span> if the device should not be enabled when the device is first added.  <br /></td></tr>
+<tr class="memitem:a016c1f9f35e925236ea93813113464e6" id="r_a016c1f9f35e925236ea93813113464e6"><td class="memItemLeft" align="right" valign="top"><a id="a016c1f9f35e925236ea93813113464e6" name="a016c1f9f35e925236ea93813113464e6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>enabled_by_default</b></td></tr>
+<tr class="memdesc:a016c1f9f35e925236ea93813113464e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <span class="tt">false</span> if the sensor should not be enabled when the sensor is first added. <br /></td></tr>
 <tr class="memitem:a45cf80574993ba6a5d858b395583abd9" id="r_a45cf80574993ba6a5d858b395583abd9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45cf80574993ba6a5d858b395583abd9">entity_picture</a></td></tr>
-<tr class="memdesc:a45cf80574993ba6a5d858b395583abd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">URL to a picture for the entity.  <br /></td></tr>
-<tr class="memitem:a8fe59595395eaedeb6ff82300961af8a" id="r_a8fe59595395eaedeb6ff82300961af8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fe59595395eaedeb6ff82300961af8a">expire_after</a></td></tr>
-<tr class="memdesc:a8fe59595395eaedeb6ff82300961af8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of seconds a sensor's state expires, if it's not updated. Set to <span class="tt">-1</span> to disable expiration.  <br /></td></tr>
-<tr class="memitem:a9c9ec87c01f65a575783384d4d20c912" id="r_a9c9ec87c01f65a575783384d4d20c912"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c9ec87c01f65a575783384d4d20c912">force_update</a></td></tr>
-<tr class="memdesc:a9c9ec87c01f65a575783384d4d20c912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <span class="tt">true</span> if Home Assistant should always send update events, even when the sensor's state doesn't change.  <br /></td></tr>
+<tr class="memdesc:a45cf80574993ba6a5d858b395583abd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">URL to a picture for the sensor.  <br /></td></tr>
+<tr class="memitem:a8fe59595395eaedeb6ff82300961af8a" id="r_a8fe59595395eaedeb6ff82300961af8a"><td class="memItemLeft" align="right" valign="top"><a id="a8fe59595395eaedeb6ff82300961af8a" name="a8fe59595395eaedeb6ff82300961af8a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>expire_after</b></td></tr>
+<tr class="memdesc:a8fe59595395eaedeb6ff82300961af8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of seconds a sensor's state expires, if it's not updated. Set to <span class="tt">-1</span> to disable expiration. <br /></td></tr>
+<tr class="memitem:a9c9ec87c01f65a575783384d4d20c912" id="r_a9c9ec87c01f65a575783384d4d20c912"><td class="memItemLeft" align="right" valign="top"><a id="a9c9ec87c01f65a575783384d4d20c912" name="a9c9ec87c01f65a575783384d4d20c912"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>force_update</b></td></tr>
+<tr class="memdesc:a9c9ec87c01f65a575783384d4d20c912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <span class="tt">true</span> if Home Assistant should always send update events, even when the sensor's state doesn't change. <br /></td></tr>
 <tr class="memitem:a6e815fc072cc9e0b7be90724dbe13f5a" id="r_a6e815fc072cc9e0b7be90724dbe13f5a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e815fc072cc9e0b7be90724dbe13f5a">icon</a></td></tr>
 <tr class="memdesc:a6e815fc072cc9e0b7be90724dbe13f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Icon for the sensor.  <br /></td></tr>
-<tr class="memitem:a0512a5badf79d7aa54cf3f7473b73a36" id="r_a0512a5badf79d7aa54cf3f7473b73a36"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0512a5badf79d7aa54cf3f7473b73a36">name</a></td></tr>
-<tr class="memdesc:a0512a5badf79d7aa54cf3f7473b73a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the sensor shown in Home Assistant.  <br /></td></tr>
-<tr class="memitem:a52980829d0825359a76149f3238358e4" id="r_a52980829d0825359a76149f3238358e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52980829d0825359a76149f3238358e4">off_delay</a></td></tr>
-<tr class="memdesc:a52980829d0825359a76149f3238358e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of seconds after the sensor turns on that Home Assistant turns it back off. Set to <span class="tt">-1</span> to disable this feature.  <br /></td></tr>
-<tr class="memitem:af0b15c6676acc5d52080501a438f9a24" id="r_af0b15c6676acc5d52080501a438f9a24"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0b15c6676acc5d52080501a438f9a24">unique_id</a></td></tr>
-<tr class="memdesc:af0b15c6676acc5d52080501a438f9a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier used for discovery in Home Assistant.  <br /></td></tr>
+<tr class="memitem:a0512a5badf79d7aa54cf3f7473b73a36" id="r_a0512a5badf79d7aa54cf3f7473b73a36"><td class="memItemLeft" align="right" valign="top"><a id="a0512a5badf79d7aa54cf3f7473b73a36" name="a0512a5badf79d7aa54cf3f7473b73a36"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memdesc:a0512a5badf79d7aa54cf3f7473b73a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the sensor shown in Home Assistant. <br /></td></tr>
+<tr class="memitem:a52980829d0825359a76149f3238358e4" id="r_a52980829d0825359a76149f3238358e4"><td class="memItemLeft" align="right" valign="top"><a id="a52980829d0825359a76149f3238358e4" name="a52980829d0825359a76149f3238358e4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>off_delay</b></td></tr>
+<tr class="memdesc:a52980829d0825359a76149f3238358e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of seconds after the sensor turns on that Home Assistant turns it back off. Set to <span class="tt">-1</span> to disable this feature. <br /></td></tr>
+<tr class="memitem:af0b15c6676acc5d52080501a438f9a24" id="r_af0b15c6676acc5d52080501a438f9a24"><td class="memItemLeft" align="right" valign="top"><a id="af0b15c6676acc5d52080501a438f9a24" name="af0b15c6676acc5d52080501a438f9a24"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>unique_id</b></td></tr>
+<tr class="memdesc:af0b15c6676acc5d52080501a438f9a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier used for discovery in Home Assistant. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Configuration parameters for a HAMQTT binary sensor. </p>
@@ -145,7 +151,7 @@ Public Attributes</h2></td></tr>
 
 <p>Returns a default-initialized binary sensor configuration. </p>
 <p>Caller is still responsible for assigning unique_id</p>
-<dl class="section return"><dt>Returns</dt><dd>An default-initialized <a class="el" href="struct_h_a_m_q_t_t___binary___sensor___config.html" title="Configuration parameters for a HAMQTT binary sensor.">HAMQTT_Binary_Sensor_Config</a> struct. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A default-initialized <a class="el" href="struct_h_a_m_q_t_t___binary___sensor___config.html" title="Configuration parameters for a HAMQTT binary sensor.">HAMQTT_Binary_Sensor_Config</a> struct. </dd></dl>
 
 </div>
 </div>
@@ -167,22 +173,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a016c1f9f35e925236ea93813113464e6" name="a016c1f9f35e925236ea93813113464e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a016c1f9f35e925236ea93813113464e6">&#9670;&#160;</a></span>enabled_by_default</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HAMQTT_Binary_Sensor_Config::enabled_by_default</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set to <span class="tt">false</span> if the device should not be enabled when the device is first added. </p>
-
-</div>
-</div>
 <a id="a45cf80574993ba6a5d858b395583abd9" name="a45cf80574993ba6a5d858b395583abd9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45cf80574993ba6a5d858b395583abd9">&#9670;&#160;</a></span>entity_picture</h2>
 
@@ -195,40 +185,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>URL to a picture for the entity. </p>
+<p>URL to a picture for the sensor. </p>
 <dl class="section note"><dt>Note</dt><dd>Optional. </dd></dl>
-
-</div>
-</div>
-<a id="a8fe59595395eaedeb6ff82300961af8a" name="a8fe59595395eaedeb6ff82300961af8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fe59595395eaedeb6ff82300961af8a">&#9670;&#160;</a></span>expire_after</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int HAMQTT_Binary_Sensor_Config::expire_after</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of seconds a sensor's state expires, if it's not updated. Set to <span class="tt">-1</span> to disable expiration. </p>
-
-</div>
-</div>
-<a id="a9c9ec87c01f65a575783384d4d20c912" name="a9c9ec87c01f65a575783384d4d20c912"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c9ec87c01f65a575783384d4d20c912">&#9670;&#160;</a></span>force_update</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HAMQTT_Binary_Sensor_Config::force_update</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set to <span class="tt">true</span> if Home Assistant should always send update events, even when the sensor's state doesn't change. </p>
 
 </div>
 </div>
@@ -246,54 +204,6 @@ Public Attributes</h2></td></tr>
 
 <p>Icon for the sensor. </p>
 <dl class="section note"><dt>Note</dt><dd>Optional. </dd></dl>
-
-</div>
-</div>
-<a id="a0512a5badf79d7aa54cf3f7473b73a36" name="a0512a5badf79d7aa54cf3f7473b73a36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0512a5badf79d7aa54cf3f7473b73a36">&#9670;&#160;</a></span>name</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* HAMQTT_Binary_Sensor_Config::name</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The name of the sensor shown in Home Assistant. </p>
-
-</div>
-</div>
-<a id="a52980829d0825359a76149f3238358e4" name="a52980829d0825359a76149f3238358e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52980829d0825359a76149f3238358e4">&#9670;&#160;</a></span>off_delay</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int HAMQTT_Binary_Sensor_Config::off_delay</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of seconds after the sensor turns on that Home Assistant turns it back off. Set to <span class="tt">-1</span> to disable this feature. </p>
-
-</div>
-</div>
-<a id="af0b15c6676acc5d52080501a438f9a24" name="af0b15c6676acc5d52080501a438f9a24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0b15c6676acc5d52080501a438f9a24">&#9670;&#160;</a></span>unique_id</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* HAMQTT_Binary_Sensor_Config::unique_id</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Unique identifier used for discovery in Home Assistant. </p>
 
 </div>
 </div>

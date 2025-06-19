@@ -1,0 +1,106 @@
+\doxysection{HAMQTT\+\_\+\+Button\+\_\+\+Config Struct Reference}
+\hypertarget{struct_h_a_m_q_t_t___button___config}{}\label{struct_h_a_m_q_t_t___button___config}\index{HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}}
+
+
+Configuration parameters for a HAMQTT button.  
+
+
+
+
+{\ttfamily \#include $<$hamqtt\+\_\+button.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}} \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config_a26bdb45462610c1f87697d9a87a99446}{hamqtt\+\_\+button\+\_\+config\+\_\+default}} (void)
+\begin{DoxyCompactList}\small\item\em Returns a default-\/initialized button configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config_a0747e3c5b3daf17c21995a4b39053a72}{device\+\_\+class}}
+\begin{DoxyCompactList}\small\item\em The class of the button, which alters how its state and icon is rendered. \end{DoxyCompactList}\item 
+\Hypertarget{struct_h_a_m_q_t_t___button___config_a1ce23d629dc0423db05235e0ad5fa658}\label{struct_h_a_m_q_t_t___button___config_a1ce23d629dc0423db05235e0ad5fa658} 
+bool {\bfseries enabled\+\_\+by\+\_\+default}
+\begin{DoxyCompactList}\small\item\em Set to {\ttfamily false} if the button should not be enabled when the button is first added. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config_a021f9c74ad258d86e9ee2709b5874731}{entity\+\_\+picture}}
+\begin{DoxyCompactList}\small\item\em URL to a picture for the button. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_h_a_m_q_t_t___button___config_a32a57d06a396f15fd1e4856732920d98}{icon}}
+\begin{DoxyCompactList}\small\item\em Icon for the button. \end{DoxyCompactList}\item 
+\Hypertarget{struct_h_a_m_q_t_t___button___config_a604eeb523f389ec9e0c8e2b765cd5dd3}\label{struct_h_a_m_q_t_t___button___config_a604eeb523f389ec9e0c8e2b765cd5dd3} 
+char \texorpdfstring{$\ast$}{*} {\bfseries name}
+\begin{DoxyCompactList}\small\item\em The name of the button shown in Home Assistant. \end{DoxyCompactList}\item 
+\Hypertarget{struct_h_a_m_q_t_t___button___config_ac9e24925d4dc674e14346089cb48fd55}\label{struct_h_a_m_q_t_t___button___config_ac9e24925d4dc674e14346089cb48fd55} 
+char \texorpdfstring{$\ast$}{*} {\bfseries unique\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Unique identifier used for discovery in Home Assistant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration parameters for a HAMQTT button. 
+
+\label{doc-func-members}
+\Hypertarget{struct_h_a_m_q_t_t___button___config_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___button___config_a26bdb45462610c1f87697d9a87a99446}\index{HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}!hamqtt\_button\_config\_default@{hamqtt\_button\_config\_default}}
+\index{hamqtt\_button\_config\_default@{hamqtt\_button\_config\_default}!HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}}
+\doxysubsubsection{\texorpdfstring{hamqtt\_button\_config\_default()}{hamqtt\_button\_config\_default()}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button___config_a26bdb45462610c1f87697d9a87a99446} 
+\mbox{\hyperlink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config}} hamqtt\+\_\+button\+\_\+config\+\_\+default (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a default-\/initialized button configuration. 
+
+Caller is still responsible for assigning unique\+\_\+id
+
+\begin{DoxyReturn}{Returns}
+A default-\/initialized \doxylink{struct_h_a_m_q_t_t___button___config}{HAMQTT\+\_\+\+Button\+\_\+\+Config} struct. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_h_a_m_q_t_t___button___config_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_h_a_m_q_t_t___button___config_a0747e3c5b3daf17c21995a4b39053a72}\index{HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}!device\_class@{device\_class}}
+\index{device\_class@{device\_class}!HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}}
+\doxysubsubsection{\texorpdfstring{device\_class}{device\_class}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button___config_a0747e3c5b3daf17c21995a4b39053a72} 
+char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Button\+\_\+\+Config\+::device\+\_\+class}
+
+
+
+The class of the button, which alters how its state and icon is rendered. 
+
+\begin{DoxyNote}{Note}
+Optional. 
+\end{DoxyNote}
+\Hypertarget{struct_h_a_m_q_t_t___button___config_a021f9c74ad258d86e9ee2709b5874731}\index{HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}!entity\_picture@{entity\_picture}}
+\index{entity\_picture@{entity\_picture}!HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}}
+\doxysubsubsection{\texorpdfstring{entity\_picture}{entity\_picture}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button___config_a021f9c74ad258d86e9ee2709b5874731} 
+char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Button\+\_\+\+Config\+::entity\+\_\+picture}
+
+
+
+URL to a picture for the button. 
+
+\begin{DoxyNote}{Note}
+Optional. 
+\end{DoxyNote}
+\Hypertarget{struct_h_a_m_q_t_t___button___config_a32a57d06a396f15fd1e4856732920d98}\index{HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}!icon@{icon}}
+\index{icon@{icon}!HAMQTT\_Button\_Config@{HAMQTT\_Button\_Config}}
+\doxysubsubsection{\texorpdfstring{icon}{icon}}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___button___config_a32a57d06a396f15fd1e4856732920d98} 
+char\texorpdfstring{$\ast$}{*} HAMQTT\+\_\+\+Button\+\_\+\+Config\+::icon}
+
+
+
+Icon for the button. 
+
+\begin{DoxyNote}{Note}
+Optional. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+HAMQTT/\mbox{\hyperlink{hamqtt__button_8h}{hamqtt\+\_\+button.\+h}}\end{DoxyCompactItemize}
