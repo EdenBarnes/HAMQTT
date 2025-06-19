@@ -146,6 +146,13 @@ static const HAMQTT_Component_VTable binary_sensor_vtable = {
 
 /* ----- HAMQTT Binary Sensor function definitions ----- */
 
+bool hamqtt_binary_sensor_is_config_valid(const HAMQTT_Binary_Sensor *sensor) {
+    if (!sensor->component_config->name) return false;
+    if (!sensor->component_config->unique_id) return false;
+
+    return true;
+}
+
 HAMQTT_Binary_Sensor *hamqtt_binary_sensor_create(HAMQTT_Binary_Sensor_Config *config,
                                                   HAMQTT_Binary_Sensor_Get_State_Func get_state_func,
                                                   void *get_state_func_args) {
