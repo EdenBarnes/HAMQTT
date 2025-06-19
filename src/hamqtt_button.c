@@ -54,37 +54,78 @@ struct HAMQTT_Button {
     char command_topic[HAMQTT_CHAR_BUF_SIZE];
 };
 
+/* ----- Private HAMQTT Button function declarations ----- */
+
+/**
+ * @brief Validates that the minimum required fields are populated in the configuration.
+ *
+ * Required fields: `name` and `unique_id`.
+ *
+ * @param button The button to validate.
+ * @return true if valid, false otherwise.
+ */
+static bool hamqtt_button_is_config_valid(const HAMQTT_Button *button);
+
 /* ----- Virtual Methods ----- */
 
 static esp_err_t hamqtt_button_get_discovery_config(HAMQTT_Component *component, 
-                                                           cJSON *root,
-                                                           const char *device_unique_id) {
-    HAMQTT_Button *sensor = (HAMQTT_Button *)component;
+                                                    cJSON *root,
+                                                    const char *device_unique_id) {
+    HAMQTT_Button *button = (HAMQTT_Button *)component;
 
-    // TODO : Finish
+    ESP_RETURN_ON_FALSE(hamqtt_button_is_config_valid(button->component_config),
+                        ESP_ERR_INVALID_STATE,
+                        TAG,
+                        "Button was used despite config missing required fields");
+
+    snprintf(button->command_topic,
+             sizeof(button->command_topic),
+             "%s/%s/press", device_unique_id,
+             button->component_config->unique_id);
+
+    button->base.subscribed_topics[0] = button->command_topic;
+    button->base.subscribed_topics_count = 1;
+
+    // Build configuration on root
+    cJSON_AddStringToObject(root, "p", "button");
+    cJSON_AddStringToObject(root, "name", button->component_config->name);
+    cJSON_AddStringToObject(root, "command_topic", button->command_topic);
+    cJSON_AddStringToObject(root, "unique_id", button->component_config->unique_id);
+    cJSON_AddBoolToObject(root, "enabled_by_default", button->component_config->enabled_by_default);
+    if (button->component_config->device_class) cJSON_AddStringToObject(root, "device_class", button->component_config->device_class);
+    if (button->component_config->entity_picture) cJSON_AddStringToObject(root, "entity_picture", button->component_config->entity_picture);
+    if (button->component_config->icon) cJSON_AddStringToObject(root, "icon", button->component_config->icon);
+
+    return ESP_OK;
 }
 
 static void hamqtt_button_handle_mqtt_message(HAMQTT_Component *component,
-                                                     const char *topic,
-                                                     int topic_len,
-                                                     const char *data,
-                                                     int data_len) {
-    HAMQTT_Button *sensor = (HAMQTT_Button *)component;
+                                              const char *topic,
+                                              int topic_len,
+                                              const char *data,
+                                              int data_len) {
+    HAMQTT_Button *button = (HAMQTT_Button *)component;
 
-    // TODO : Finish
+    if(strcmp(topic, button->command_topic) != 0) return; // Sanity check
+    if(strcmp(data, "PRESS") != 0) return;
+
+    ESP_RETURN_ON_FALSE(button->on_press_func,
+                        ESP_ERR_INVALID_STATE,
+                        TAG,
+                        "Button is missing on_press_func");
+
+    button->on_press_func(button->on_press_func_args);
 }
 
 static void hamqtt_button_update(HAMQTT_Component *component,
-                                        esp_mqtt_client_handle_t mqtt_client) {
-    HAMQTT_Button *sensor = (HAMQTT_Button *)component;
-
-    // TODO : Finish
+                                 esp_mqtt_client_handle_t mqtt_client) {
+    // DO NOTHING
 }
 
-static const char hamqtt_button_get_unique_id(HAMQTT_Component *component) {
-    HAMQTT_Button *sensor = (HAMQTT_Button *)component;
+static const char *hamqtt_button_get_unique_id(HAMQTT_Component *component) {
+    HAMQTT_Button *button = (HAMQTT_Button *)component;
 
-    // TODO : Finish
+    return button->component_config->unique_id;
 }
 
 /* ----- V-Table ----- */
@@ -96,17 +137,14 @@ static const HAMQTT_Component_VTable button_vtable = {
     .get_subscribed_topics = NULL
 };
 
-/* ----- Private HAMQTT Button function declarations ----- */
+/* ----- HAMQTT Button function definitions ----- */
 
-/**
- * @brief Validates that the minimum required fields are populated in the configuration.
- *
- * Required fields: `unique_id`, and `name`.
- *
- * @param button The button to validate.
- * @return true if valid, false otherwise.
- */
-static bool hamqtt_button_is_config_valid(const HAMQTT_Button *button);
+static bool hamqtt_button_is_config_valid(const HAMQTT_Button *button) {
+    if (!button->component_config->name) return false;
+    if (!button->component_config->unique_id) return false;
+
+    return true;
+}
 
 HAMQTT_Button *hamqtt_button_create(HAMQTT_Button_Config *config,
                                     HAMQTT_Button_On_Press_Func on_press_func,
