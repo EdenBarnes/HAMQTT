@@ -60,6 +60,18 @@ struct HAMQTT_Binary_Sensor {
     char state_topic[HAMQTT_CHAR_BUF_SIZE];
 };
 
+/* ----- Private HAMQTT Binary Sensor function declarations ----- */
+
+/**
+ * @brief Validates that the minimum required fields are populated in the configuration.
+ *
+ * Required fields: `name` and `unique_id`.
+ *
+ * @param sensor The binary sensor to validate.
+ * @return true if valid, false otherwise.
+ */
+static bool hamqtt_binary_sensor_is_config_valid(const HAMQTT_Binary_Sensor *sensor);
+
 /* ----- Virtual Methods ----- */
 
 static esp_err_t hamqtt_binary_sensor_get_discovery_config(HAMQTT_Component *component, 
@@ -67,7 +79,30 @@ static esp_err_t hamqtt_binary_sensor_get_discovery_config(HAMQTT_Component *com
                                                            const char *device_unique_id) {
     HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
 
-    // TODO : Finish
+    ESP_RETURN_ON_FALSE(hamqtt_binary_sensor_is_config_valid(sensor->component_config),
+                        ESP_ERR_INVALID_STATE,
+                        TAG,
+                        "Binary sensor was used despite config missing required fields");
+
+    snprintf(sensor->state_topic,
+             sizeof(sensor->state_topic),
+             "%s/%s/state", device_unique_id,
+             sensor->component_config->unique_id);
+
+    // Build configuration on root
+    cJSON_AddStringToObject(root, "p", "binary_sensor");
+    cJSON_AddStringToObject(root, "name", sensor->component_config->name);
+    cJSON_AddStringToObject(root, "state_topic", sensor->state_topic);
+    cJSON_AddStringToObject(root, "unique_id", sensor->component_config->unique_id);
+    cJSON_AddBoolToObject(root, "enabled_by_default", sensor->component_config->enabled_by_default);
+    cJSON_AddBoolToObject(root, "force_update", sensor->component_config->force_update);
+    if (sensor->component_config->device_class) cJSON_AddStringToObject(root, "device_class", sensor->component_config->device_class);
+    if (sensor->component_config->entity_picture) cJSON_AddStringToObject(root, "entity_picture", sensor->component_config->entity_picture);
+    if (sensor->component_config->icon) cJSON_AddStringToObject(root, "icon", sensor->component_config->icon);
+    if (sensor->component_config->expire_after != -1) cJSON_AddNumberToObject(root, "expire_after", sensor->component_config->expire_after);
+    if (sensor->component_config->off_delay != -1) cJSON_AddNumberToObject(root, "off_delay", sensor->component_config->off_delay);
+
+    return ESP_OK;
 }
 
 static void hamqtt_binary_sensor_handle_mqtt_message(HAMQTT_Component *component,
@@ -75,22 +110,31 @@ static void hamqtt_binary_sensor_handle_mqtt_message(HAMQTT_Component *component
                                                      int topic_len,
                                                      const char *data,
                                                      int data_len) {
-    HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
-
-    // TODO : Finish
+    // DO NOTHING
 }
 
 static void hamqtt_binary_sensor_update(HAMQTT_Component *component,
                                         esp_mqtt_client_handle_t mqtt_client) {
     HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
 
-    // TODO : Finish
+    if (!sensor->get_state_func) {
+        ESP_LOGE(TAG, "Binary sensor is missing get_state_func");
+        return;
+    }
+
+    bool current_state = sensor->get_state_func(sensor->get_state_func_args);
+
+    if (current_state == sensor->previous_state && sensor->has_sent_state) return;
+    sensor->has_sent_state = true;
+    sensor->previous_state = current_state;
+
+    esp_mqtt_client_publish(mqtt_client, sensor->state_topic, current_state ? "ON" : "OFF", 0, 2, 1);
 }
 
-static const char hamqtt_binary_sensor_get_unique_id(HAMQTT_Component *component) {
+static const char *hamqtt_binary_sensor_get_unique_id(HAMQTT_Component *component) {
     HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
 
-    // TODO : Finish
+    return sensor->component_config->unique_id;
 }
 
 /* ----- V-Table ----- */
@@ -101,18 +145,6 @@ static const HAMQTT_Component_VTable binary_sensor_vtable = {
     .get_unique_id = hamqtt_binary_sensor_get_unique_id,
     .get_subscribed_topics = NULL
 };
-
-/* ----- Private HAMQTT Binary Sensor function declarations ----- */
-
-/**
- * @brief Validates that the minimum required fields are populated in the configuration.
- *
- * Required fields: `unique_id`, and `name`.
- *
- * @param sensor The binary sensor to validate.
- * @return true if valid, false otherwise.
- */
-static bool hamqtt_binary_sensor_is_config_valid(const HAMQTT_Binary_Sensor *sensor);
 
 /* ----- HAMQTT Binary Sensor function definitions ----- */
 

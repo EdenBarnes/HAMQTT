@@ -109,10 +109,10 @@ static void hamqtt_button_handle_mqtt_message(HAMQTT_Component *component,
     if(strcmp(topic, button->command_topic) != 0) return; // Sanity check
     if(strcmp(data, "PRESS") != 0) return;
 
-    ESP_RETURN_ON_FALSE(button->on_press_func,
-                        ESP_ERR_INVALID_STATE,
-                        TAG,
-                        "Button is missing on_press_func");
+    if (!button->on_press_func) {
+        ESP_LOGE(TAG, "Button is missing on_press_func");
+        return;
+    }
 
     button->on_press_func(button->on_press_func_args);
 }
