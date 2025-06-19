@@ -73,7 +73,7 @@ static esp_err_t hamqtt_button_get_discovery_config(HAMQTT_Component *component,
                                                     const char *device_unique_id) {
     HAMQTT_Button *button = (HAMQTT_Button *)component;
 
-    ESP_RETURN_ON_FALSE(hamqtt_button_is_config_valid(button->component_config),
+    ESP_RETURN_ON_FALSE(hamqtt_button_is_config_valid(button),
                         ESP_ERR_INVALID_STATE,
                         TAG,
                         "Button was used despite config missing required fields");
@@ -160,7 +160,7 @@ HAMQTT_Button *hamqtt_button_create(HAMQTT_Button_Config *config,
     sensor->on_press_func = on_press_func;
     sensor->on_press_func_args = on_press_func_args;
 
-    if (!hamqtt_Button_is_config_valid(sensor)) {
+    if (!hamqtt_button_is_config_valid(sensor)) {
         ESP_LOGW(TAG, "Binary Sensor config is missing required fields");
     }
 

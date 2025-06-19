@@ -193,7 +193,7 @@ esp_err_t hamqtt_device_connect(HAMQTT_Device *device) {
         MQTT_CONNECTED_BIT,
         pdFALSE,
         pdFALSE,
-        pdMs_TO_TICKS(HAMQTT_MQTT_CONNECT_TIMEOUT_MS)
+        pdMS_TO_TICKS(HAMQTT_MQTT_CONNECT_TIMEOUT_MS)
     );
 
     ESP_RETURN_ON_FALSE(bits & MQTT_CONNECTED_BIT, ESP_FAIL, TAG, "MQTT Failed to connect within timeout");
@@ -204,7 +204,7 @@ esp_err_t hamqtt_device_connect(HAMQTT_Device *device) {
     char config_topic[HAMQTT_CHAR_BUF_SIZE];
     snprintf(config_topic,
              sizeof(config_topic),
-             "%s/device/$s/config",
+             "%s/device/%s/config",
              device->device_config->mqtt_config_topic_prefix,
              device->device_config->unique_id);
     
@@ -356,7 +356,7 @@ void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *
     for (size_t i = 0; i < device->component_count; ++i) {
         HAMQTT_Component *component = device->components[i];
 
-        const char *unique_id = hamqtt_component_get_unique_id(component);
+        // const char *unique_id = hamqtt_component_get_unique_id(component); TODO : Determine if I can remove this. I forget why its here
 
         size_t topic_count = 0;
         const char *const *topics = hamqtt_component_get_subscribed_topics(component, &topic_count);

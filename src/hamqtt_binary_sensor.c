@@ -79,7 +79,7 @@ static esp_err_t hamqtt_binary_sensor_get_discovery_config(HAMQTT_Component *com
                                                            const char *device_unique_id) {
     HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
 
-    ESP_RETURN_ON_FALSE(hamqtt_binary_sensor_is_config_valid(sensor->component_config),
+    ESP_RETURN_ON_FALSE(hamqtt_binary_sensor_is_config_valid(sensor),
                         ESP_ERR_INVALID_STATE,
                         TAG,
                         "Binary sensor was used despite config missing required fields");

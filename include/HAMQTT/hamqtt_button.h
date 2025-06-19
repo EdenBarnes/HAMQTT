@@ -99,5 +99,5 @@ void hamqtt_button_destroy(HAMQTT_Button *button);
  * 
  * @memberof HAMQTT_Button
  */
-const HAMQTT_Button_Config *hamqtt_button_get_config(HAMQTT_Button *button);
+const HAMQTT_Button_Config *hamqtt_button_get_config(const HAMQTT_Button *button);
 
