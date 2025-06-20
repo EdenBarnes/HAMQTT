@@ -176,7 +176,7 @@ esp_err_t hamqtt_device_connect(HAMQTT_Device *device) {
 
     mqtt_config.session.last_will.topic = device->availability_topic;
     mqtt_config.session.last_will.msg = "offline";
-    mqtt_config.session.last_will.qos = 2;
+    mqtt_config.session.last_will.qos = 1;
     mqtt_config.session.last_will.retain = 1;
 
     // Connect to the mqtt broker
@@ -208,7 +208,7 @@ esp_err_t hamqtt_device_connect(HAMQTT_Device *device) {
              device->device_config->mqtt_config_topic_prefix,
              device->device_config->unique_id);
     
-    esp_mqtt_client_publish(device->mqtt_client, config_topic, ha_dev_config_str, strlen(ha_dev_config_str), 2, 1);
+    esp_mqtt_client_publish(device->mqtt_client, config_topic, ha_dev_config_str, strlen(ha_dev_config_str), 1, 1);
 
     cJSON_Delete(ha_dev_config_json);
 
@@ -219,9 +219,9 @@ esp_err_t hamqtt_device_publish_availability(const HAMQTT_Device *device, bool a
     ESP_RETURN_ON_FALSE(device->mqtt_client, ESP_ERR_INVALID_STATE, TAG, "Tried to publish availability before MQTT connection was created");
 
     if (availability) {
-        esp_mqtt_client_publish(device->mqtt_client, device->availability_topic, "online", 0, 2, 1);
+        esp_mqtt_client_publish(device->mqtt_client, device->availability_topic, "online", 0, 1, 1);
     } else {
-        esp_mqtt_client_publish(device->mqtt_client, device->availability_topic, "offline", 0, 2, 1);
+        esp_mqtt_client_publish(device->mqtt_client, device->availability_topic, "offline", 0, 1, 1);
     }
 
     return ESP_OK;
@@ -296,7 +296,7 @@ esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root) {
     // Availability Config
     cJSON_AddStringToObject(root, "availability_topic", device->availability_topic);
 
-    cJSON_AddStringToObject(root, "qos", "2");
+    cJSON_AddStringToObject(root, "qos", "1");
 
     return ESP_OK;
 }
@@ -310,7 +310,7 @@ void hamqtt_device_subscribe(const HAMQTT_Device *device) {
 
         for (size_t j = 0; j < topic_count; ++j) {
             ESP_LOGI(TAG, "Subscribing to Topic %s", topics[j]);
-            esp_mqtt_client_subscribe_single(device->mqtt_client, topics[j], 2);
+            esp_mqtt_client_subscribe_single(device->mqtt_client, topics[j], 1);
         }
     }
 }

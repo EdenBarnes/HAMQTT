@@ -138,7 +138,7 @@ static void hamqtt_binary_sensor_update(HAMQTT_Component *component,
     sensor->has_sent_state = true;
     sensor->previous_state = current_state;
 
-    esp_mqtt_client_publish(mqtt_client, sensor->state_topic, current_state ? "ON" : "OFF", 0, 2, 1);
+    esp_mqtt_client_publish(mqtt_client, sensor->state_topic, current_state ? "ON" : "OFF", 0, 1, 1);
 }
 
 static const char *hamqtt_binary_sensor_get_unique_id(HAMQTT_Component *component) {
