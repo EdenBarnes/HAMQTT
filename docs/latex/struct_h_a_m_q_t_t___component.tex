@@ -14,7 +14,7 @@ Base struct representing a generic Home Assistant MQTT component.
 \item 
 esp\+\_\+err\+\_\+t \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a076abb82f1d6bd547109139a0fd0477e}{hamqtt\+\_\+component\+\_\+get\+\_\+discovery\+\_\+config}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, c\+JSON \texorpdfstring{$\ast$}{*}root, const char \texorpdfstring{$\ast$}{*}device\+\_\+uid)
 \begin{DoxyCompactList}\small\item\em Populates the Home Assistant discovery configuration for the component. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18}{hamqtt\+\_\+component\+\_\+handle\+\_\+mqtt\+\_\+message}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, const char \texorpdfstring{$\ast$}{*}topic, int topic\+\_\+len, const char \texorpdfstring{$\ast$}{*}data, int data\+\_\+len)
+void \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a57313655092b106be18a619e2df3c246}{hamqtt\+\_\+component\+\_\+handle\+\_\+mqtt\+\_\+message}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, const char \texorpdfstring{$\ast$}{*}topic, const char \texorpdfstring{$\ast$}{*}data)
 \begin{DoxyCompactList}\small\item\em Dispatches an incoming MQTT message to the specified component. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ac64bc85cd566882dfc4473c76417c7c1}{hamqtt\+\_\+component\+\_\+update}} (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}component, esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t client)
 \begin{DoxyCompactList}\small\item\em Performs a periodic update for the component. \end{DoxyCompactList}\item 
@@ -108,11 +108,11 @@ This ID is used for discovery, topic namespacing, and internal lookup.
 \begin{DoxyReturn}{Returns}
 const char\texorpdfstring{$\ast$}{*} Unique ID string. 
 \end{DoxyReturn}
-\Hypertarget{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_handle\_mqtt\_message@{hamqtt\_component\_handle\_mqtt\_message}}
+\Hypertarget{struct_h_a_m_q_t_t___component_a57313655092b106be18a619e2df3c246}\index{HAMQTT\_Component@{HAMQTT\_Component}!hamqtt\_component\_handle\_mqtt\_message@{hamqtt\_component\_handle\_mqtt\_message}}
 \index{hamqtt\_component\_handle\_mqtt\_message@{hamqtt\_component\_handle\_mqtt\_message}!HAMQTT\_Component@{HAMQTT\_Component}}
 \doxysubsubsection{\texorpdfstring{hamqtt\_component\_handle\_mqtt\_message()}{hamqtt\_component\_handle\_mqtt\_message()}}
-{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18} 
-void hamqtt\+\_\+component\+\_\+handle\+\_\+mqtt\+\_\+message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{, }\item[{int}]{topic\+\_\+len}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{data\+\_\+len}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{struct_h_a_m_q_t_t___component_a57313655092b106be18a619e2df3c246} 
+void hamqtt\+\_\+component\+\_\+handle\+\_\+mqtt\+\_\+message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} \texorpdfstring{$\ast$}{*}}]{component}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
 
 
 

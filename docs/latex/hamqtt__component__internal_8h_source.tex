@@ -33,67 +33,25 @@
 \DoxyCodeLine{00048\ }
 \DoxyCodeLine{00049\ \ \ \ \ void\ (*handle\_mqtt\_message)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
 \DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *topic,}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ topic\_len,}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ data\_len);}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ void\ (*update)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ esp\_mqtt\_client\_handle\_t\ mqtt\_client);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(*get\_unique\_id)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component);}
-\DoxyCodeLine{00059\ \ \ \ \ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ *(*get\_subscribed\_topics)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *count);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ void\ (*update)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ esp\_mqtt\_client\_handle\_t\ mqtt\_client);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(*get\_unique\_id)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component);}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ *(*get\_subscribed\_topics)(\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *component,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *count);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \};}
 \DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00063\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Base\ Object\ -\/-\/-\/-\/-\/\ */}}
 \DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Base\ Object\ -\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00070\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\_Component\_VTable}}\ *v;}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *subscribed\_topics[HAMQTT\_COMPONENT\_MAX\_TOPICS];}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ subscribed\_topics\_count;}
-\DoxyCodeLine{00075\ \};}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/\ Dispatch\ helpers\ -\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ esp\_err\_t\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_a076abb82f1d6bd547109139a0fd0477e}{hamqtt\_component\_get\_discovery\_config}}(}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ cJSON\ *root,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *device\_uid)}
-\DoxyCodeLine{00081\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>v-\/>get\_discovery\_config(c,\ root,\ device\_uid);}
-\DoxyCodeLine{00083\ \}}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_aa3b9a81bd5495e35b93e5a6ab233ae18}{hamqtt\_component\_handle\_mqtt\_message}}(}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *topic,\ \textcolor{keywordtype}{int}\ topic\_len,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ data\_len)}
-\DoxyCodeLine{00087\ \{}
-\DoxyCodeLine{00088\ \ \ \ \ c-\/>v-\/>handle\_mqtt\_message(c,\ topic,\ topic\_len,\ data,\ data\_len);}
-\DoxyCodeLine{00089\ \}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component_ac64bc85cd566882dfc4473c76417c7c1}{hamqtt\_component\_update}}(}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ esp\_mqtt\_client\_handle\_t\ client)}
-\DoxyCodeLine{00093\ \{}
-\DoxyCodeLine{00094\ \ \ \ \ c-\/>v-\/>update(c,\ client);}
-\DoxyCodeLine{00095\ \}}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab84107885e9060b0ecf2d304fa6d81ec}{hamqtt\_component\_get\_unique\_id}}(}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c)}
-\DoxyCodeLine{00099\ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>v-\/>get\_unique\_id(c);}
-\DoxyCodeLine{00101\ \}}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{struct_h_a_m_q_t_t___component_ab8daa7145718b9feb168f3819b750c0e}{hamqtt\_component\_get\_subscribed\_topics}}(}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *c,\ \textcolor{keywordtype}{size\_t}\ *count)}
-\DoxyCodeLine{00105\ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>v-\/>get\_subscribed\_topics)}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>v-\/>get\_subscribed\_topics(c,\ count);}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>subscribed\_topics\_count\ >\ 0)\ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ *count\ =\ c-\/>subscribed\_topics\_count;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c-\/>subscribed\_topics;}
-\DoxyCodeLine{00112\ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ *count\ =\ 0;}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
-\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\_Component\_VTable}}\ *v;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *subscribed\_topics[HAMQTT\_COMPONENT\_MAX\_TOPICS];}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ subscribed\_topics\_count;}
+\DoxyCodeLine{00073\ \};}
 
 \end{DoxyCode}

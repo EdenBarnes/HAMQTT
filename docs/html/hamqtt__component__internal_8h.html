@@ -110,19 +110,6 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:afb437637681ba271ca20e2adffd53684" id="r_afb437637681ba271ca20e2adffd53684"><td class="memItemLeft" align="right" valign="top"><a id="afb437637681ba271ca20e2adffd53684" name="afb437637681ba271ca20e2adffd53684"></a>
 typedef struct HAMQTT_Component_VTable&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_Component_VTable</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a514ed787c49e33afab6fee049f2e5699" id="r_a514ed787c49e33afab6fee049f2e5699"><td class="memItemLeft" align="right" valign="top"><a id="a514ed787c49e33afab6fee049f2e5699" name="a514ed787c49e33afab6fee049f2e5699"></a>
-esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><b>hamqtt_component_get_discovery_config</b> (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, cJSON *root, const char *device_uid)</td></tr>
-<tr class="memitem:a977d2112422dd2fb496596420cc1c2c4" id="r_a977d2112422dd2fb496596420cc1c2c4"><td class="memItemLeft" align="right" valign="top"><a id="a977d2112422dd2fb496596420cc1c2c4" name="a977d2112422dd2fb496596420cc1c2c4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>hamqtt_component_handle_mqtt_message</b> (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, const char *topic, int topic_len, const char *data, int data_len)</td></tr>
-<tr class="memitem:a50aaec8bb7d92d3cbee7941040d1dac3" id="r_a50aaec8bb7d92d3cbee7941040d1dac3"><td class="memItemLeft" align="right" valign="top"><a id="a50aaec8bb7d92d3cbee7941040d1dac3" name="a50aaec8bb7d92d3cbee7941040d1dac3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>hamqtt_component_update</b> (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, esp_mqtt_client_handle_t client)</td></tr>
-<tr class="memitem:ab81c387b217c04e3d9c4b72acad18800" id="r_ab81c387b217c04e3d9c4b72acad18800"><td class="memItemLeft" align="right" valign="top"><a id="ab81c387b217c04e3d9c4b72acad18800" name="ab81c387b217c04e3d9c4b72acad18800"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>hamqtt_component_get_unique_id</b> (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c)</td></tr>
-<tr class="memitem:a91374641c026e66545420fcb6b576f07" id="r_a91374641c026e66545420fcb6b576f07"><td class="memItemLeft" align="right" valign="top"><a id="a91374641c026e66545420fcb6b576f07" name="a91374641c026e66545420fcb6b576f07"></a>
-const char *const *&#160;</td><td class="memItemRight" valign="bottom"><b>hamqtt_component_get_subscribed_topics</b> (<a class="el" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, size_t *count)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal declarations for the <a class="el" href="struct_h_a_m_q_t_t___component.html" title="Base struct representing a generic Home Assistant MQTT component.">HAMQTT_Component</a> system. </p>

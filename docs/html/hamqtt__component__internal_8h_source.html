@@ -125,89 +125,32 @@ $(function(){initNavTree('hamqtt__component__internal_8h_source.html','',''); })
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    void (*handle_mqtt_message)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                <span class="keyword">const</span> <span class="keywordtype">char</span> *topic,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                <span class="keywordtype">int</span> topic_len,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                                <span class="keyword">const</span> <span class="keywordtype">char</span> *data,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                                <span class="keywordtype">int</span> data_len);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    void (*update)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                   esp_mqtt_client_handle_t mqtt_client);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *(*get_unique_id)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> *(*get_subscribed_topics)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                                <span class="keywordtype">size_t</span> *count);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                <span class="keyword">const</span> <span class="keywordtype">char</span> *data);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    void (*update)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                   esp_mqtt_client_handle_t mqtt_client);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *(*get_unique_id)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> *(*get_subscribed_topics)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                                <span class="keywordtype">size_t</span> *count);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
-</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/* ----- Base Object ----- */</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html">   70</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_h_a_m_q_t_t___component___v_table.html">HAMQTT_Component_VTable</a> *v;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *subscribed_topics[HAMQTT_COMPONENT_MAX_TOPICS];</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">size_t</span>      subscribed_topics_count;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
-</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">/* ----- Dispatch helpers ----- */</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html#a076abb82f1d6bd547109139a0fd0477e">   79</a></span>esp_err_t <a class="code hl_function" href="struct_h_a_m_q_t_t___component.html#a076abb82f1d6bd547109139a0fd0477e">hamqtt_component_get_discovery_config</a>(</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, cJSON *root, <span class="keyword">const</span> <span class="keywordtype">char</span> *device_uid)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> c-&gt;v-&gt;get_discovery_config(c, root, device_uid);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
-</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html#aa3b9a81bd5495e35b93e5a6ab233ae18">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_a_m_q_t_t___component.html#aa3b9a81bd5495e35b93e5a6ab233ae18">hamqtt_component_handle_mqtt_message</a>(</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, <span class="keyword">const</span> <span class="keywordtype">char</span> *topic, <span class="keywordtype">int</span> topic_len, <span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keywordtype">int</span> data_len)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    c-&gt;v-&gt;handle_mqtt_message(c, topic, topic_len, data, data_len);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
-</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html#ac64bc85cd566882dfc4473c76417c7c1">   91</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_a_m_q_t_t___component.html#ac64bc85cd566882dfc4473c76417c7c1">hamqtt_component_update</a>(</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, esp_mqtt_client_handle_t client)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>{</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    c-&gt;v-&gt;update(c, client);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
-</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html#ab84107885e9060b0ecf2d304fa6d81ec">   97</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="struct_h_a_m_q_t_t___component.html#ab84107885e9060b0ecf2d304fa6d81ec">hamqtt_component_get_unique_id</a>(</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> c-&gt;v-&gt;get_unique_id(c);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
-</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html#ab8daa7145718b9feb168f3819b750c0e">  103</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> * <span class="keyword">const</span> *<a class="code hl_function" href="struct_h_a_m_q_t_t___component.html#ab8daa7145718b9feb168f3819b750c0e">hamqtt_component_get_subscribed_topics</a>(</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *c, <span class="keywordtype">size_t</span> *count)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (c-&gt;v-&gt;get_subscribed_topics)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> c-&gt;v-&gt;get_subscribed_topics(c, count);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (c-&gt;subscribed_topics_count &gt; 0) {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        *count = c-&gt;subscribed_topics_count;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">return</span> c-&gt;subscribed_topics;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    *count = 0;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/* ----- Base Object ----- */</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_h_a_m_q_t_t___component.html">   68</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_h_a_m_q_t_t___component___v_table.html">HAMQTT_Component_VTable</a> *v;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *subscribed_topics[HAMQTT_COMPONENT_MAX_TOPICS];</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">size_t</span>      subscribed_topics_count;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
 </div>
 <div class="ttc" id="ahamqtt__component_8h_html"><div class="ttname"><a href="hamqtt__component_8h.html">hamqtt_component.h</a></div><div class="ttdoc">Interface definition for Home Assistant MQTT components.</div></div>
 <div class="ttc" id="astruct_h_a_m_q_t_t___component___v_table_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___component___v_table.html">HAMQTT_Component_VTable</a></div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:44</div></div>
-<div class="ttc" id="astruct_h_a_m_q_t_t___component_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a></div><div class="ttdoc">Base struct representing a generic Home Assistant MQTT component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:70</div></div>
-<div class="ttc" id="astruct_h_a_m_q_t_t___component_html_a076abb82f1d6bd547109139a0fd0477e"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html#a076abb82f1d6bd547109139a0fd0477e">HAMQTT_Component::hamqtt_component_get_discovery_config</a></div><div class="ttdeci">esp_err_t hamqtt_component_get_discovery_config(HAMQTT_Component *component, cJSON *root, const char *device_uid)</div><div class="ttdoc">Populates the Home Assistant discovery configuration for the component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:79</div></div>
-<div class="ttc" id="astruct_h_a_m_q_t_t___component_html_aa3b9a81bd5495e35b93e5a6ab233ae18"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html#aa3b9a81bd5495e35b93e5a6ab233ae18">HAMQTT_Component::hamqtt_component_handle_mqtt_message</a></div><div class="ttdeci">void hamqtt_component_handle_mqtt_message(HAMQTT_Component *component, const char *topic, int topic_len, const char *data, int data_len)</div><div class="ttdoc">Dispatches an incoming MQTT message to the specified component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:85</div></div>
-<div class="ttc" id="astruct_h_a_m_q_t_t___component_html_ab84107885e9060b0ecf2d304fa6d81ec"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html#ab84107885e9060b0ecf2d304fa6d81ec">HAMQTT_Component::hamqtt_component_get_unique_id</a></div><div class="ttdeci">const char * hamqtt_component_get_unique_id(HAMQTT_Component *component)</div><div class="ttdoc">Returns the unique ID of the component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:97</div></div>
-<div class="ttc" id="astruct_h_a_m_q_t_t___component_html_ab8daa7145718b9feb168f3819b750c0e"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html#ab8daa7145718b9feb168f3819b750c0e">HAMQTT_Component::hamqtt_component_get_subscribed_topics</a></div><div class="ttdeci">const char *const * hamqtt_component_get_subscribed_topics(HAMQTT_Component *component, size_t *count)</div><div class="ttdoc">Returns the list of topics the component wants to subscribe to.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:103</div></div>
-<div class="ttc" id="astruct_h_a_m_q_t_t___component_html_ac64bc85cd566882dfc4473c76417c7c1"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html#ac64bc85cd566882dfc4473c76417c7c1">HAMQTT_Component::hamqtt_component_update</a></div><div class="ttdeci">void hamqtt_component_update(HAMQTT_Component *component, esp_mqtt_client_handle_t client)</div><div class="ttdoc">Performs a periodic update for the component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:91</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___component_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a></div><div class="ttdoc">Base struct representing a generic Home Assistant MQTT component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:68</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
