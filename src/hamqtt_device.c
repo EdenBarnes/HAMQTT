@@ -370,8 +370,6 @@ void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *
     for (size_t i = 0; i < device->component_count; ++i) {
         HAMQTT_Component *component = device->components[i];
 
-        // const char *unique_id = hamqtt_component_get_unique_id(component); TODO : Determine if I can remove this. I forget why its here
-
         size_t topic_count = 0;
         const char *const *topics = hamqtt_component_get_subscribed_topics(component, &topic_count);
 
