@@ -35,10 +35,11 @@
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}mqtt\_client.h"{}}}
 \DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ HAMQTT\_DEVICE\_MAX\_COMPONENTS\ 16}}
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ HAMQTT\_COMPONENT\_MAX\_TOPICS\ 32}}
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ HAMQTT\_CHAR\_BUF\_SIZE\ 64}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS\ 10000}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}sdkconfig.h"{}}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ HAMQTT\_DEVICE\_MAX\_COMPONENTS\ CONFIG\_HAMQTT\_DEVICE\_MAX\_COMPONENTS}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ HAMQTT\_MAX\_CHAR\_BUF\_SIZE\ CONFIG\_HAMQTT\_MAX\_CHAR\_BUF\_SIZE}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS\ CONFIG\_HAMQTT\_MQTT\_CONNECT\_TIMEOUT\_MS}}
 
 \end{DoxyCode}

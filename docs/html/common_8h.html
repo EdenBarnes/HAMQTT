@@ -26,6 +26,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
    <div id="projectname">HAMQTT<span id="projectnumber">&#160;0.1.0</span>
    </div>
@@ -106,19 +107,18 @@ $(function(){initNavTree('common_8h.html','',''); });
 <code>#include &quot;freertos/task.h&quot;</code><br />
 <code>#include &quot;freertos/event_groups.h&quot;</code><br />
 <code>#include &quot;mqtt_client.h&quot;</code><br />
+<code>#include &quot;sdkconfig.h&quot;</code><br />
 </div>
 <p><a href="common_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a02c79785bd66192831429789aae18f2e" id="r_a02c79785bd66192831429789aae18f2e"><td class="memItemLeft" align="right" valign="top"><a id="a02c79785bd66192831429789aae18f2e" name="a02c79785bd66192831429789aae18f2e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_DEVICE_MAX_COMPONENTS</b>&#160;&#160;&#160;16</td></tr>
-<tr class="memitem:a2fc290f3f367930732ad6448e021077b" id="r_a2fc290f3f367930732ad6448e021077b"><td class="memItemLeft" align="right" valign="top"><a id="a2fc290f3f367930732ad6448e021077b" name="a2fc290f3f367930732ad6448e021077b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_COMPONENT_MAX_TOPICS</b>&#160;&#160;&#160;32</td></tr>
-<tr class="memitem:a17e50de40838a250c65197a0165ca7fb" id="r_a17e50de40838a250c65197a0165ca7fb"><td class="memItemLeft" align="right" valign="top"><a id="a17e50de40838a250c65197a0165ca7fb" name="a17e50de40838a250c65197a0165ca7fb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_CHAR_BUF_SIZE</b>&#160;&#160;&#160;64</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_DEVICE_MAX_COMPONENTS</b>&#160;&#160;&#160;CONFIG_HAMQTT_DEVICE_MAX_COMPONENTS</td></tr>
+<tr class="memitem:a30af66e7e863e5832e2604d92ed719c4" id="r_a30af66e7e863e5832e2604d92ed719c4"><td class="memItemLeft" align="right" valign="top"><a id="a30af66e7e863e5832e2604d92ed719c4" name="a30af66e7e863e5832e2604d92ed719c4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_MAX_CHAR_BUF_SIZE</b>&#160;&#160;&#160;CONFIG_HAMQTT_MAX_CHAR_BUF_SIZE</td></tr>
 <tr class="memitem:a4b69ae1a25328e3f290ebcee7662a555" id="r_a4b69ae1a25328e3f290ebcee7662a555"><td class="memItemLeft" align="right" valign="top"><a id="a4b69ae1a25328e3f290ebcee7662a555" name="a4b69ae1a25328e3f290ebcee7662a555"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_MQTT_CONNECT_TIMEOUT_MS</b>&#160;&#160;&#160;10000</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAMQTT_MQTT_CONNECT_TIMEOUT_MS</b>&#160;&#160;&#160;CONFIG_HAMQTT_MQTT_CONNECT_TIMEOUT_MS</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Common macros and definitions used across the HAMQTT library. </p>

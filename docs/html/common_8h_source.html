@@ -26,6 +26,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
    <div id="projectname">HAMQTT<span id="projectnumber">&#160;0.1.0</span>
    </div>
@@ -126,11 +127,12 @@ $(function(){initNavTree('common_8h_source.html','',''); });
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;mqtt_client.h&quot;</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define HAMQTT_DEVICE_MAX_COMPONENTS 16</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define HAMQTT_COMPONENT_MAX_TOPICS 32</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define HAMQTT_CHAR_BUF_SIZE 64</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define HAMQTT_MQTT_CONNECT_TIMEOUT_MS 10000</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &quot;sdkconfig.h&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define HAMQTT_DEVICE_MAX_COMPONENTS CONFIG_HAMQTT_DEVICE_MAX_COMPONENTS</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define HAMQTT_MAX_CHAR_BUF_SIZE CONFIG_HAMQTT_MAX_CHAR_BUF_SIZE</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define HAMQTT_MQTT_CONNECT_TIMEOUT_MS CONFIG_HAMQTT_MQTT_CONNECT_TIMEOUT_MS</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
