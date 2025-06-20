@@ -60,7 +60,7 @@ struct HAMQTT_Device {
     HAMQTT_Component *components[HAMQTT_DEVICE_MAX_COMPONENTS];
     int component_count;
 
-    char availability_topic[HAMQTT_CHAR_BUF_SIZE];
+    char *availability_topic;
 
     esp_mqtt_client_handle_t mqtt_client;
     EventGroupHandle_t mqtt_event_group;
@@ -85,7 +85,7 @@ static bool hamqtt_device_is_config_valid(const HAMQTT_Device *device);
  * @param[out] root The output cJSON object to populate.
  * @return ESP_OK on success, or appropriate error on failure.
  */
-static esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root);
+static esp_err_t hamqtt_device_build_config(HAMQTT_Device *device, cJSON* root);
 
 /**
  * @brief Subscribes to all topics requested by each registered component.
@@ -118,7 +118,7 @@ void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *
 /* ----- HAMQTT Device function definitions ----- */
 
 HAMQTT_Device *hamqtt_device_create(HAMQTT_Device_Config *config){
-    HAMQTT_Device *device = malloc(sizeof(HAMQTT_Device));
+    HAMQTT_Device *device = calloc(1, sizeof(HAMQTT_Device));
     if (!device) {
         ESP_LOGE(TAG, "Unable to allocate space for HAMQTT Device");
         return NULL;
@@ -137,6 +137,8 @@ HAMQTT_Device *hamqtt_device_create(HAMQTT_Device_Config *config){
 
 void hamqtt_device_destroy(HAMQTT_Device *device) {
     if (!device) return;
+    
+    if (device->availability_topic) free(device->availability_topic);
 
     free(device);
 }
@@ -147,7 +149,7 @@ esp_err_t hamqtt_device_add_component(HAMQTT_Device *device, HAMQTT_Component *c
                         TAG,
                         "Attempted to add component before it was initialized");
 
-    ESP_RETURN_ON_FALSE(device->component_count <= HAMQTT_DEVICE_MAX_COMPONENTS,
+    ESP_RETURN_ON_FALSE(device->component_count < HAMQTT_DEVICE_MAX_COMPONENTS,
                         ESP_ERR_NO_MEM,
                         TAG,
                         "Component buffer is full! No more than %d components can be added",
@@ -247,11 +249,22 @@ bool hamqtt_device_is_config_valid(const HAMQTT_Device *device) {
     return true;
 }
 
-esp_err_t hamqtt_device_build_config(const HAMQTT_Device *device, cJSON* root) {
+esp_err_t hamqtt_device_build_config(HAMQTT_Device *device, cJSON* root) {
     ESP_RETURN_ON_FALSE(hamqtt_device_is_config_valid(device), ESP_ERR_INVALID_STATE, TAG, "Some required fields are missing");
 
     // Set availability topic
-    snprintf(device->availability_topic, sizeof(device->availability_topic), "%s/availability", device->device_config->unique_id);
+    size_t availability_topic_size = strlen(device->device_config->unique_id)
+                                    + 13 /* /availability */ + 1; /* NUL */
+
+    if (device->availability_topic) free(device->availability_topic);
+    device->availability_topic = malloc(availability_topic_size);
+    ESP_RETURN_ON_FALSE(device->availability_topic,
+                        ESP_ERR_NO_MEM,
+                        TAG, 
+                        "Unable to allocate space for HAMQTT Device availability topic");
+
+    snprintf(device->availability_topic, availability_topic_size,
+             "%s/availability", device->device_config->unique_id);
 
     // Build HomeAssistant config
     ESP_LOGI(TAG, "Building Configuration");
@@ -353,15 +366,20 @@ void hamqtt_device_mqtt_event_handler(void *handler_args, esp_event_base_t base,
 }
 
 void hamqtt_device_handle_mqtt_message(const HAMQTT_Device *device, const char *topic, int topic_len, const char *data, int data_len) {
-    // The data must be converted into two new Cstrings, since `topic` and `data` are not guaranteed to end in a null char
-    char topic_str[HAMQTT_CHAR_BUF_SIZE];
-    char data_str[HAMQTT_CHAR_BUF_SIZE];
+    // Clamp lengths to ensure we don't exceed HAMQTT_MAX_CHAR_BUF_SIZE
+    int clamped_topic_len = topic_len < (HAMQTT_MAX_CHAR_BUF_SIZE - 1) ? topic_len : (HAMQTT_MAX_CHAR_BUF_SIZE - 1);
+    int clamped_data_len  = data_len  < (HAMQTT_MAX_CHAR_BUF_SIZE - 1) ? data_len  : (HAMQTT_MAX_CHAR_BUF_SIZE - 1);
 
+    // Allocate stack buffers using VLAs with a fixed maximum size
+    char topic_str[clamped_topic_len + 1];
+    char data_str[clamped_data_len + 1];
+
+    // Null-terminate and copy safely
     memset(topic_str, 0, sizeof(topic_str));
     memset(data_str, 0, sizeof(data_str));
 
-    memcpy(topic_str, topic, topic_len < HAMQTT_CHAR_BUF_SIZE - 1 ? topic_len : HAMQTT_CHAR_BUF_SIZE - 1);
-    memcpy(data_str, data, data_len < HAMQTT_CHAR_BUF_SIZE - 1 ? data_len : HAMQTT_CHAR_BUF_SIZE - 1);
+    memcpy(topic_str, topic, clamped_topic_len);
+    memcpy(data_str, data, clamped_data_len);
     
     ESP_LOGI(TAG, "MQTT Event Data Received");
     ESP_LOGI(TAG, "Topic: %s", topic_str);
