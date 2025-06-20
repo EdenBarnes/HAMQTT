@@ -202,10 +202,16 @@ esp_err_t hamqtt_device_connect(HAMQTT_Device *device) {
 
     // Publish the config to MQTT Broker
     ESP_LOGI(TAG, "Publishing Configuration");
+
+    size_t config_topic_size = strlen(device->device_config->mqtt_config_topic_prefix)
+                            + strlen(device->device_config->mqtt_config_topic_prefix)
+                            + 8 /* /device/ */ + 7 /* /config */ + 1; /* NUL */
     
-    char config_topic[HAMQTT_CHAR_BUF_SIZE];
+    int clamped_config_topic_size = config_topic_size < HAMQTT_MAX_CHAR_BUF_SIZE ? config_topic_size : HAMQTT_MAX_CHAR_BUF_SIZE;
+
+    char config_topic[clamped_config_topic_size];
     snprintf(config_topic,
-             sizeof(config_topic),
+             clamped_config_topic_size,
              "%s/device/%s/config",
              device->device_config->mqtt_config_topic_prefix,
              device->device_config->unique_id);
