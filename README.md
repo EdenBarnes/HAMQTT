@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/EdenBarnes/HAMQTT" target="_blank" rel="noopener noreferrer">
-    <img src="docs/logo.svg?raw=true" alt="EdenElectronics Logo" width="200">
+    <img src="https://raw.githubusercontent.com/EdenBarnes/HAMQTT/refs/heads/main/docs/logo.svg" alt="EdenElectronics Logo" width="200">
   </a>
 </p>
 
