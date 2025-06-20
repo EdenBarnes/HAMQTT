@@ -32,8 +32,8 @@
 
 #pragma once
 
-#include "hamqtt_device.h"
+#include "HAMQTT/hamqtt_device.h"
 
 // Components
-#include "hamqtt_binary_sensor.h"
-#include "hamqtt_button.h"
+#include "HAMQTT/hamqtt_binary_sensor.h"
+#include "HAMQTT/hamqtt_button.h"
