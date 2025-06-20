@@ -51,7 +51,8 @@ struct HAMQTT_Button {
     HAMQTT_Button_On_Press_Func on_press_func;
     void *on_press_func_args;
 
-    char command_topic[HAMQTT_CHAR_BUF_SIZE];
+    char *command_topic;
+    char *subscribed_topics[1];
 };
 
 /* ----- Private HAMQTT Button function declarations ----- */
@@ -77,14 +78,24 @@ static esp_err_t hamqtt_button_get_discovery_config(HAMQTT_Component *component,
                         ESP_ERR_INVALID_STATE,
                         TAG,
                         "Button was used despite config missing required fields");
+                                                    
+    size_t command_topic_size = strlen(device_unique_id)
+                          + strlen(button->component_config->unique_id)
+                          + 1 /* slash */ + 6 /* "/press" */
+                          + 1; /* NUL */
+    
+    if (button->command_topic) free(button->command_topic);
+    button->command_topic = malloc(command_topic_size);
+    ESP_RETURN_ON_FALSE(button->command_topic,
+                        ESP_ERR_NO_MEM,
+                        TAG, 
+                        "Unable to allocate space for HAMQTT Button command topic");
 
-    snprintf(button->command_topic,
-             sizeof(button->command_topic),
+    snprintf(button->command_topic, command_topic_size,
              "%s/%s/press", device_unique_id,
              button->component_config->unique_id);
 
-    button->base.subscribed_topics[0] = button->command_topic;
-    button->base.subscribed_topics_count = 1;
+    button->subscribed_topics[0] = button->command_topic;
 
     // Build configuration on root
     cJSON_AddStringToObject(root, "p", "button");
@@ -104,8 +115,10 @@ static void hamqtt_button_handle_mqtt_message(HAMQTT_Component *component,
                                               const char *data) {
     HAMQTT_Button *button = (HAMQTT_Button *)component;
 
-    if(strcmp(topic, button->command_topic) != 0) return; // Sanity check
-    if(strcmp(data, "PRESS") != 0) return;
+    if (!button->command_topic) return;
+
+    if (strcmp(topic, button->command_topic) != 0) return; // Sanity check
+    if (strcmp(data, "PRESS") != 0) return;
 
     if (!button->on_press_func) {
         ESP_LOGE(TAG, "Button is missing on_press_func");
@@ -126,13 +139,21 @@ static const char *hamqtt_button_get_unique_id(HAMQTT_Component *component) {
     return button->component_config->unique_id;
 }
 
+static const char *const *hamqtt_button_get_subscribed_topics(HAMQTT_Component *component, size_t *count) {
+    HAMQTT_Button *button = (HAMQTT_Button *)component;
+
+    *count = 1;
+
+    return button->subscribed_topics;
+}
+
 /* ----- V-Table ----- */
 static const HAMQTT_Component_VTable button_vtable = {
     .get_discovery_config = hamqtt_button_get_discovery_config,
     .handle_mqtt_message = hamqtt_button_handle_mqtt_message,
     .update = hamqtt_button_update,
     .get_unique_id = hamqtt_button_get_unique_id,
-    .get_subscribed_topics = NULL
+    .get_subscribed_topics = hamqtt_button_get_subscribed_topics
 };
 
 /* ----- HAMQTT Button function definitions ----- */
@@ -147,26 +168,29 @@ static bool hamqtt_button_is_config_valid(const HAMQTT_Button *button) {
 HAMQTT_Button *hamqtt_button_create(HAMQTT_Button_Config *config,
                                     HAMQTT_Button_On_Press_Func on_press_func,
                                     void *on_press_func_args) {
-    HAMQTT_Button *sensor = malloc(sizeof(HAMQTT_Button));
-    if (!sensor) {
-        ESP_LOGE(TAG, "Unable to allocate space for HAMQTT Binary Sensor");
+    HAMQTT_Button *button = calloc(1, sizeof(HAMQTT_Button));
+    if (!button) {
+        ESP_LOGE(TAG, "Unable to allocate space for HAMQTT Button");
         return NULL;
     }
 
-    sensor->base.v = &button_vtable;
-    sensor->component_config = config;
-    sensor->on_press_func = on_press_func;
-    sensor->on_press_func_args = on_press_func_args;
+    button->base.v = &button_vtable;
+    button->component_config = config;
+    button->on_press_func = on_press_func;
+    button->on_press_func_args = on_press_func_args;
 
-    if (!hamqtt_button_is_config_valid(sensor)) {
-        ESP_LOGW(TAG, "Binary Sensor config is missing required fields");
+    if (!hamqtt_button_is_config_valid(button)) {
+        ESP_LOGE(TAG, "Button config is missing required fields");
+        free(button);
+        return NULL;
     }
 
-    return sensor;
+    return button;
 }
 
 void hamqtt_button_destroy(HAMQTT_Button *button) {
     if (!button) return;
+    if (button->command_topic) free(button->command_topic);
 
     free(button);
 }

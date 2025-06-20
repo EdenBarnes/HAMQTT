@@ -56,13 +56,5 @@ const char *hamqtt_component_get_unique_id(
 const char * const *hamqtt_component_get_subscribed_topics(
         HAMQTT_Component *c, size_t *count)
 {
-    if (c->v->get_subscribed_topics)
-        return c->v->get_subscribed_topics(c, count);
-
-    if (c->subscribed_topics_count > 0) {
-        *count = c->subscribed_topics_count;
-        return c->subscribed_topics;
-    }
-    *count = 0;
-    return NULL;
+    return c->v->get_subscribed_topics(c, count);
 }

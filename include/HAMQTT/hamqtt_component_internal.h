@@ -67,7 +67,4 @@ struct HAMQTT_Component_VTable {
  */
 struct HAMQTT_Component {
     const HAMQTT_Component_VTable *v;
-
-    const char *subscribed_topics[HAMQTT_COMPONENT_MAX_TOPICS];
-    size_t      subscribed_topics_count;
 };

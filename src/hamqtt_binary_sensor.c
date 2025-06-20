@@ -57,7 +57,7 @@ struct HAMQTT_Binary_Sensor {
 
     bool has_sent_state;
     bool previous_state;
-    char state_topic[HAMQTT_CHAR_BUF_SIZE];
+    char *state_topic;
 };
 
 /* ----- Private HAMQTT Binary Sensor function declarations ----- */
@@ -84,8 +84,20 @@ static esp_err_t hamqtt_binary_sensor_get_discovery_config(HAMQTT_Component *com
                         TAG,
                         "Binary sensor was used despite config missing required fields");
 
+    size_t state_topic_size = strlen(device_unique_id)
+                          + strlen(sensor->component_config->unique_id)
+                          + 1 /* slash */ + 6 /* "/state" */
+                          + 1; /* NUL */
+
+    if (sensor->state_topic) free(sensor->state_topic);
+    sensor->state_topic = malloc(state_topic_size);
+    ESP_RETURN_ON_FALSE(sensor->state_topic,
+                        ESP_ERR_NO_MEM,
+                        TAG,
+                        "Unable to allocate space for HAMQTT Binary Sensor state topic");
+
     snprintf(sensor->state_topic,
-             sizeof(sensor->state_topic),
+             state_topic_size,
              "%s/%s/state", device_unique_id,
              sensor->component_config->unique_id);
 
@@ -135,18 +147,26 @@ static const char *hamqtt_binary_sensor_get_unique_id(HAMQTT_Component *componen
     return sensor->component_config->unique_id;
 }
 
+static const char *const *hamqtt_binary_sensor_get_subscribed_topics(HAMQTT_Component *component, size_t *count) {
+    HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
+
+    *count = 0;
+
+    return NULL;
+}
+
 /* ----- V-Table ----- */
 static const HAMQTT_Component_VTable binary_sensor_vtable = {
     .get_discovery_config = hamqtt_binary_sensor_get_discovery_config,
     .handle_mqtt_message = hamqtt_binary_sensor_handle_mqtt_message,
     .update = hamqtt_binary_sensor_update,
     .get_unique_id = hamqtt_binary_sensor_get_unique_id,
-    .get_subscribed_topics = NULL
+    .get_subscribed_topics = hamqtt_binary_sensor_get_subscribed_topics
 };
 
 /* ----- HAMQTT Binary Sensor function definitions ----- */
 
-bool hamqtt_binary_sensor_is_config_valid(const HAMQTT_Binary_Sensor *sensor) {
+static bool hamqtt_binary_sensor_is_config_valid(const HAMQTT_Binary_Sensor *sensor) {
     if (!sensor->component_config->name) return false;
     if (!sensor->component_config->unique_id) return false;
 
@@ -156,7 +176,7 @@ bool hamqtt_binary_sensor_is_config_valid(const HAMQTT_Binary_Sensor *sensor) {
 HAMQTT_Binary_Sensor *hamqtt_binary_sensor_create(HAMQTT_Binary_Sensor_Config *config,
                                                   HAMQTT_Binary_Sensor_Get_State_Func get_state_func,
                                                   void *get_state_func_args) {
-    HAMQTT_Binary_Sensor *sensor = malloc(sizeof(HAMQTT_Binary_Sensor));
+    HAMQTT_Binary_Sensor *sensor = calloc(1, sizeof(HAMQTT_Binary_Sensor));
     if (!sensor) {
         ESP_LOGE(TAG, "Unable to allocate space for HAMQTT Binary Sensor");
         return NULL;
@@ -170,7 +190,9 @@ HAMQTT_Binary_Sensor *hamqtt_binary_sensor_create(HAMQTT_Binary_Sensor_Config *c
     sensor->previous_state = false;
     
     if (!hamqtt_binary_sensor_is_config_valid(sensor)) {
-        ESP_LOGW(TAG, "Binary Sensor config is missing required fields");
+        ESP_LOGE(TAG, "Binary Sensor config is missing required fields");
+        free(sensor);
+        return NULL;
     }
 
     return sensor;
@@ -178,6 +200,7 @@ HAMQTT_Binary_Sensor *hamqtt_binary_sensor_create(HAMQTT_Binary_Sensor_Config *c
 
 void hamqtt_binary_sensor_destroy(HAMQTT_Binary_Sensor *sensor) {
     if (!sensor) return;
+    if (sensor->state_topic) free(sensor->state_topic);
 
     free(sensor);
 }
