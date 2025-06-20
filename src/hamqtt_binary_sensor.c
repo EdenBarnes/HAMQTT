@@ -148,10 +148,7 @@ static const char *hamqtt_binary_sensor_get_unique_id(HAMQTT_Component *componen
 }
 
 static const char *const *hamqtt_binary_sensor_get_subscribed_topics(HAMQTT_Component *component, size_t *count) {
-    HAMQTT_Binary_Sensor *sensor = (HAMQTT_Binary_Sensor *)component;
-
     *count = 0;
-
     return NULL;
 }
 

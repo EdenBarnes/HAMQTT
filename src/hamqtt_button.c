@@ -52,7 +52,7 @@ struct HAMQTT_Button {
     void *on_press_func_args;
 
     char *command_topic;
-    char *subscribed_topics[1];
+    const char *subscribed_topics[1];
 };
 
 /* ----- Private HAMQTT Button function declarations ----- */
