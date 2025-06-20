@@ -1,0 +1,21 @@
+menu "HAMQTT Configuration"
+
+    config HAMQTT_DEVICE_MAX_COMPONENTS
+        int "Max HAMQTT Device Components"
+        default 16
+        help
+            Enter the number of compontents a HAMQTT Device can store.
+
+    config HAMQTT_CHAR_BUF_SIZE
+        int "Character Buffer Size"
+        default 32
+        help
+            Enter the number of characters to hold in the HAMQTT internal buffers.
+
+    config HAMQTT_MQTT_CONNECT_TIMEOUT_MS
+        int "MQTT Connection Timeout (ms)"
+        default 10000
+        help
+            Enter the amount of time (in milliseconds) that MQTT will spend attemping to connect before it gives up.
+
+endmenu
