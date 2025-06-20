@@ -1,5 +1,5 @@
 name: EdenBarnes/HAMQTT
-version: "0.0.1"
+version: "0.1.0"
 license: "Apache-2.0"
 description: ESP-IDF component for integrating devices with Home Assistant over MQTT
 url: "https://github.com/EdenBarnes/HAMQTT"
