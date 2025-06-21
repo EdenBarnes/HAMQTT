@@ -26,6 +26,21 @@ var NAVTREE =
 [
   [ "HAMQTT", "index.html", [
     [ "Classes", "annotated.html", [
+      [ "Introduction", "index.html#autotoc_md1", null ],
+      [ "Features", "index.html#autotoc_md3", null ],
+      [ "Roadmap to v1.0.0", "index.html#autotoc_md5", null ],
+      [ "Installation (ESP‑IDF v5.x)", "index.html#autotoc_md7", null ],
+      [ "Quick start (minimal example)", "index.html#autotoc_md9", [
+        [ "What happens behind the scenes?", "index.html#autotoc_md10", null ]
+      ] ],
+      [ "Contributing", "index.html#autotoc_md12", [
+        [ "Component Architecture", "index.html#autotoc_md13", [
+          [ "1. Start with a base component", "index.html#autotoc_md14", null ],
+          [ "2. Implement the VTable", "index.html#autotoc_md15", null ]
+        ] ],
+        [ "Steps to Add a New Component", "index.html#autotoc_md17", null ]
+      ] ],
+      [ "License", "index.html#autotoc_md20", null ],
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [

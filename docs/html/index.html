@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HAMQTT: Main Page</title>
+<title>HAMQTT: HAMQTT</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,10 +90,248 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">HAMQTT Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">HAMQTT </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p align="center"><a class="anchor" id="md__r_e_a_d_m_e"></a> </p>
+<p><a href="https://github.com/EdenBarnes/HAMQTT" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/EdenBarnes/HAMQTT/refs/heads/main/docs/logo.svg" alt="EdenElectronics Logo" width="200" style="pointer-events: none;" class="inline"/> </a> </p>
+<h1 align="center">HAMQTT</h1>
+<p align="center"></p>
+<p><b>ESP-IDF component for integrating devices with Home Assistant over MQTT</b> </p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Introduction</h2>
+<p>HAMQTT is a small C library that lets your ESP32 firmware expose sensors, buttons, and other components to Home Assistant over MQTT.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Features</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Category  </th><th class="markdownTableHeadNone">Feature  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Discovery  </td><td class="markdownTableBodyNone">Automatic generation &amp; pubication of device and component discovery payloads.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Availability  </td><td class="markdownTableBodyNone">Online / offline last-will handled for you  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Components  </td><td class="markdownTableBodyNone"><span class="tt">Binary_Sensor</span>, <span class="tt">Button</span> (more planned)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Footprint  </td><td class="markdownTableBodyNone">~2.9 KB flash / ~0 B static RAM (heap usage depends on component count)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">License  </td><td class="markdownTableBodyNone">Apache 2.0  </td></tr>
+</table>
+<p><a href="https://edenbarnes.github.io/HAMQTT/html/index.html">Click here for documentation</a></p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Roadmap to v1.0.0</h2>
+<dl class="section note"><dt>Note</dt><dd>These will be completed as I need them for my projects, and not necessarily in the order listed here.</dd></dl>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Status  </th><th class="markdownTableHeadNone">Component type  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">✅ Done  </td><td class="markdownTableBodyNone"><b>Binary Sensor</b>  </td><td class="markdownTableBodyNone">Basic On/Off  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">✅ Done  </td><td class="markdownTableBodyNone"><b>Button</b>  </td><td class="markdownTableBodyNone">Basic pressable button  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Switch</b>  </td><td class="markdownTableBodyNone">On/Off control + state  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Sensor</b>  </td><td class="markdownTableBodyNone">Generic sensor (temperature, humidity, etc.)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Number</b>  </td><td class="markdownTableBodyNone">Publish numeric value / accept setpoint  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Select</b>  </td><td class="markdownTableBodyNone">Dropdown selection entity  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Notify</b>  </td><td class="markdownTableBodyNone">Send notifications  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Text</b>  </td><td class="markdownTableBodyNone">Publish / accept text values  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Tag Scanner</b>  </td><td class="markdownTableBodyNone">RFID/NFC tag reader  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Alarm Control Panel</b>  </td><td class="markdownTableBodyNone">Arm/disarm alarm system  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Device Trigger</b>  </td><td class="markdownTableBodyNone">Trigger automations based on events  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Event</b>  </td><td class="markdownTableBodyNone">Publish custom event data  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Device Tracker</b>  </td><td class="markdownTableBodyNone">Track device presence/location  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Cover</b>  </td><td class="markdownTableBodyNone">Open/close/stop (e.g., garage door, blinds)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Fan</b>  </td><td class="markdownTableBodyNone">Control fan speed and oscillation  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Humidifier</b>  </td><td class="markdownTableBodyNone">Control humidifier devices  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Light</b>  </td><td class="markdownTableBodyNone">Brightness / RGB / color control  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Lock</b>  </td><td class="markdownTableBodyNone">Lock/unlock doors  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Siren</b>  </td><td class="markdownTableBodyNone">Trigger audible alarms  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Valve</b>  </td><td class="markdownTableBodyNone">Control valves for water/gas  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Water Heater</b>  </td><td class="markdownTableBodyNone">Manage water heater temperature/settings  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Camera</b>  </td><td class="markdownTableBodyNone">Stream or snapshot camera images  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Lawn Mower</b>  </td><td class="markdownTableBodyNone">Control robotic lawn mower  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Scene</b>  </td><td class="markdownTableBodyNone">Activate preconfigured scenes  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Update</b>  </td><td class="markdownTableBodyNone">Firmware/software update over MQTT  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">⏳ Planned  </td><td class="markdownTableBodyNone"><b>Vacuum</b>  </td><td class="markdownTableBodyNone">Control robotic vacuum cleaners  </td></tr>
+</table>
+<blockquote class="doxtable">
+<p><b>Release 1.0.0</b> will ship once most of the table above is ✅. </p>
+</blockquote>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Installation (ESP‑IDF v5.x)</h2>
+<div class="fragment"><div class="line"> bash</div>
+<div class="line">mkdir -p components</div>
+<div class="line">git submodule add https://github.com/EdenBarnes/HAMQTT.git components/HAMQTT</div>
+</div><!-- fragment --><hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Quick start (minimal example)</h2>
+<p><a href="https://edenbarnes.github.io/HAMQTT/html/index.html">Click here for documentation</a></p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;HAMQTT.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Your GPIO / sensor read function */</span></div>
+<div class="line"><span class="keywordtype">bool</span> door_open_get_state(<span class="keywordtype">void</span> *arg)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// TODO: read GPIO or sensor</span></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// placeholder</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> app_main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// 1. Configure the device (MQTT broker, IDs, etc.)</span></div>
+<div class="line">    <a class="code hl_struct" href="struct_h_a_m_q_t_t___device___config.html">HAMQTT_Device_Config</a> dev_cfg = hamqtt_device_config_default();</div>
+<div class="line">    dev_cfg.<a class="code hl_variable" href="struct_h_a_m_q_t_t___device___config.html#aa4dc947b0dc69f1021c89883ebf0588e">mqtt_uri</a>   = <span class="stringliteral">&quot;mqtt://&lt;BROKER‑IP&gt;&quot;</span>;   <span class="comment">// TODO</span></div>
+<div class="line">    dev_cfg.<a class="code hl_variable" href="struct_h_a_m_q_t_t___device___config.html#ae0bd3b2c40450213a1e71ffba9d6a345">unique_id</a>  = <span class="stringliteral">&quot;esp32‑hall‑node&quot;</span>;       <span class="comment">// Must be unique per device</span></div>
+<div class="line">    dev_cfg.<a class="code hl_variable" href="struct_h_a_m_q_t_t___device___config.html#a7225c63ca05dbd991e4087b717b6bacb">name</a>       = <span class="stringliteral">&quot;Hall Sensor Node&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="struct_h_a_m_q_t_t___device.html">HAMQTT_Device</a> *device = hamqtt_device_create(&amp;dev_cfg);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 2. Add a binary‑sensor component</span></div>
+<div class="line">    <a class="code hl_struct" href="struct_h_a_m_q_t_t___binary___sensor___config.html">HAMQTT_Binary_Sensor_Config</a> bin_cfg = hamqtt_binary_sensor_config_default();</div>
+<div class="line">    bin_cfg.<a class="code hl_variable" href="struct_h_a_m_q_t_t___binary___sensor___config.html#af0b15c6676acc5d52080501a438f9a24">unique_id</a> = <span class="stringliteral">&quot;hall_door_state&quot;</span>;</div>
+<div class="line">    bin_cfg.<a class="code hl_variable" href="struct_h_a_m_q_t_t___binary___sensor___config.html#a0512a5badf79d7aa54cf3f7473b73a36">name</a>      = <span class="stringliteral">&quot;Hall Door&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="struct_h_a_m_q_t_t___binary___sensor.html">HAMQTT_Binary_Sensor</a> *door = hamqtt_binary_sensor_create(&amp;bin_cfg,</div>
+<div class="line">                                                             door_open_get_state,</div>
+<div class="line">                                                             NULL);</div>
+<div class="line">    hamqtt_device_add_component(device, (<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *)door);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// TODO: You must connect to WiFi before attempting to connect to the MQTT broker</span></div>
+<div class="line">    <span class="comment">// 3. Connect to MQTT (blocks until connected &amp; discovery published)</span></div>
+<div class="line">    hamqtt_device_connect(device);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 4. Main loop (call regularly or from freertos task)</span></div>
+<div class="line">    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line">        hamqtt_device_loop(device);</div>
+<div class="line">        vTaskDelay(pdMS_TO_TICKS(500));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___binary___sensor___config_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___binary___sensor___config.html">HAMQTT_Binary_Sensor_Config</a></div><div class="ttdoc">Configuration parameters for a HAMQTT binary sensor.</div><div class="ttdef"><b>Definition</b> hamqtt_binary_sensor.h:36</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___binary___sensor___config_html_a0512a5badf79d7aa54cf3f7473b73a36"><div class="ttname"><a href="struct_h_a_m_q_t_t___binary___sensor___config.html#a0512a5badf79d7aa54cf3f7473b73a36">HAMQTT_Binary_Sensor_Config::name</a></div><div class="ttdeci">char * name</div><div class="ttdoc">The name of the sensor shown in Home Assistant.</div><div class="ttdef"><b>Definition</b> hamqtt_binary_sensor.h:43</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___binary___sensor___config_html_af0b15c6676acc5d52080501a438f9a24"><div class="ttname"><a href="struct_h_a_m_q_t_t___binary___sensor___config.html#af0b15c6676acc5d52080501a438f9a24">HAMQTT_Binary_Sensor_Config::unique_id</a></div><div class="ttdeci">char * unique_id</div><div class="ttdoc">Unique identifier used for discovery in Home Assistant.</div><div class="ttdef"><b>Definition</b> hamqtt_binary_sensor.h:45</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___binary___sensor_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___binary___sensor.html">HAMQTT_Binary_Sensor</a></div><div class="ttdoc">Internal representation of a Home Assistant MQTT binary sensor.</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___component_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a></div><div class="ttdoc">Base struct representing a generic Home Assistant MQTT component.</div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:68</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___device___config_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___device___config.html">HAMQTT_Device_Config</a></div><div class="ttdoc">Configuration parameters for a HAMQTT device.</div><div class="ttdef"><b>Definition</b> hamqtt_device.h:41</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___device___config_html_a7225c63ca05dbd991e4087b717b6bacb"><div class="ttname"><a href="struct_h_a_m_q_t_t___device___config.html#a7225c63ca05dbd991e4087b717b6bacb">HAMQTT_Device_Config::name</a></div><div class="ttdeci">char * name</div><div class="ttdoc">The name of the device shown in Home Assistant.</div><div class="ttdef"><b>Definition</b> hamqtt_device.h:53</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___device___config_html_aa4dc947b0dc69f1021c89883ebf0588e"><div class="ttname"><a href="struct_h_a_m_q_t_t___device___config.html#aa4dc947b0dc69f1021c89883ebf0588e">HAMQTT_Device_Config::mqtt_uri</a></div><div class="ttdeci">char * mqtt_uri</div><div class="ttdoc">The URI of the MQTT broker (e.g., &quot;mqtt://broker.hivemq.com:1883&quot;).</div><div class="ttdef"><b>Definition</b> hamqtt_device.h:43</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___device___config_html_ae0bd3b2c40450213a1e71ffba9d6a345"><div class="ttname"><a href="struct_h_a_m_q_t_t___device___config.html#ae0bd3b2c40450213a1e71ffba9d6a345">HAMQTT_Device_Config::unique_id</a></div><div class="ttdeci">char * unique_id</div><div class="ttdoc">Unique identifier used for discovery in Home Assistant.</div><div class="ttdef"><b>Definition</b> hamqtt_device.h:49</div></div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___device_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___device.html">HAMQTT_Device</a></div><div class="ttdoc">Internal representation of a Home Assistant MQTT device.</div></div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+What happens behind the scenes?</h3>
+<ol type="1">
+<li>The device publishes its discovery config on <div class="fragment"><div class="line">&lt;mqtt_config_topic_prefix&gt;/device/&lt;unique_id&gt;/config</div>
+</div><!-- fragment --></li>
+<li>Each component publishes its own JSON in the <span class="tt">cmps</span> section.</li>
+<li>The library subscribes to any command topics and schedules <span class="tt">update()</span> calls.</li>
+<li>Home Assistant → MQTT automatically shows the entities.</li>
+</ol>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Contributing</h2>
+<ol type="1">
+<li>Fork &amp; clone the repo.</li>
+<li>Create a topic branch: <span class="tt">git checkout -b feature/my‑new‑component</span>.</li>
+<li>Follow the coding style in existing files.</li>
+<li>Run <span class="tt">idf.py build</span> on an ESP32‑S3 or ESP32‑C3 target.</li>
+<li>Open a PR.</li>
+</ol>
+<p>Feedback and assistance on this project is greatly appreciated. If you have any ideas on how to improve this project, or simply want to tell me how I've done everything in the worst way possible, I'd love to hear it. HAMQTT is still in its infancy, and I am not shy to rewriting the entire thing for the sake of improving it.</p>
+<p>If there’s a component missing from the list above that you wish existed, feel free to implement it and submit a PR! I’ve tried to make the codebase self-explanatory and well-documented, but here’s a detailed guide to help you get started building your own component:</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Component Architecture</h3>
+<p>Every component in HAMQTT is defined by a C <span class="tt">struct</span> that holds its internal state and behavior. To integrate with the framework, it must follow a few conventions.</p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+1. Start with a base component</h4>
+<p>Your component's struct <b>must</b> have a <span class="tt">HAMQTT_Component</span> as its first field. This lets the framework treat it as a generic component and cast it safely when needed:</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">  <a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> base;</div>
+<div class="line">  <span class="comment">// Your component&#39;s internal state here</span></div>
+<div class="line">} HAMQTT_MyComponent;</div>
+</div><!-- fragment --><p> This design lets the <span class="tt">HAMQTT_Device</span> interact with all components uniformly.</p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+2. Implement the VTable</h4>
+<p>Each component must define a HAMQTT_Component_VTable struct, which contains function pointers used by the framework to interact with the component.</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="struct_h_a_m_q_t_t___component___v_table.html">HAMQTT_Component_VTable</a> {</div>
+<div class="line">    esp_err_t (*get_discovery_config)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component, </div>
+<div class="line">                                      cJSON *root,</div>
+<div class="line">                                      <span class="keyword">const</span> <span class="keywordtype">char</span> *device_unique_id);</div>
+<div class="line"> </div>
+<div class="line">    void (*handle_mqtt_message)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
+<div class="line">                                <span class="keyword">const</span> <span class="keywordtype">char</span> *topic,</div>
+<div class="line">                                <span class="keyword">const</span> <span class="keywordtype">char</span> *data);</div>
+<div class="line"> </div>
+<div class="line">    void (*update)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
+<div class="line">                   esp_mqtt_client_handle_t mqtt_client);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *(*get_unique_id)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> *(*get_subscribed_topics)(<a class="code hl_struct" href="struct_h_a_m_q_t_t___component.html">HAMQTT_Component</a> *component,</div>
+<div class="line">                                                <span class="keywordtype">size_t</span> *count);</div>
+<div class="line">};</div>
+<div class="ttc" id="astruct_h_a_m_q_t_t___component___v_table_html"><div class="ttname"><a href="struct_h_a_m_q_t_t___component___v_table.html">HAMQTT_Component_VTable</a></div><div class="ttdef"><b>Definition</b> hamqtt_component_internal.h:44</div></div>
+</div><!-- fragment --><p> Each function serves a specific role in the lifecyclle of a component: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function name  </th><th class="markdownTableHeadNone">Purpose  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">get_discovery_config</span>  </td><td class="markdownTableBodyNone">Called at startup to populate a cJSON object representing this component's discovery config. This object will be nested under the component's entry in the cmps section of the device discovery message. You must populate all required fields for the component type (see the <a href="https://www.home-assistant.io/integrations/mqtt/#configuration">MQTT discovery docs</a>).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">handle_mqtt_message</span>  </td><td class="markdownTableBodyNone">Called when a subscribed MQTT topic for this component receives a new message. This is where you handle commands from Home Assistant (e.g. turning a switch on).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">update</span>  </td><td class="markdownTableBodyNone">Called periodically in the main loop to publish state updates. You are responsible for formatting and publishing the MQTT payload.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">get_unique_id</span>  </td><td class="markdownTableBodyNone">Returns a unique string identifier for this component. This will be used to build discovery topic paths and for de-duplication inside Home Assistant.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">get_subscribed_topics</span>  </td><td class="markdownTableBodyNone">Returns a pointer to an array of topic strings and a count. These topics are automatically subscribed to and routed to <span class="tt">handle_mqtt_message</span>  </td></tr>
+</table>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Steps to Add a New Component</h3>
+<ol type="1">
+<li><b>Define a struct</b> for your component with <span class="tt">HAMQTT_Component base;</span> as the first member.</li>
+<li><b>Implement all five functions</b> in the vtable.</li>
+<li><b>Create a factory function</b>, e.g. <span class="tt">hamqtt_my_component_create()</span>, that:<ul>
+<li>Allocates and initializes the struct.</li>
+<li>Sets the <span class="tt">base.v</span> field to point to your vtable.</li>
+</ul>
+</li>
+<li><b>Register the component</b> using <span class="tt">hamqtt_device_add_component()</span>.</li>
+</ol>
+<p>Your component will now be included in device discovery, state updates, and command routing.</p>
+<hr  />
+<p>If you need a reference, take a look at the existing <span class="tt">binary_sensor</span> or <span class="tt">button</span> components for a simple example of a full implementation.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+License</h2>
+<p>HAMQTT is licensed under the <b>Apache License 2.0</b>. See [<span class="tt">LICENSE</span>](LICENSE) for details.</p>
+<hr  />
+ </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

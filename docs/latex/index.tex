@@ -1,0 +1,254 @@
+\chapter{HAMQTT }
+\hypertarget{index}{}\label{index}\index{HAMQTT@{HAMQTT}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+ 
+
+\href{https://github.com/EdenBarnes/HAMQTT}{\texttt{ }} 
+
+\doxysection*{HAMQTT}
+
+
+
+{\bfseries{ESP-\/\+IDF component for integrating devices with Home Assistant over MQTT}} 
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md1}{}\doxysubsection{\texorpdfstring{Introduction}{Introduction}}\label{index_autotoc_md1}
+HAMQTT is a small C library that lets your ESP32 firmware expose sensors, buttons, and other components to Home Assistant over MQTT.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md3}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature  }\\\cline{1-2}
+\endhead
+Discovery  &Automatic generation \& pubication of device and component discovery payloads.  \\\cline{1-2}
+Availability  &Online / offline last-\/will handled for you  \\\cline{1-2}
+Components  &{\ttfamily Binary\+\_\+\+Sensor}, {\ttfamily Button} (more planned)  \\\cline{1-2}
+Footprint  &\texorpdfstring{$\sim$}{\string~}2.9 KB flash / \texorpdfstring{$\sim$}{\string~}0 B static RAM (heap usage depends on component count)  \\\cline{1-2}
+License  &Apache 2.\+0  \\\cline{1-2}
+\end{longtabu}
+
+
+\href{https://edenbarnes.github.io/HAMQTT/html/index.html}{\texttt{Click here for documentation}}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Roadmap to v1.\+0.\+0}{Roadmap to v1.\+0.\+0}}\label{index_autotoc_md5}
+\begin{DoxyNote}{Note}
+These will be completed as I need them for my projects, and not necessarily in the order listed here.
+\end{DoxyNote}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Status  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Component type  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Status  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Component type  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+✅ Done  &{\bfseries{Binary Sensor}}  &Basic On/\+Off  \\\cline{1-3}
+✅ Done  &{\bfseries{Button}}  &Basic pressable button  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Switch}}  &On/\+Off control + state  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Sensor}}  &Generic sensor (temperature, humidity, etc.)  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Number}}  &Publish numeric value / accept setpoint  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Select}}  &Dropdown selection entity  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Notify}}  &Send notifications  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Text}}  &Publish / accept text values  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Tag Scanner}}  &RFID/\+NFC tag reader  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Alarm Control Panel}}  &Arm/disarm alarm system  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Device Trigger}}  &Trigger automations based on events  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Event}}  &Publish custom event data  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Device Tracker}}  &Track device presence/location  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Cover}}  &Open/close/stop (e.\+g., garage door, blinds)  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Fan}}  &Control fan speed and oscillation  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Humidifier}}  &Control humidifier devices  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Light}}  &Brightness / RGB / color control  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Lock}}  &Lock/unlock doors  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Siren}}  &Trigger audible alarms  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Valve}}  &Control valves for water/gas  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Water Heater}}  &Manage water heater temperature/settings  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Camera}}  &Stream or snapshot camera images  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Lawn Mower}}  &Control robotic lawn mower  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Scene}}  &Activate preconfigured scenes  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Update}}  &Firmware/software update over MQTT  \\\cline{1-3}
+⏳ Planned  &{\bfseries{Vacuum}}  &Control robotic vacuum cleaners  \\\cline{1-3}
+\end{longtabu}
+
+
+\begin{quote}
+{\bfseries{Release 1.\+0.\+0}} will ship once most of the table above is ✅. \end{quote}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Installation (ESP‑\+IDF v5.\+x)}{Installation (ESP‑\+IDF v5.\+x)}}\label{index_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ bash}
+\DoxyCodeLine{mkdir\ -\/p\ components}
+\DoxyCodeLine{git\ submodule\ add\ https://github.com/EdenBarnes/HAMQTT.git\ components/HAMQTT}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md9}{}\doxysubsection{\texorpdfstring{Quick start (minimal example)}{Quick start (minimal example)}}\label{index_autotoc_md9}
+\href{https://edenbarnes.github.io/HAMQTT/html/index.html}{\texttt{Click here for documentation}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}HAMQTT.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*\ Your\ GPIO\ /\ sensor\ read\ function\ */}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ door\_open\_get\_state(\textcolor{keywordtype}{void}\ *arg)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ TODO:\ read\ GPIO\ or\ sensor}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ placeholder}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ app\_main(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 1.\ Configure\ the\ device\ (MQTT\ broker,\ IDs,\ etc.)}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___device___config}{HAMQTT\_Device\_Config}}\ dev\_cfg\ =\ hamqtt\_device\_config\_default();}
+\DoxyCodeLine{\ \ \ \ dev\_cfg.\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_aa4dc947b0dc69f1021c89883ebf0588e}{mqtt\_uri}}\ \ \ =\ \textcolor{stringliteral}{"{}mqtt://<BROKER‑IP>"{}};\ \ \ \textcolor{comment}{//\ TODO}}
+\DoxyCodeLine{\ \ \ \ dev\_cfg.\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_ae0bd3b2c40450213a1e71ffba9d6a345}{unique\_id}}\ \ =\ \textcolor{stringliteral}{"{}esp32‑hall‑node"{}};\ \ \ \ \ \ \ \textcolor{comment}{//\ Must\ be\ unique\ per\ device}}
+\DoxyCodeLine{\ \ \ \ dev\_cfg.\mbox{\hyperlink{struct_h_a_m_q_t_t___device___config_a7225c63ca05dbd991e4087b717b6bacb}{name}}\ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}Hall\ Sensor\ Node"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___device}{HAMQTT\_Device}}\ *device\ =\ hamqtt\_device\_create(\&dev\_cfg);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 2.\ Add\ a\ binary‑sensor\ component}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config}{HAMQTT\_Binary\_Sensor\_Config}}\ bin\_cfg\ =\ hamqtt\_binary\_sensor\_config\_default();}
+\DoxyCodeLine{\ \ \ \ bin\_cfg.\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_af0b15c6676acc5d52080501a438f9a24}{unique\_id}}\ =\ \textcolor{stringliteral}{"{}hall\_door\_state"{}};}
+\DoxyCodeLine{\ \ \ \ bin\_cfg.\mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor___config_a0512a5badf79d7aa54cf3f7473b73a36}{name}}\ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}Hall\ Door"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___binary___sensor}{HAMQTT\_Binary\_Sensor}}\ *door\ =\ hamqtt\_binary\_sensor\_create(\&bin\_cfg,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ door\_open\_get\_state,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NULL);}
+\DoxyCodeLine{\ \ \ \ hamqtt\_device\_add\_component(device,\ (\mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ *)door);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ TODO:\ You\ must\ connect\ to\ WiFi\ before\ attempting\ to\ connect\ to\ the\ MQTT\ broker}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 3.\ Connect\ to\ MQTT\ (blocks\ until\ connected\ \&\ discovery\ published)}}
+\DoxyCodeLine{\ \ \ \ hamqtt\_device\_connect(device);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 4.\ Main\ loop\ (call\ regularly\ or\ from\ freertos\ task)}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ hamqtt\_device\_loop(device);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vTaskDelay(pdMS\_TO\_TICKS(500));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{What happens behind the scenes?}{What happens behind the scenes?}}\label{index_autotoc_md10}
+
+\begin{DoxyEnumerate}
+\item The device publishes its discovery config on 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<mqtt\_config\_topic\_prefix>/device/<unique\_id>/config}
+
+\end{DoxyCode}
+
+\item Each component publishes its own JSON in the {\ttfamily cmps} section.
+\item The library subscribes to any command topics and schedules {\ttfamily update()} calls.
+\item Home \+Assistant → \+MQTT automatically shows the entities.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md12}{}\doxysubsection{\texorpdfstring{Contributing}{Contributing}}\label{index_autotoc_md12}
+
+\begin{DoxyEnumerate}
+\item Fork \& clone the repo.
+\item Create a topic branch\+: {\ttfamily git checkout -\/b feature/my‑new‑component}.
+\item Follow the coding style in existing files.
+\item Run {\ttfamily idf.\+py build} on an ESP32‑\+S3 or ESP32‑\+C3 target.
+\item Open a PR.
+\end{DoxyEnumerate}
+
+Feedback and assistance on this project is greatly appreciated. If you have any ideas on how to improve this project, or simply want to tell me how I\textquotesingle{}ve done everything in the worst way possible, I\textquotesingle{}d love to hear it. HAMQTT is still in its infancy, and I am not shy to rewriting the entire thing for the sake of improving it.
+
+If there’s a component missing from the list above that you wish existed, feel free to implement it and submit a PR! I’ve tried to make the codebase self-\/explanatory and well-\/documented, but here’s a detailed guide to help you get started building your own component\+:\hypertarget{index_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Component Architecture}{Component Architecture}}\label{index_autotoc_md13}
+Every component in HAMQTT is defined by a C {\ttfamily struct} that holds its internal state and behavior. To integrate with the framework, it must follow a few conventions.\hypertarget{index_autotoc_md14}{}\doxysubsubsubsection{\texorpdfstring{1. Start with a base component}{1. Start with a base component}}\label{index_autotoc_md14}
+Your component\textquotesingle{}s struct {\bfseries{must}} have a {\ttfamily \doxylink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component}} as its first field. This lets the framework treat it as a generic component and cast it safely when needed\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{struct_h_a_m_q_t_t___component}{HAMQTT\_Component}}\ base;}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Your\ component's\ internal\ state\ here}}
+\DoxyCodeLine{\}\ HAMQTT\_MyComponent;}
+
+\end{DoxyCode}
+ This design lets the {\ttfamily \doxylink{struct_h_a_m_q_t_t___device}{HAMQTT\+\_\+\+Device}} interact with all components uniformly.\hypertarget{index_autotoc_md15}{}\doxysubsubsubsection{\texorpdfstring{2. Implement the VTable}{2. Implement the VTable}}\label{index_autotoc_md15}
+Each component must define a \doxylink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\+\_\+\+Component\+\_\+\+VTable} struct, which contains function pointers used by the framework to interact with the component.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_h_a_m_q_t_t___component___v_table}{HAMQTT\_Component\_VTable}}\ \{}
+\DoxyCodeLine{\ \ \ \ esp\_err\_t\ (*get\_discovery\_config)(HAMQTT\_Component\ *component,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cJSON\ *root,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *device\_unique\_id);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ void\ (*handle\_mqtt\_message)(HAMQTT\_Component\ *component,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *topic,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ void\ (*update)(HAMQTT\_Component\ *component,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ esp\_mqtt\_client\_handle\_t\ mqtt\_client);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(*get\_unique\_id)(HAMQTT\_Component\ *component);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ *(*get\_subscribed\_topics)(HAMQTT\_Component\ *component,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *count);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ Each function serves a specific role in the lifecyclle of a component\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function name  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Purpose  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function name  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Purpose  }\\\cline{1-2}
+\endhead
+{\ttfamily get\+\_\+discovery\+\_\+config}  &Called at startup to populate a c\+JSON object representing this component\textquotesingle{}s discovery config. This object will be nested under the component\textquotesingle{}s entry in the cmps section of the device discovery message. You must populate all required fields for the component type (see the \href{https://www.home-assistant.io/integrations/mqtt/\#configuration}{\texttt{MQTT discovery docs}}).  \\\cline{1-2}
+{\ttfamily handle\+\_\+mqtt\+\_\+message}  &Called when a subscribed MQTT topic for this component receives a new message. This is where you handle commands from Home Assistant (e.\+g. turning a switch on).  \\\cline{1-2}
+{\ttfamily update}  &Called periodically in the main loop to publish state updates. You are responsible for formatting and publishing the MQTT payload.  \\\cline{1-2}
+{\ttfamily get\+\_\+unique\+\_\+id}  &Returns a unique string identifier for this component. This will be used to build discovery topic paths and for de-\/duplication inside Home Assistant.  \\\cline{1-2}
+{\ttfamily get\+\_\+subscribed\+\_\+topics}  &Returns a pointer to an array of topic strings and a count. These topics are automatically subscribed to and routed to {\ttfamily handle\+\_\+mqtt\+\_\+message}  \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Steps to Add a New Component}{Steps to Add a New Component}}\label{index_autotoc_md17}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Define a struct}} for your component with {\ttfamily \doxylink{struct_h_a_m_q_t_t___component}{HAMQTT\+\_\+\+Component} base;} as the first member.
+\item {\bfseries{Implement all five functions}} in the vtable.
+\item {\bfseries{Create a factory function}}, e.\+g. {\ttfamily hamqtt\+\_\+my\+\_\+component\+\_\+create()}, that\+:
+\begin{DoxyItemize}
+\item Allocates and initializes the struct.
+\item Sets the {\ttfamily base.\+v} field to point to your vtable.
+\end{DoxyItemize}
+\item {\bfseries{Register the component}} using {\ttfamily hamqtt\+\_\+device\+\_\+add\+\_\+component()}.
+\end{DoxyEnumerate}
+
+Your component will now be included in device discovery, state updates, and command routing.
+
+\DoxyHorRuler{0}
+
+
+If you need a reference, take a look at the existing {\ttfamily binary\+\_\+sensor} or {\ttfamily button} components for a simple example of a full implementation.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md20}{}\doxysubsection{\texorpdfstring{License}{License}}\label{index_autotoc_md20}
+HAMQTT is licensed under the {\bfseries{Apache \+License 2.0}}. See \mbox{[}{\ttfamily LICENSE}\mbox{]}(LICENSE) for details.
+
+\DoxyHorRuler{0}
+ 

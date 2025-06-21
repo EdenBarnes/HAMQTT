@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['name_0',['name',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a0512a5badf79d7aa54cf3f7473b73a36',1,'HAMQTT_Binary_Sensor_Config::name'],['../struct_h_a_m_q_t_t___button___config.html#a604eeb523f389ec9e0c8e2b765cd5dd3',1,'HAMQTT_Button_Config::name'],['../struct_h_a_m_q_t_t___device___config.html#a7225c63ca05dbd991e4087b717b6bacb',1,'HAMQTT_Device_Config::name']]]
+  ['enabled_5fby_5fdefault_0',['enabled_by_default',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a016c1f9f35e925236ea93813113464e6',1,'HAMQTT_Binary_Sensor_Config::enabled_by_default'],['../struct_h_a_m_q_t_t___button___config.html#a1ce23d629dc0423db05235e0ad5fa658',1,'HAMQTT_Button_Config::enabled_by_default']]],
+  ['entity_5fpicture_1',['entity_picture',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a45cf80574993ba6a5d858b395583abd9',1,'HAMQTT_Binary_Sensor_Config::entity_picture'],['../struct_h_a_m_q_t_t___button___config.html#a021f9c74ad258d86e9ee2709b5874731',1,'HAMQTT_Button_Config::entity_picture']]],
+  ['esp‑idf v5_20x_2',['Installation (ESP‑IDF v5.x)',['../index.html#autotoc_md7',1,'']]],
+  ['example_3',['Quick start (minimal example)',['../index.html#autotoc_md9',1,'']]],
+  ['expire_5fafter_4',['expire_after',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a8fe59595395eaedeb6ff82300961af8a',1,'HAMQTT_Binary_Sensor_Config']]]
 ];

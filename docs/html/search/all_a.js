@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['unique_5fid_0',['unique_id',['../struct_h_a_m_q_t_t___binary___sensor___config.html#af0b15c6676acc5d52080501a438f9a24',1,'HAMQTT_Binary_Sensor_Config::unique_id'],['../struct_h_a_m_q_t_t___button___config.html#ac9e24925d4dc674e14346089cb48fd55',1,'HAMQTT_Button_Config::unique_id'],['../struct_h_a_m_q_t_t___device___config.html#ae0bd3b2c40450213a1e71ffba9d6a345',1,'HAMQTT_Device_Config::unique_id']]]
+  ['icon_0',['icon',['../struct_h_a_m_q_t_t___binary___sensor___config.html#a6e815fc072cc9e0b7be90724dbe13f5a',1,'HAMQTT_Binary_Sensor_Config::icon'],['../struct_h_a_m_q_t_t___button___config.html#a32a57d06a396f15fd1e4856732920d98',1,'HAMQTT_Button_Config::icon']]],
+  ['implement_20the_20vtable_1',['2. Implement the VTable',['../index.html#autotoc_md15',1,'']]],
+  ['installation_20esp‑idf v5_20x_2',['Installation (ESP‑IDF v5.x)',['../index.html#autotoc_md7',1,'']]],
+  ['introduction_3',['Introduction',['../index.html#autotoc_md1',1,'']]]
 ];
