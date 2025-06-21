@@ -139,8 +139,6 @@ void app_main(void)
 4. Run `idf.py build` on an ESP32‑S3 or ESP32‑C3 target.
 5. Open a PR.
 
-All contributions require a DCO sign‑off (`git commit -s`).
-
 ---
 
 ## License
